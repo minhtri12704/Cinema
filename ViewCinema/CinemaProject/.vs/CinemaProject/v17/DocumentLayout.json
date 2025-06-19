@@ -1,0 +1,262 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CinemaProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\views\\cinemaview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\models\\showtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\showtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Program.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Program.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Program.cs",
+              "RelativeToolTip": "CinemaProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:21:32.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T14:21:23.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Showtime.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Models\\Showtime.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\Showtime.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Models\\Showtime.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\Showtime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:19:48.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:09:40.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T14:21:26.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Home.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Home.cshtml",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Home.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Home.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T14:17:28.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CinemaViewController.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaViewController.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:38:23.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CinemaProject\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CinemaProject\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-19T14:32:16.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:39:09.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T14:21:21.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T14:21:29.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cinema.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Models\\Cinema.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\Cinema.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Models\\Cinema.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\Cinema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:19:27.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\Movie.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Models\\Movie.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\Movie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:19:04.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\CinemaProject\\CinemaProject\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:09:29.968Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

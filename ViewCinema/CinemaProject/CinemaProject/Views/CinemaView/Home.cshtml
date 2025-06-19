@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Đặt vé phim chiếu rạp";
+    var movies = ViewBag.Movies as List<Movie>;
+    var cinemas = ViewBag.Cinemas as List<Cinema>;
+    var showtimes = ViewBag.Showtimes as List<Showtime>;
+}
+
+<h2>Mua vé theo phim</h2>
+<div class="movie-list">
+    @foreach (var movie in movies)
+    {
+        <div class="movie-item">
+            <img src="@movie.PosterUrl" alt="@movie.Title" />
+            <p>@movie.Title</p>
+            <p>@movie.Duration</p>
+        </div>
+    }
+</div>
+
+<h2>Mua vé theo rạp</h2>
+<div class="cinema-section">
+    <select>
+        @foreach (var c in cinemas)
+        {
+            <option>@c.Name</option>
+        }
+    </select>
+</div>
+
+<div class="showtime-list">
+    @foreach (var s in showtimes)
+    {
+        var movie = movies.FirstOrDefault(m => m.Id == s.MovieId);
+        <div class="showtime-block">
+            <strong>@movie.Title</strong> - <span>@s.Time.ToString("HH:mm")</span>
+        </div>
+    }
+</div>
