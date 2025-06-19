@@ -1,22 +1,73 @@
-html {
-  font-size: 14px;
+﻿/* Nền đen toàn trang, chữ trắng */
+html, body {
+    background-color: #121212;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* Hiệu ứng khi focus */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    outline: none;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* Danh sách phim hiển thị dạng lưới 3x3 */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
-body {
-  margin-bottom: 60px;
+.movie-item {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s;
+}
+
+    .movie-item:hover {
+        transform: scale(1.05);
+    }
+
+    .movie-item img {
+        width:50%;
+        border-radius: 5px;
+    }
+
+/* Dropdown chọn rạp */
+.cinema-section select {
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Danh sách suất chiếu */
+.showtime-list {
+    padding: 20px;
+}
+
+.showtime-block {
+    margin-bottom: 10px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 4px;
 }
