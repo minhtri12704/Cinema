@@ -1,38 +1,23 @@
-﻿@{
-    ViewBag.Title = "Đặt vé phim chiếu rạp";
-    var movies = ViewBag.Movies as List<Movie>;
-    var cinemas = ViewBag.Cinemas as List<Cinema>;
-    var showtimes = ViewBag.Showtimes as List<Showtime>;
+﻿@model IEnumerable<CinemaProject.Models.Phim>
+@{
+    ViewData["Title"] = "Danh sách phim";
 }
 
-<h2>Mua vé theo phim</h2>
-<div class="movie-list">
-    @foreach (var movie in movies)
-    {
-        <div class="movie-item">
-                <img src="@movie.PosterUrl" alt="@movie.Title" width="100px" />
-                <p>@movie.Title</p>
-                <p>@movie.Duration</p>
-        </div>
-    }
-</div>
-
-<h2>Mua vé theo rạp</h2>
-<div class="cinema-section">
-    <select>
-        @foreach (var c in cinemas)
+<div class="container">
+    <h2 class="text-white">Danh sách phim</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var p in Model)
         {
-            <option>@c.Name</option>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="~/images/@(p.TenPhim).jpg" class="card-img-top" alt="@p.TenPhim" style="height: 400px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@p.TenPhim</h5>
+                        <p class="card-text">Thời lượng: @p.ThoiLuong phút</p>
+                        <p class="card-text">Ngày khởi chiếu: @p.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
+                    </div>
+                </div>
+            </div>
         }
-    </select>
-</div>
-
-<div class="showtime-list">
-    @foreach (var s in showtimes)
-    {
-        var movie = movies.FirstOrDefault(m => m.Id == s.MovieId);
-        <div class="showtime-block">
-            <strong>@movie.Title</strong> - <span>@s.Time.ToString("HH:mm")</span>
-        </div>
-    }
+    </div>
 </div>
