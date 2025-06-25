@@ -1,5 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CinemaProject.Models.LoginViewModel
+
 @{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CinemaProject.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <p style="color:red">@ViewBag.Error</p>
+        }
+
+        <form asp-action="Login" method="post">
+            <div class="login-group">
+                <label asp-for="TenDangNhap">Tên đăng nhập:</label>
+                <input asp-for="TenDangNhap" />
+            </div>
+
+            <div class="login-group">
+                <label asp-for="MatKhau">Mật khẩu:</label>
+                <input asp-for="MatKhau" type="password" />
+            </div>
+
+            <button type="submit">Đăng Nhập</button>
+            <a asp-controller="CinemaView" asp-action="Signup" class="btn btn-link d-block mt-3 text-center text-decoration-none text-info">
+                Bạn chưa có tài khoản?
+            </a>
+        </form>
+
+    </div>
+</body>
+</html>

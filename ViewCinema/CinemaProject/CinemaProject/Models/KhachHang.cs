@@ -14,6 +14,7 @@ public partial class KhachHang
     public string? SoDienThoai { get; set; }
 
     public DateTime? NgayDangKy { get; set; }
+    public string MatKhauKH { get; set; } = null!;
 
     public virtual ICollection<DatVe> DatVes { get; set; } = new List<DatVe>();
 

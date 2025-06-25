@@ -1,0 +1,64 @@
+﻿@model CinemaProject.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CinemaProject.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng ký</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <p style="color:red">@ViewBag.Error</p>
+        }
+
+        <form asp-action="Register" method="post">
+            <div class="login-group">
+                <label asp-for="Ten">Họ và tên:</label>
+                <input asp-for="Ten" />
+            </div>
+
+            <div class="login-group">
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" type="email" />
+            </div>
+
+            <div class="login-group">
+                <label asp-for="SoDienThoai">Số điện thoại:</label>
+                <input asp-for="SoDienThoai" />
+            </div>
+
+            <div class="login-group">
+                <label asp-for="MatKhauKH">Mật khẩu:</label>
+                <input asp-for="MatKhauKH" type="password" />
+            </div>
+            <div class="login-group">
+                <label asp-for="XacNhanMatKhau">Nhập lại mật khẩu:</label>
+                <input asp-for="XacNhanMatKhau" type="password" />
+                <span asp-validation-for="XacNhanMatKhau" class="text-danger"></span>
+            </div>
+
+            <button type="submit">Đăng Ký</button>
+
+            <a asp-controller="CinemaView" asp-action="Login" class="btn btn-link d-block mt-3 text-center text-decoration-none text-info">
+                Đã có tài khoản? Đăng nhập
+            </a>
+        </form>
+    </div>
+</body>
+</html>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

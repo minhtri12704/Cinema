@@ -58,7 +58,8 @@ create table KhachHang (
     Ten nvarchar(255) not null,
     Email varchar(255) unique not null,
     SoDienThoai varchar(20),
-    NgayDangKy date
+    NgayDangKy date,
+	MatKhauKH varchar(255) not null
 )
 go
 -- bảng đặt vé
@@ -198,14 +199,14 @@ VALUES
 
 -- 4. Dữ liệu cho bảng Phim --
 INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop) 
-VALUES ('P01', N'Avengers: Endgame', 'HD', 181, '2023-12-01', 'PG-13'),
+VALUES ('P01', N'Avengers_Endgame', 'HD', 181, '2023-12-01', 'PG-13'),
 ('P02', N'Mắt Biếc', 'TC', 120, '2024-01-15', 'PG'),
 ('P03', N'The Batman', 'HD', 176, '2023-03-01', 'PG-13'),
 ('P04', N'Your Name', 'HD', 112, '2023-05-15', 'PG'),
 ('P05', N'Parasite', 'TL', 132, '2023-09-20', 'R'),
-('P06', N'Top Gun: Maverick', 'HD', 131, '2023-07-04', 'PG-13'),
-('P07', N'Spider-Man: No Way Home', 'HD', 148, '2023-12-17', 'PG-13'),
-('P08', N'Conan: Tàu Ngầm Đen', 'HD', 110, '2024-03-25', 'PG'),
+('P06', N'Top Gun_Maverick', 'HD', 131, '2023-07-04', 'PG-13'),
+('P07', N'Spider-Man_No Way Home', 'HD', 148, '2023-12-17', 'PG-13'),
+('P08', N'Conan_Viên đạn đỏ', 'HD', 110, '2024-03-25', 'PG'),
 ('P09', N'Suzume', 'HH', 122, '2024-02-01', 'PG'),
 ('P10', N'Nhà Bà Nữ', 'H', 98, '2024-01-10', 'PG'),
 ('P11', N'The Conjuring', 'KD', 98, '2024-03-10', 'PG-16'),
@@ -223,27 +224,28 @@ VALUES ('L1', 'P01', 'PC1', '2024-04-10', '9:00 - 11:00', 70000),
 go
 
 -- 6. Dữ liệu cho bảng KhachHang --
-INSERT INTO KhachHang (idKhach, Ten, Email, SoDienThoai, NgayDangKy) 
+INSERT INTO KhachHang (idKhach, Ten, Email, SoDienThoai, NgayDangKy, MatKhauKH) 
 VALUES
-('KH01', N'Nguyễn Văn A', 'vana@gmail.com', '0912345678', '2024-04-01'),
-('KH02', N'Trần Thị B', 'thib@gmail.com', '0923456789', '2024-04-02'),
-('KH03', N'Phạm Minh Tuấn', 'tuanpm@gmail.com', '0933123456', '2024-04-05'),
-('KH04', N'Phạm Huy Minh Quang', 'quangpham@gmail.com', '0987456123', '2024-04-06'),
-('KH05', N'Trịnh Quốc D', 'datquoc@gmail.com', '0967123874', '2024-04-06'),
-('KH06', N'Châu Trần Minh Trí', 'minhtri@gmail.com', '0912233445', '2024-04-07'),
-('KH07', N'Nguyễn Thanh Tùng', 'thanhtung@gmail.com', '0908765432', '2024-04-07'),
-('KH08', N'Ngô Minh Thuận', 'hanhngo@gmail.com', '0977567890', '2024-04-08'),
-('KH09', N'Võ Đức Huy', 'huyvo@gmail.com', '0934789651', '2024-04-08'),
-('KH10', N'Hồ Phan Minh Đăng', 'dangho@gmail.com', '0945123789', '2024-04-08'),
-('KH11', N'Tô Thanh Hà', 'hatho@gmail.com', '0967894321', '2024-04-08'),
-('KH12', N'Đặng Văn Nam', 'namdang@gmail.com', '0978312465', '2024-04-08'),
-('KH13', N'Trần Quang Hưng', 'hungtran@gmail.com', '0923678456', '2024-04-08'),
-('KH14', N'Nguyễn Kim Oanh', 'oanhnk@gmail.com', '0912348765', '2024-04-08'),
-('KH15', N'Lương Minh Khoa', 'khoaluong@gmail.com', '0909988776', '2024-04-08'),
-('KH16', N'Phan Thị Thảo', 'thaophan@gmail.com', '0933467890', '2024-04-08'),
-('KH17', N'Cao Văn Bình', 'binhcao@gmail.com', '0965456789', '2024-04-08'),
-('KH18', N'Tống Ngọc Duy', 'duytong@gmail.com', '0977654321', '2024-04-08');
+('KH01', N'Nguyễn Văn A', 'vana@gmail.com', '0912345678', '2024-04-01', '123456'),
+('KH02', N'Trần Thị B', 'thib@gmail.com', '0923456789', '2024-04-02', '123456'),
+('KH03', N'Phạm Minh Tuấn', 'tuanpm@gmail.com', '0933123456', '2024-04-05', '123456'),
+('KH04', N'Phạm Huy Minh Quang', 'quangpham@gmail.com', '0987456123', '2024-04-06', '123456'),
+('KH05', N'Trịnh Quốc D', 'datquoc@gmail.com', '0967123874', '2024-04-06', '123456'),
+('KH06', N'Châu Trần Minh Trí', 'minhtri@gmail.com', '0912233445', '2024-04-07', '123456'),
+('KH07', N'Nguyễn Thanh Tùng', 'thanhtung@gmail.com', '0908765432', '2024-04-07', '123456'),
+('KH08', N'Ngô Minh Thuận', 'hanhngo@gmail.com', '0977567890', '2024-04-08', '123456'),
+('KH09', N'Võ Đức Huy', 'huyvo@gmail.com', '0934789651', '2024-04-08', '123456'),
+('KH10', N'Hồ Phan Minh Đăng', 'dangho@gmail.com', '0945123789', '2024-04-08', '123456'),
+('KH11', N'Tô Thanh Hà', 'hatho@gmail.com', '0967894321', '2024-04-08', '123456'),
+('KH12', N'Đặng Văn Nam', 'namdang@gmail.com', '0978312465', '2024-04-08', '123456'),
+('KH13', N'Trần Quang Hưng', 'hungtran@gmail.com', '0923678456', '2024-04-08', '123456'),
+('KH14', N'Nguyễn Kim Oanh', 'oanhnk@gmail.com', '0912348765', '2024-04-08', '123456'),
+('KH15', N'Lương Minh Khoa', 'khoaluong@gmail.com', '0909988776', '2024-04-08', '123456'),
+('KH16', N'Phan Thị Thảo', 'thaophan@gmail.com', '0933467890', '2024-04-08', '123456'),
+('KH17', N'Cao Văn Bình', 'binhcao@gmail.com', '0965456789', '2024-04-08', '123456'),
+('KH18', N'Tống Ngọc Duy', 'duytong@gmail.com', '0977654321', '2024-04-08', '123456');
 go
+
 
 -- 7. Dữ liệu cho bảng DatVe --
 INSERT INTO DatVe (idDatVe, idKhach, idLich, GheNgoi, ThoiGianDat, TongTien) 
@@ -292,3 +294,5 @@ VALUES ('cb1', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz', 77000),
 ('cb4', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz + 01 khoai tây chiên', 114000),
 ('cb5', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz + 01 xúc xích lốc xoáy', 114000)
 go
+ select * from KhachHang
+ delete from KhachHang where Ten = 'dang1'
