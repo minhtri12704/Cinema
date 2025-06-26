@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CinemaProject.Models.KhachHang>
+@{
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách nhân viên</h2>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Mã KH</th>
+            <th>Họ tên</th>
+            <td>Email</td>
+            <td>SoDienThoai</td>
+            <td>MatKhauKH</td>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nv in Model)
+        {
+            <tr>
+                <td>@nv.IdKhach</td>
+                <td>@nv.Ten</td>
+                <td>@nv.Email</td>
+                <td>@nv.SoDienThoai</td>
+                <td>@nv.MatKhauKH</td>
+                <td>
+                    <a href="@Url.Action("EditKhachHang", "CinemaAdmin", new { id = nv.IdKhach })" class="btn btn-sm btn-warning">Sửa</a>
+                    <a href="@Url.Action("Delete", "CinemaAdmin", new { id = nv.IdKhach })" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
