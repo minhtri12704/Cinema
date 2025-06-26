@@ -63,6 +63,40 @@ namespace CinemaProject.Controllers
             HttpContext.Session.Clear(); // Xóa session
             return RedirectToAction("Login");
         }
+        
+        // NHÂN VIÊN
+        //Hiển thị danh sách nhân viên
+        public IActionResult NhanVien()
+        {
+            var nhanvienlist = _context.NhanViens.ToList();
+            return View("~/Views/CinemaAdmin/nhanvien/NhanVien.cshtml", nhanvienlist);
+        }
+        // Xóa Nhân Viên
+        public IActionResult DeleteNV(string id)
+        {
+            var nv = _context.NhanViens.Find(id);
+            if (nv != null)
+            {
+                _context.NhanViens.Remove(nv);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("KhachHang");
+        }
+        //chỉnh sửa Nhân Viên
+        [HttpPost]
+        public IActionResult EditNV(NhanVien model)
+        {
+            var existing = _context.NhanViens.Find(model.IdNhanVien);
+            if (existing == null)
+                return NotFound();
 
+            existing.Ten = model.Ten;
+            existing.ViTri = model.ViTri;
+            existing.Luong = model.Luong;
+            existing.NgayVaoLam = model.NgayVaoLam;
+
+            _context.SaveChanges();
+            return RedirectToAction("KhachHang");
+        }
     }
 }

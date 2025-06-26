@@ -169,7 +169,7 @@ create table ComboMonAn(
 )
 go
 
--- 1. Dữ liệu cho bảng Rap --
+-- 1. Dữ liệu cho bảng Rap (chi nhánh)--
 INSERT INTO Rap (idRap, TenRap, DiaChi, SoDienThoai) 
 VALUES ('R1', N'BHD STAR Lê Văn Việt', N'Tầng 4, Vincom Plaza Lê Văn Việt, 50 Lê Văn Việt, P.Hiệp Phú, Quận 9, TP.HCM', '011564215'),
 ('R2', N'BHD STAR Long Khánh', N'430 Hồ Thị Hương, Phường Xuân An, Thành Phố Long Khánh, Tỉnh Đồng Nai', '09129234567'),
