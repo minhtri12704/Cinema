@@ -178,24 +178,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwC4AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T04:10:17.1Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -205,7 +192,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\Program.cs",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Program.cs",
               "RelativeToolTip": "CinemaProject\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAIBJwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T14:21:32.512Z"
             },
@@ -217,7 +204,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\CinemaProject.csproj",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\CinemaProject.csproj",
               "RelativeToolTip": "CinemaProject\\CinemaProject.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-06-20T00:25:04.995Z"
             },
@@ -229,10 +216,9 @@
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
               "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T02:19:10.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T02:19:10.879Z"
             },
             {
               "$type": "Document",
@@ -244,8 +230,7 @@
               "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAcwHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T14:38:23.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T14:38:23.884Z"
             },
             {
               "$type": "Document",
@@ -267,10 +252,22 @@
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
               "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAwDsAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAADwvzsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-21T02:13:11.095Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwC4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T04:10:17.1Z"
             },
             {
               "$type": "Document",
@@ -304,7 +301,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Login.cshtml",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Login.cshtml",
               "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Login.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-20T01:56:49.527Z"
             },
@@ -328,7 +325,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\Models\\NhanVien.cs",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\NhanVien.cs",
               "RelativeToolTip": "CinemaProject\\Models\\NhanVien.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAkAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T01:41:05.614Z"
             },
@@ -400,7 +397,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\site.css",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\site.css",
               "RelativeToolTip": "CinemaProject\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAIBJwGcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-06-19T16:40:05.968Z"
             },
@@ -532,7 +529,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\Models\\RapChieuPhimContext.cs",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\RapChieuPhimContext.cs",
               "RelativeToolTip": "CinemaProject\\Models\\RapChieuPhimContext.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAcwC0AAABKAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAA2wC0AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T00:43:11.907Z"
             },
@@ -599,13 +596,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "Avengers_Endgame.jpg",
+              "Title": "Avengers_Endgame.jpg - Bitmap [400x600, 24 bit, JPG]",
               "DocumentMoniker": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
-              "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
-              "RelativeToolTip": "CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
+              "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg - Bitmap [400x600, 24 bit, JPG]",
+              "RelativeToolTip": "CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg - Bitmap [400x600, 24 bit, JPG]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-06-20T01:22:32.799Z"
+              "WhenOpened": "2025-06-20T01:22:32.799Z",
+              "EditorCaption": " - Bitmap [400x600, 24 bit, JPG]"
             },
             {
               "$type": "Document",
@@ -686,7 +684,7 @@
               "RelativeDocumentMoniker": "CinemaProject\\Properties\\launchSettings.json",
               "ToolTip": "E:\\Cinema\\ViewCinema\\CinemaProject\\CinemaProject\\Properties\\launchSettings.json",
               "RelativeToolTip": "CinemaProject\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAgAAAAAAAAAAABRwBYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAABhwBYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-06-19T14:32:16.896Z"
             }
