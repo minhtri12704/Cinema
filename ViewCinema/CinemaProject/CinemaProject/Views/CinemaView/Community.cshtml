@@ -1,0 +1,130 @@
+﻿@model IEnumerable<CinemaProject.Models.Phim>
+@{
+    ViewData["Title"] = "Danh sách phim";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Movek - Cộng đồng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Community.css" asp-append-version="true" />
+</head>
+<body>
+    <section class="trending">
+        <h2>Thịnh Hành</h2>
+        <p>Các Phim Được Yêu Thích Trong Tuần</p>
+        <div class="movie-carousel">
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Avengers_Endgame.jpg" alt="Film 1">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Conan_Viên đạn đỏ.jpg" alt="Film 2">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Mắt Biếc.jpg" alt="Film 3">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Nhà Bà Nữ.jpg" alt="Film 4">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Parasite.jpg" alt="Film 5">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Spider-Man_No Way Home.jpg" alt="Film 6">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/Suzume.jpg" alt="Film 7">
+            </div>
+            <div class="movie">
+                <i class="fa fa-heart heart-icon"></i>
+                <img src="~/images/The Batman.jpg" alt="Film 8">
+            </div>
+        </div>
+    </section>
+
+    <section class="community-section">
+        <div class="activities">
+            <h3>Movvek-er đang làm gì?</h3>
+            <div class="activity">Nguyễn Kiều Oanh đã đánh giá 🎬 Doraemon Movie 44: 8⭐ <span style="float:right; font-size:12px; color:#aaa">20 phút trước</span></div>
+            <div class="activity highlight">
+                <div class="left">
+                    <strong>Đức Lộc</strong> đã đánh giá 10⭐ cho <b>Thám Tử Kiên</b>
+                    <div class="reaction">
+                        <i class="fas fa-thumbs-up" data-id="1"></i>
+                        <i class="fas fa-thumbs-down" data-id="1"></i>
+                        <i class="fas fa-share" data-id="1"></i>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="~/images/The Batman.jpg" alt="Thám Tử Kiên">
+                </div>
+            </div>
+            <div class="activity">Nguyễn Kiều Oanh đã đánh giá 🎬 Doraemon Movie 44: 8⭐</div>
+            <div class="activity">Yuu đã thích bình luận 💬 của Dưới Đáy Hồ</div>
+            <div class="activity">Nguyễn Kiều Oanh đã đánh giá 🎬 Dưới Đáy Hồ: 8⭐</div>
+            <div class="activity">Huỳnh Minh Trí đã đánh giá 🎬 Dưới Đáy Hồ: 6⭐</div>
+            <div class="activity">Phan Văn Đức đã đánh giá 🎬 Dưới Đáy Hồ: 9⭐</div>
+            <div class="activity">Võ Quang Trung đã đánh giá 🎬 Dưới Đáy Hồ: 9⭐</div>
+            <button class="btn-view-more">Xem thêm</button>
+        </div>
+
+        <div class="critics">
+            <h3>Movvek's Approved Critics</h3>
+            <div class="critic"><i class="fas fa-user-circle"></i> Bùi An <small>- Phóng Viên (HDVietnam)</small></div>
+            <div class="critic"><i class="fas fa-user-circle"></i> Đào Bội Tú <small>- Nhà phê bình tự do</small></div>
+            <div class="critic"><i class="fas fa-user-circle"></i> Đào Diệu Loan <small>- Phóng viên tự do</small></div>
+            <div class="critic"><i class="fas fa-user-circle"></i> Hanhfm <small>- Nhà phê bình tự do</small></div>
+            <div class="critic"><i class="fas fa-user-circle"></i> Hoàng Hưng <small>- Biên tập tại HTV</small></div>
+            <div class="critic"><i class="fas fa-user-circle"></i> Lotus <small>- Nhà phê bình tự do</small></div>
+        </div>
+    </section>
+
+@*     <footer>
+        <p>Công ty TNHH NOMNET · Địa chỉ: Số 16, Đường Số 8, Khu Đô Thị Him Lam, P. Tân Hưng, Q.7, TP.HCM</p>
+        <p>Email: contact@movek.vn · Hotline: 0707.999.888</p>
+        <p>© 2025 Movek.vn</p>
+    </footer> *@
+
+    <script>
+        document.querySelectorAll('.heart-icon').forEach(function (icon) {
+            icon.addEventListener('click', function () {
+                this.classList.toggle('liked');
+            });
+        });
+
+        document.querySelectorAll('.reaction i').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const type = this.classList.contains('fa-thumbs-up') ? 'like'
+                    : this.classList.contains('fa-thumbs-down') ? 'dislike'
+                        : 'share';
+
+                const id = this.dataset.id;
+
+                fetch('/CinemaView/React', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id, type })
+                })
+                    .then(res => {
+                        if (res.ok) {
+                            this.classList.add('text-success'); // thêm màu xanh
+                            setTimeout(() => this.classList.remove('text-success'), 1000);
+                        }
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

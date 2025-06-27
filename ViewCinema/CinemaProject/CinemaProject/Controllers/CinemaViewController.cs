@@ -113,5 +113,28 @@ public class CinemaViewController : Controller
         ViewBag.Error = "Vui lòng kiểm tra lại thông tin.";
         return View("Signup",model);
     }
+    //CỘNG ĐỒNG
+    //Hiển thị cộng đồng
+    public IActionResult Community()
+    {
+        return View();
+    }
+    //like , dislike
+    [HttpPost]
+    public IActionResult React([FromBody] ReactModel react)
+    {
+        if (string.IsNullOrEmpty(react.Type) || react.Id <= 0)
+            return BadRequest();
 
+        // TODO: Lưu vào DB (bảng Likes/Dislikes/Share)
+        Console.WriteLine($"User reacted: {react.Type} on ID {react.Id}");
+
+        return Ok();
+    }
+
+    public class ReactModel
+    {
+        public int Id { get; set; }
+        public string Type { get; set; } // like / dislike / share
+    }
 }
