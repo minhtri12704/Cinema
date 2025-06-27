@@ -137,4 +137,39 @@ public class CinemaViewController : Controller
         public int Id { get; set; }
         public string Type { get; set; } // like / dislike / share
     }
+
+    //NHÀ PHÊ BÌNH
+    private static List<Critic> _critics = new List<Critic>
+    {
+        new Critic { Name = "Bùi An", Title = "Phóng Viên (HDVietnam)", Bio = "Yêu thích thể loại hành động và điều tra." },
+        new Critic { Name = "Đào Bội Tú", Title = "Nhà phê bình tự do", Bio = "Thường viết review phim nghệ thuật và xã hội." },
+        // thêm critic khác nếu cần
+    };
+
+    public IActionResult CriticDetail(string name)
+    {
+        var critic = new Critic
+        {
+            Name = name,
+            Title = "Nhà phê bình tự do",
+            Bio = "Một cây viết điện ảnh với góc nhìn sâu sắc và độc lập.",
+            AvatarUrl = "/images/Suzume.jpg"
+        };
+
+        // Giả lập danh sách đánh giá của critic
+        var reviews = new List<Review>
+    {
+        new Review { MovieTitle = "Parasite", Rating = 9, Comment = "Một tác phẩm xuất sắc về phân hóa xã hội." },
+        new Review { MovieTitle = "Mắt Biếc", Rating = 8, Comment = "Gợi cảm xúc và gần gũi." },
+        new Review { MovieTitle = "Doraemon Movie 44", Rating = 7, Comment = "Giải trí nhẹ nhàng, thích hợp cho thiếu nhi." }
+    };
+
+        var viewModel = new CriticDetailViewModel
+        {
+            Critic = critic,
+            Reviews = reviews
+        };
+
+        return View("CriticsDetail", viewModel);
+    }
 }

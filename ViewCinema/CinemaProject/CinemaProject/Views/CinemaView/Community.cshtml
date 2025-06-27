@@ -80,12 +80,29 @@
 
         <div class="critics">
             <h3>Movvek's Approved Critics</h3>
-            <div class="critic"><i class="fas fa-user-circle"></i> Bùi An <small>- Phóng Viên (HDVietnam)</small></div>
-            <div class="critic"><i class="fas fa-user-circle"></i> Đào Bội Tú <small>- Nhà phê bình tự do</small></div>
-            <div class="critic"><i class="fas fa-user-circle"></i> Đào Diệu Loan <small>- Phóng viên tự do</small></div>
-            <div class="critic"><i class="fas fa-user-circle"></i> Hanhfm <small>- Nhà phê bình tự do</small></div>
-            <div class="critic"><i class="fas fa-user-circle"></i> Hoàng Hưng <small>- Biên tập tại HTV</small></div>
-            <div class="critic"><i class="fas fa-user-circle"></i> Lotus <small>- Nhà phê bình tự do</small></div>
+            <a href="@Url.Action("CriticDetail", "CinemaView", new { name = "Bùi An" })" class="critic">
+                <i class="fas fa-user-circle"></i> Bùi An <small>- Phóng Viên (HDVietnam)</small>
+            </a>
+
+            <a href="@Url.Action("CriticDetail", "CinemaView", new { name = "Đào Bội Tú" })" class="critic">
+                <i class="fas fa-user-circle"></i> Đào Bội Tú <small>- Nhà phê bình tự do</small>
+            </a>
+
+            <a href="@Url.Action("CriticDetail", "CinemaView", new { name = "Đào Diệu Loan" })" class="critic">
+                <i class="fas fa-user-circle"></i> Đào Diệu Loan <small>- Phóng viên tự do</small>
+            </a>
+
+            <a href="@Url.Action("CriticDetail", "CinemaView", new { name = "Hanhfm" })" class="critic">
+                <i class="fas fa-user-circle"></i> Hanhfm <small>- Nhà phê bình tự do</small>
+            </a>
+
+            <a href="@Url.Action("CriticDetail", "CinemaView", new { name = "Hoàng Hưng" })" class="critic">
+                <i class="fas fa-user-circle"></i> Hoàng Hưng <small>- Biên tập tại HTV</small>
+            </a>
+
+            <a href="@Url.Action("CriticDetail", "CinemaView", new { name = "Lotus" })" class="critic">
+                <i class="fas fa-user-circle"></i> Lotus <small>- Nhà phê bình tự do</small>
+            </a>
         </div>
     </section>
 

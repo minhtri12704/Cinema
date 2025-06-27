@@ -1,0 +1,151 @@
+﻿@model CinemaProject.Models.CriticDetailViewModel
+@{
+    ViewData["Title"] = "Chi tiết nhà phê bình";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<div class="critic-detail-wrapper">
+    <div class="critic-card">
+        <div class="avatar-section">
+            <img src="@(!string.IsNullOrEmpty(Model.Critic.AvatarUrl) ? Model.Critic.AvatarUrl : "/images/default-avatar.png")"
+                 alt="Avatar @Model.Critic.Name" class="avatar-img" />
+        </div>
+        <div class="info-section">
+            <h2 class="critic-name">@Model.Critic.Name</h2>
+            <h5 class="critic-title">@Model.Critic.Title</h5>
+            <p class="critic-bio">@Model.Critic.Bio</p>
+        </div>
+    </div>
+
+    <div class="review-section">
+        <h3>🎬 Các đánh giá nổi bật</h3>
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="review-card">
+                <h5>@review.MovieTitle</h5>
+                <p class="rating">⭐ @review.Rating/10</p>
+                <p class="comment">“@review.Comment”</p>
+            </div>
+        }
+    </div>
+
+    <a href="@Url.Action("Home", "CinemaView")" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Về trang chủ
+    </a>
+</div>
+
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #121212;
+        color: #f1f1f1;
+    }
+
+    .avatar-img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #555;
+    }
+
+    .critic-detail-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+    }
+
+    .critic-card {
+        background-color: #1f1f1f;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        max-width: 700px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .avatar-icon {
+        font-size: 100px;
+        color: #888;
+    }
+
+    .critic-name {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #ffffff;
+    }
+
+    .critic-title {
+        font-size: 18px;
+        color: #aaa;
+        margin-bottom: 15px;
+    }
+
+    .critic-bio {
+        font-size: 16px;
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    .review-section {
+        margin-top: 40px;
+        width: 100%;
+        max-width: 700px;
+    }
+
+        .review-section h3 {
+            color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+    .review-card {
+        background-color: #1c1c1c;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+        .review-card h5 {
+            margin: 0;
+            color: #f1f1f1;
+        }
+
+    .rating {
+        color: #f39c12;
+        font-weight: bold;
+    }
+
+    .comment {
+        font-style: italic;
+        color: #bbb;
+    }
+
+    .btn-back {
+        margin-top: 30px;
+        text-decoration: none;
+        background-color: #4b7bec;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+    }
+
+        .btn-back:hover {
+            background-color: #3867d6;
+        }
+
+        .btn-back i {
+            margin-right: 8px;
+        }
+</style>
+
+<!-- FontAwesome nếu chưa có -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>

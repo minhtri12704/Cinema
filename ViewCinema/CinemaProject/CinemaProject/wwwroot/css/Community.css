@@ -166,3 +166,16 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
+.critic {
+    display: block;
+    background: #444;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+    .critic:hover {
+        background: #555;
+    }

@@ -3,12 +3,52 @@
   "WorkspaceRootPath": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaview\\community.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\community.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaview\\criticsdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\criticsdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\models\\critic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\critic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\models\\criticdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\criticdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\models\\datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\datve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaview\\community.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\community.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\wwwroot\\css\\community.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\wwwroot\\css\\community.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +59,8 @@
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaview\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaview\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\wwwroot\\css\\community.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\wwwroot\\css\\community.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\wwwroot\\css\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -71,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\cinemaproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -93,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinema.git\\viewcinema\\cinemaproject\\cinemaproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -190,102 +210,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Community.cshtml",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Community.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Community.cshtml",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Community.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Community.cshtml",
-              "ViewState": "AQIAADgAAAAAAAAAAAAqwEAAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-27T04:46:12.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Login.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Login.cshtml",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Login.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T01:56:49.527Z",
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\Review.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Review.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\Review.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:22:14.814Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Signup.cshtml",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Signup.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Signup.cshtml",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Signup.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Signup.cshtml",
+              "DocumentIndex": 0,
+              "Title": "CriticsDetail.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\CriticsDetail.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\CriticsDetail.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\CriticsDetail.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\CriticsDetail.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-27T06:59:01.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T17:24:42.863Z",
+              "WhenOpened": "2025-06-21T02:02:36.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T01:29:26.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "CinemaProject\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-19T16:40:05.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CinemaViewController.cs",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
-              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaViewController.cs",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
-              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAIwHkAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T14:38:23.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "CinemaProject\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T14:09:40.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_Layout.cshtml",
@@ -298,20 +266,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
+              "DocumentIndex": 8,
+              "Title": "Community.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Community.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Community.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Community.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Community.cshtml",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAuwJMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T02:13:11.095Z",
+              "WhenOpened": "2025-06-27T04:46:12.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "CinemaViewController.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaViewController.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAuwJsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:38:23.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Home.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Home.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Home.cshtml",
@@ -324,20 +305,144 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Critic.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Critic.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\Critic.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Critic.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\Critic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:12:08.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CriticDetailViewModel.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\CriticDetailViewModel.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\CriticDetailViewModel.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\CriticDetailViewModel.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\CriticDetailViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:22:43.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CinemaAdminController.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaAdminController.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaAdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T02:00:54.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "DatVe.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\DatVe.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\DatVe.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\DatVe.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\DatVe.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:12:00.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Community.css",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\Community.css",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\Community.css",
               "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\Community.css",
               "RelativeToolTip": "CinemaProject\\wwwroot\\css\\Community.css",
-              "ViewState": "AQIAAHkAAAAAAAAAAAAUwKgAAAAAAAAA",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAUwLQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-06-27T05:23:39.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:09:40.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "CinemaProject\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-19T16:40:05.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-21T01:29:26.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Signup.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Signup.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Signup.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Signup.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Signup.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T17:24:42.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Login.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Login.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Login.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaView\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T01:56:49.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
+              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-21T02:13:11.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "RapChieuPhimContext.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\RapChieuPhimContext.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\RapChieuPhimContext.cs",
@@ -345,12 +450,11 @@
               "RelativeToolTip": "CinemaProject\\Models\\RapChieuPhimContext.cs",
               "ViewState": "AQIAACkAAAAAAAAAAIA9wDQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:43:11.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T00:43:11.907Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "Admin.css",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\Admin.css",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\Admin.css",
@@ -358,12 +462,11 @@
               "RelativeToolTip": "CinemaProject\\wwwroot\\css\\Admin.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-21T02:03:22.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T02:03:22.513Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\Error.cshtml",
@@ -371,12 +474,11 @@
               "RelativeToolTip": "CinemaProject\\Views\\Shared\\Error.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-27T04:58:42.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T04:58:42.902Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "KhachHang.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
@@ -388,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "CinemaProject.csproj",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\CinemaProject.csproj",
               "RelativeDocumentMoniker": "CinemaProject\\CinemaProject.csproj",
@@ -400,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Program.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Program.cs",
@@ -412,19 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CinemaAdminController.cs",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T02:00:54.724Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "NhanVien.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\NhanVien.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\NhanVien.cs",
@@ -436,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "BookingController.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Controllers\\BookingController.cs",
@@ -448,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\_ViewImports.cshtml",
@@ -460,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Home\\Privacy.cshtml",
@@ -472,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Home\\Index.cshtml",
@@ -484,19 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T02:02:36.292Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\appsettings.json",
               "RelativeDocumentMoniker": "CinemaProject\\appsettings.json",
@@ -508,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\RegisterViewModel.cs",
@@ -520,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ErrorViewModel.cs",
@@ -532,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "Showtime.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Showtime.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Showtime.cs",
@@ -544,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "KhachHang.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\KhachHang.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\KhachHang.cs",
@@ -556,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\LoginViewModel.cs",
@@ -568,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "TaiKhoanNhanVien.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\TaiKhoanNhanVien.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\TaiKhoanNhanVien.cs",
@@ -580,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "LichChieu.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\LichChieu.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\LichChieu.cs",
@@ -592,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\_ViewStart.cshtml",
@@ -604,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "Rap.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Rap.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Rap.cs",
@@ -616,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "ApDungKhuyenMaiVe.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ApDungKhuyenMaiVe.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ApDungKhuyenMaiVe.cs",
@@ -628,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "TheLoai.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\TheLoai.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\TheLoai.cs",
@@ -640,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 42,
               "Title": "VeXemPhim.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\VeXemPhim.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\VeXemPhim.cs",
@@ -652,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "Avengers_Endgame.jpg - Bitmap [400x600, 24 bit, JPG]",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
@@ -664,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "Phim.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Phim.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Phim.cs",
@@ -676,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 41,
               "Title": "PhimDoiTac.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\PhimDoiTac.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\PhimDoiTac.cs",
@@ -688,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 45,
               "Title": "ApDungKhuyenMaiDoAn.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ApDungKhuyenMaiDoAn.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ApDungKhuyenMaiDoAn.cs",
@@ -700,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 46,
               "Title": "Movie.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Movie.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Movie.cs",
@@ -712,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 47,
               "Title": "Cinema.cs",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Cinema.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Cinema.cs",
@@ -724,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 49,
               "Title": "CinemaProject",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\CinemaProject.csproj",
               "RelativeDocumentMoniker": "CinemaProject\\CinemaProject.csproj",
@@ -735,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 48,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Cinema.git\\ViewCinema\\CinemaProject\\CinemaProject\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "CinemaProject\\Properties\\launchSettings.json",
