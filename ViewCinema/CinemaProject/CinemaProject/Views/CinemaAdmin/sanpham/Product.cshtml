@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CinemaProject.Models.Phim>
+@{
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách phim</h2>
+<a href="@Url.Action("Create", "CinemaAdmin")" class="btn btn-primary mb-3">Thêm phim</a>
+
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên phim</th>
+            <th>Thể loại</th>
+            <th>Thời lượng (phút)</th>
+            <th>Ngày khởi chiếu</th>
+            <th>Độ tuổi</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var phim in Model)
+        {
+            <tr>
+                <td>@phim.IdPhim</td>
+                <td>@phim.TenPhim</td>
+                <td>@phim.IdTheLoaiNavigation?.TenTheLoai</td>
+                <td>@phim.ThoiLuong</td>
+                <td>@phim.NgayKhoiChieu?.ToString("dd/MM/yyyy")</td>
+                <td>@phim.DoTuoiPhuHop</td>
+                <td>
+                    <a asp-controller="CinemaAdmin" asp-action="EditPhim" asp-route-id="@phim.IdPhim">Sửa</a>
+                    <a asp-controller="CinemaAdmin" asp-action="DeletePhim" asp-route-id="@phim.IdPhim">Xoá</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
