@@ -34,10 +34,22 @@
 </style>
 
 <div class="form-container">
-    <h2 class="text-center mb-4">Chỉnh sửa thông tin khách hàng</h2>
+    <h2 class="text-center mb-4">Thêm thông tin khách hàng</h2>
 
-    <form asp-action="EditNhanVien" method="post">
-        <input type="hidden" asp-for="IdNhanVien" />
+    <form asp-action="AddNV" asp-controller="CinemaAdmin" method="post">
+        @* <input type="hidden" asp-for="IdNhanVien" /> *@
+
+        <div class="mb-3">
+            <label asp-for="IdNhanVien" class="form-label">Mã Nhân Viên</label>
+            <input asp-for="IdNhanVien" class="form-control" />
+            <span asp-validation-for="IdNhanVien" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="IdRap" class="form-label">Mã Rạp</label>
+            <input asp-for="IdRap" class="form-control" />
+            <span asp-validation-for="IdRap" class="text-danger"></span>
+        </div>
 
         <div class="mb-3">
             <label asp-for="Ten" class="form-label">Họ tên</label>
@@ -64,8 +76,8 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
-            <a asp-action="NhanVien" class="btn btn-secondary">Quay lại</a>
+            <button type="submit" class="btn btn-primary">Thêm Nhân Viên</button>
+            @* <a asp-action="NhanVien" class="btn btn-secondary">Quay lại</a> *@
         </div>
     </form>
 </div>

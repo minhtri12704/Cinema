@@ -1,6 +1,5 @@
-﻿using System.Linq;
+﻿using CinemaProject.Models;
 using Microsoft.AspNetCore.Mvc;
-using CinemaProject.Models;
 
 namespace CinemaProject.Controllers
 {
@@ -63,7 +62,7 @@ namespace CinemaProject.Controllers
             HttpContext.Session.Clear(); // Xóa session
             return RedirectToAction("Login");
         }
-        
+
         // NHÂN VIÊN
         //Hiển thị danh sách nhân viên
         public IActionResult NhanVien()
@@ -80,11 +79,21 @@ namespace CinemaProject.Controllers
                 _context.NhanViens.Remove(nv);
                 _context.SaveChanges();
             }
-            return RedirectToAction("KhachHang");
+            return RedirectToAction("NhanVien");
+        }
+        //tìm kiếm id khách hàng
+        [HttpGet]
+        public IActionResult EditNhanVien(string id)
+        {
+            var khach = _context.NhanViens.Find(id);
+            if (khach == null)
+                return NotFound();
+
+            return View("~/Views/CinemaAdmin/NhanVien/EditNV.cshtml", khach);
         }
         //chỉnh sửa Nhân Viên
         [HttpPost]
-        public IActionResult EditNV(NhanVien model)
+        public IActionResult EditNhanVien(NhanVien model)
         {
             var existing = _context.NhanViens.Find(model.IdNhanVien);
             if (existing == null)
@@ -96,7 +105,30 @@ namespace CinemaProject.Controllers
             existing.NgayVaoLam = model.NgayVaoLam;
 
             _context.SaveChanges();
-            return RedirectToAction("KhachHang");
+            return RedirectToAction("NhanVien");
         }
+
+        //chuyển trang thêm 
+        // Hiển thị form thêm nhân viên
+        [HttpGet]
+        public IActionResult AddNV()
+        {
+            return View("~/Views/CinemaAdmin/NhanVien/AddNV.cshtml");
+        }
+
+        // Xử lý form thêm nhân viên
+        [HttpPost]
+        public IActionResult AddNV(NhanVien model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.NhanViens.Add(model);
+                _context.SaveChanges();
+                return RedirectToAction("NhanVien");
+            }
+
+            return View("~/Views/CinemaAdmin/NhanVien/AddNV.cshtml", model);
+        }
+
     }
 }
