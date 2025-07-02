@@ -146,5 +146,30 @@ namespace CinemaProject.Controllers
             }
             return RedirectToAction("Movie");
         }
+
+        // ============================
+        // === ĐẶT VÉ ================
+        // ============================
+
+        public IActionResult BookVe()
+        {
+            var dsDatVe = _context.BookVes
+                                  .ToList();
+            return View("~/Views/CinemaAdmin/bookve/bookve.cshtml", dsDatVe);
+        }
+        //action huy ve
+        [HttpPost]
+        public IActionResult HuyVe(string id)
+        {
+            var ve = _context.BookVes.FirstOrDefault(v => v.IdBookVe == id);
+            if (ve != null && ve.TrangThai != "Đã hủy")
+            {
+                ve.TrangThai = "Đã hủy";
+                _context.SaveChanges();
+            }
+            return RedirectToAction("bookve");
+        }
+
+
     }
 }

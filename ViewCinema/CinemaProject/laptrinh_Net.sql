@@ -74,6 +74,19 @@ create table DatVe (
     foreign key (idLich) references LichChieu(idLich)
 )
 go
+----option khác cảu đặt vé
+CREATE TABLE BookVe (
+    idBookVe varchar(30) primary key,
+    idKhach varchar(30),
+    idLich varchar(30),
+    GheNgoi varchar(50),
+    ThoiGianDat date,
+    TongTien int not null,
+	TrangThai NVARCHAR(50) DEFAULT N'Đang giữ chỗ',
+    foreign key (idKhach) references KhachHang(idKhach),
+    foreign key (idLich) references LichChieu(idLich)
+);
+go
 -- bảng vé xem phim
 create table VeXemPhim (
     idVe varchar(30) primary key ,
@@ -294,5 +307,14 @@ VALUES ('cb1', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz', 77000),
 ('cb4', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz + 01 khoai tây chiên', 114000),
 ('cb5', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz + 01 xúc xích lốc xoáy', 114000)
 go
+INSERT INTO BookVe (idBookVe, idKhach, idLich, GheNgoi, ThoiGianDat, TongTien, TrangThai)
+VALUES ('BV01', 'KH01', 'L1', 'A1,A2', '2024-04-08', 140000, N'Đang giữ chỗ'),
+('BV02', 'KH02', 'L2', 'B3', '2024-04-09', 70000, N'Đang giữ chỗ'),
+('BV03', 'KH03', 'L3', 'C5,C6,C7', '2024-04-10', 210000, N'Đang giữ chỗ'),
+('BV04', 'KH04', 'L4', 'D1', '2024-04-11', 70000, N'Đã hủy'),
+('BV05', 'KH05', 'L5', 'E2,E3', '2024-04-12', 140000, N'Đang giữ chỗ');
+go
+
+ select * from BookVe
  select * from KhachHang
  delete from KhachHang where Ten = 'dang1'

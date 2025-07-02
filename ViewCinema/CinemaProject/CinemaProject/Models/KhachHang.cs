@@ -17,6 +17,7 @@ public partial class KhachHang
     public string MatKhauKH { get; set; } = null!;
 
     public virtual ICollection<DatVe> DatVes { get; set; } = new List<DatVe>();
+    public virtual ICollection<BookVe> BookVes { get; set; } = new List<BookVe>();
 
     public virtual ICollection<DonHangDoAn> DonHangDoAns { get; set; } = new List<DonHangDoAn>();
 }

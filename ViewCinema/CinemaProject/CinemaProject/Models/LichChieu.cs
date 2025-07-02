@@ -18,6 +18,7 @@ public partial class LichChieu
     public int GiaVe { get; set; }
 
     public virtual ICollection<DatVe> DatVes { get; set; } = new List<DatVe>();
+    public virtual ICollection<BookVe> BookVes { get; set; } = new List<BookVe>();
 
     public virtual Phim? IdPhimNavigation { get; set; }
 
