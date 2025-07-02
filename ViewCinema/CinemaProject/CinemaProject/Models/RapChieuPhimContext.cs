@@ -22,6 +22,7 @@ public partial class RapChieuPhimContext : DbContext
     public virtual DbSet<ComboMonAn> ComboMonAns { get; set; }
 
     public virtual DbSet<DatVe> DatVes { get; set; }
+    public virtual DbSet<BookVe> BookVes { get; set; }
 
     public virtual DbSet<DoiTacPhim> DoiTacPhims { get; set; }
 
@@ -451,6 +452,49 @@ public partial class RapChieuPhimContext : DbContext
                 .HasForeignKey(d => d.IdDatVe)
                 .HasConstraintName("FK__VeXemPhim__idDat__4BAC3F29");
         });
+
+        modelBuilder.Entity<BookVe>(entity =>
+        {
+            entity.HasKey(e => e.IdBookVe).HasName("PK__BookVe__..."); // Bạn có thể tự đặt tên hoặc để mặc định
+
+            entity.ToTable("BookVe");
+
+            entity.Property(e => e.IdBookVe)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idBookVe");
+
+            entity.Property(e => e.IdKhach)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idKhach");
+
+            entity.Property(e => e.IdLich)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idLich");
+
+            entity.Property(e => e.GheNgoi)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            entity.Property(e => e.ThoiGianDat)
+                .HasColumnType("date");
+
+            entity.Property(e => e.TrangThai)
+                .HasMaxLength(50); // Unicode mặc định là true cho NVARCHAR
+
+            entity.HasOne(d => d.IdKhachNavigation)
+                .WithMany(p => p.BookVes)
+                .HasForeignKey(d => d.IdKhach)
+                .HasConstraintName("FK_BookVe_KhachHang");
+
+            entity.HasOne(d => d.IdLichNavigation)
+                .WithMany(p => p.BookVes)
+                .HasForeignKey(d => d.IdLich)
+                .HasConstraintName("FK_BookVe_LichChieu");
+        });
+
 
         OnModelCreatingPartial(modelBuilder);
     }
