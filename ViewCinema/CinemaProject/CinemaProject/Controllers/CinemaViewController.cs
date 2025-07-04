@@ -5,6 +5,21 @@ public class CinemaViewController : Controller
 {
     private readonly RapChieuPhimContext _context;
 
+    public IActionResult Search(string query)
+    {
+        var movies = _context.Phims
+            .Where(m => m.TenPhim.Contains(query))
+            .ToList();
+
+        // Tạm thêm hình (gắn sẵn theo TenPhim hoặc IdPhim)
+        foreach (var phim in movies)
+        {
+            phim.HinhAnh = $"{phim.IdPhim}.jpg"; // Gán cứng tên file ảnh tương ứng
+        }
+
+        return View("Search", movies);
+    }
+
     public CinemaViewController(RapChieuPhimContext context)
     {
         _context = context;

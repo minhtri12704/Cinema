@@ -41,9 +41,11 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <form class="d-flex align-items-center" asp-controller="CinemaView" asp-action="Search" method="get">
-                                <input class="form-control me-2" type="search" name="query" placeholder="Tìm kiếm phim..." aria-label="Search" style="width: 250px;">
+                                <input class="form-control me-2" type="search" name="query" placeholder="Tìm kiếm phim..." />
                                 <button class="btn btn-sm btn-outline-light" type="submit">Tìm</button>
                             </form>
+
+
                         </li>
                         @if (Context.Session.GetString("username") == null)
                         {
