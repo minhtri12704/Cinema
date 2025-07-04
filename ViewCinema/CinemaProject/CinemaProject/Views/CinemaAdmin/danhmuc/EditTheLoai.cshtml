@@ -1,0 +1,17 @@
+﻿@model CinemaProject.Models.TheLoai
+
+@{
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Sửa thể loại</h2>
+
+<form asp-action="EditTheLoai">
+    <input type="hidden" asp-for="IdTheLoai" />
+    <div class="form-group">
+        <label>Tên thể loại</label>
+        <input asp-for="TenTheLoai" class="form-control" />
+        <span asp-validation-for="TenTheLoai" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+</form>
