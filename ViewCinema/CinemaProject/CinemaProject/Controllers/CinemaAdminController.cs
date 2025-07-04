@@ -190,7 +190,7 @@ namespace CinemaProject.Controllers
 
             return View("~/Views/CinemaAdmin/DanhMuc/CreateTheLoai.cshtml", model);
         }
-        
+
 
 
         [HttpGet]
@@ -222,5 +222,76 @@ namespace CinemaProject.Controllers
             }
             return RedirectToAction("DanhSachTheLoai");
         }
+        // ==============================
+        // ==== PHÒNG CHIẾU ============
+        // ==============================
+
+        public IActionResult DanhSachPhongChieu()
+        {
+            var list = _context.PhongChieus
+                   .Include(p => p.IdRapNavigation) 
+                   .ToList();
+
+            return View("~/Views/CinemaAdmin/Phong/DanhSach.cshtml", list);
+        }
+
+        [HttpGet]
+        public IActionResult CreatePhongChieu()
+        {
+            ViewBag.IdRap = new SelectList(_context.Raps, "IdRap", "TenRap");
+            return View("~/Views/CinemaAdmin/Phong/CreatePhong.cshtml", new PhongChieu());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreatePhongChieu(PhongChieu model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.PhongChieus.Add(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachPhongChieu");
+            }
+
+            ViewBag.IdRap = new SelectList(_context.Raps, "IdRap", "TenRap", model.IdRap);
+            return View("~/Views/CinemaAdmin/Phong/CreatePhong.cshtml", model);
+        }
+
+        [HttpGet]
+        public IActionResult EditPhongChieu(string id)
+        {
+            var phong = _context.PhongChieus.Find(id);
+            if (phong == null) return NotFound();
+
+            ViewBag.IdRap = new SelectList(_context.Raps, "IdRap", "TenRap", phong.IdRap);
+            return View("~/Views/CinemaAdmin/Phong/EditPhong.cshtml", phong);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditPhongChieu(PhongChieu model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.PhongChieus.Update(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachPhongChieu");
+            }
+
+            ViewBag.IdRap = new SelectList(_context.Raps, "IdRap", "TenRap", model.IdRap);
+            return View("~/Views/CinemaAdmin/Phong/EditPhong.cshtml", model);
+        }
+
+        public IActionResult DeletePhongChieu(string id)
+        {
+            var phong = _context.PhongChieus.Find(id);
+            if (phong != null)
+            {
+                _context.PhongChieus.Remove(phong);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("DanhSachPhongChieu");
+        }
+
     }
 }
