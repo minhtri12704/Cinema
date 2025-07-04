@@ -25,11 +25,32 @@ public class CinemaViewController : Controller
         _context = context;
     }
 
-    public IActionResult Home()
+    public IActionResult Home(int page = 1)
     {
-        var dsPhim = _context.Phims.ToList();
-        return View("Home", dsPhim);
+        int pageSize = 4;
+        var today = new DateTime(2025,06,20);
+
+        var sapKhoiChieu = _context.Phims
+            .Where(p => p.NgayKhoiChieu > today)
+            .OrderBy(p => p.NgayKhoiChieu);
+
+        var model = new TrangChuViewModel
+        {
+            SapKhoiChieuGanNhat = sapKhoiChieu.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+            TotalPages = (int)Math.Ceiling(sapKhoiChieu.Count() / (double)pageSize),
+            CurrentPage = page,
+
+            PhimRaMatHomNay = _context.Phims
+                .Where(p => p.NgayKhoiChieu == today).ToList(),
+
+            DangChieu = _context.Phims
+                .Where(p => p.NgayKhoiChieu <= today).ToList()
+        };
+
+        return View(model);
     }
+
+
 
     [HttpGet]
     public IActionResult Login()
