@@ -49,7 +49,11 @@
                                  class="card-img-top" alt="@phim.TenPhim"
                                  style="height: 350px; object-fit: cover;" />
                             <div class="card-body text-white bg-dark">
-                                <h5 class="card-title">@phim.TenPhim</h5>
+                                <h5 class="card-title">
+                                    <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
+                                        @phim.TenPhim
+                                    </a>
+                                </h5>
                             </div>
                         </div>
                     </div>

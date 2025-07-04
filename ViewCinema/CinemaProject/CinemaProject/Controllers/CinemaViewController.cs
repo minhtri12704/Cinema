@@ -1,5 +1,6 @@
 ﻿using CinemaProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 public class CinemaViewController : Controller
 {
@@ -148,6 +149,22 @@ public class CinemaViewController : Controller
 
         ViewBag.Error = "Vui lòng kiểm tra lại thông tin.";
         return View("Signup",model);
+    }
+
+    // Chi tiết phim
+    public IActionResult ChiTiet(string id)
+    {
+        var phim = _context.Phims
+            .Include(p => p.IdTheLoaiNavigation)
+            .FirstOrDefault(p => p.IdPhim == id);
+
+        if (phim == null)
+        {
+            return NotFound();
+        }
+
+
+        return View("FilmDetail", phim);
     }
 
 }
