@@ -89,6 +89,7 @@ public class CinemaViewController : Controller
             {
                 HttpContext.Session.SetString("username", model.TenDangNhap);
                 HttpContext.Session.SetString("role", "KhachHang");
+                HttpContext.Session.SetString("idKhach", khachHang.IdKhach);
 
                 // Chuyển đến trang Home trong CinemaView
                 return RedirectToAction("Home", "CinemaView");
@@ -104,7 +105,7 @@ public class CinemaViewController : Controller
     public IActionResult Logout()
     {
         HttpContext.Session.Clear(); // Xóa session
-        return RedirectToAction("Login");
+        return RedirectToAction("Home");
     }
     [HttpPost]
     public IActionResult Register(RegisterViewModel model)
@@ -163,9 +164,58 @@ public class CinemaViewController : Controller
             return NotFound();
         }
 
+        var danhGias = _context.DanhGiaPhims
+        .Include(d => d.KhachHangNavigation)
+        .Include(d => d.PhimNavigation)
+        .Where(d => d.IdPhim == id)
+        .OrderByDescending(d => d.NgayDanhGia)
+        .ToList();
+
+
+        // Truyền sang ViewBag
+        ViewBag.DanhGias = danhGias;
+
 
         return View("FilmDetail", phim);
     }
 
+    [HttpPost]
+    public IActionResult ThemBinhLuan(string idPhim, int soSao, string binhLuan)
+    {
+        var idKhach = HttpContext.Session.GetString("idKhach");
+        if (string.IsNullOrEmpty(idKhach))
+            return RedirectToAction("Login", "CinemaView");
+
+        // Lấy IdDanhGia cuối
+        var lastDanhGia = _context.DanhGiaPhims
+            .OrderByDescending(d => d.IdDanhGia)
+            .FirstOrDefault();
+
+        int nextNumber = 1;
+        if (lastDanhGia != null)
+        {
+            var numberPart = lastDanhGia.IdDanhGia.Substring(2);
+            if (int.TryParse(numberPart, out int parsed))
+            {
+                nextNumber = parsed + 1;
+            }
+        }
+
+        string newId = "DG" + nextNumber.ToString("D3");
+
+        var danhGia = new DanhGiaPhim
+        {
+            IdDanhGia = newId,
+            IdPhim = idPhim,
+            IdKhach = idKhach,
+            SoSao = soSao,
+            BinhLuan = binhLuan,
+            NgayDanhGia = DateTime.Now
+        };
+
+        _context.DanhGiaPhims.Add(danhGia);
+        _context.SaveChanges();
+
+        return RedirectToAction("ChiTiet", new { id = idPhim });
+    }
 }
-    

@@ -11,8 +11,9 @@ public partial class Phim
     public string TenPhim { get; set; } = null!;
 
     public string? IdTheLoai { get; set; }
+
     [NotMapped]
-    public string? HinhAnh { get; set; } // Không ghi vào DB
+    public string? HinhAnh { get; set; }
 
     public int ThoiLuong { get; set; }
 
@@ -25,4 +26,6 @@ public partial class Phim
     public virtual ICollection<LichChieu> LichChieus { get; set; } = new List<LichChieu>();
 
     public virtual ICollection<PhimDoiTac> PhimDoiTacs { get; set; } = new List<PhimDoiTac>();
+
+    public virtual ICollection<DanhGiaPhim> DanhGiaPhims { get; set; } = new List<DanhGiaPhim>();
 }
