@@ -15,9 +15,7 @@ namespace CinemaProject.Controllers
             _context = context;
         }
 
-        // ============================
-        // === KHÁCH HÀNG ============
-        // ============================
+        // === KHÁCH HÀNG ===
 
         public IActionResult KhachHang()
         {
@@ -48,7 +46,7 @@ namespace CinemaProject.Controllers
             return RedirectToAction("KhachHang");
         }
 
-        public IActionResult Delete(string id)
+        public IActionResult DeleteKhachHang(string id)
         {
             var kh = _context.KhachHangs.Find(id);
             if (kh != null)
@@ -59,22 +57,20 @@ namespace CinemaProject.Controllers
             return RedirectToAction("KhachHang");
         }
 
+        // === ĐĂNG XUẤT ===
+
         [HttpPost]
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            return RedirectToAction("Login", "CinemaView");
         }
 
-        // ============================
-        // === PHIM ==================
-        // ============================
+        // === PHIM ===
 
         public IActionResult Movie()
         {
-            var dsPhim = _context.Phims
-                                 .Include(p => p.IdTheLoaiNavigation) // Để hiển thị TenTheLoai
-                                 .ToList();
+            var dsPhim = _context.Phims.Include(p => p.IdTheLoaiNavigation).ToList();
             return View("~/Views/CinemaAdmin/SanPham/Product.cshtml", dsPhim);
         }
 
@@ -147,17 +143,14 @@ namespace CinemaProject.Controllers
             return RedirectToAction("Movie");
         }
 
-        // ============================
-        // === ĐẶT VÉ ================
-        // ============================
+        // === ĐẶT VÉ ===
 
         public IActionResult BookVe()
         {
-            var dsDatVe = _context.BookVes
-                                  .ToList();
-            return View("~/Views/CinemaAdmin/bookve/bookve.cshtml", dsDatVe);
+            var dsDatVe = _context.BookVes.ToList();
+            return View("~/Views/CinemaAdmin/BookVe/BookVe.cshtml", dsDatVe);
         }
-        //action huy ve
+
         [HttpPost]
         public IActionResult HuyVe(string id)
         {
@@ -167,9 +160,67 @@ namespace CinemaProject.Controllers
                 ve.TrangThai = "Đã hủy";
                 _context.SaveChanges();
             }
-            return RedirectToAction("bookve");
+            return RedirectToAction("BookVe");
         }
 
+        // === THỂ LOẠI ===
 
+        public IActionResult DanhSachTheLoai()
+        {
+            var theloais = _context.TheLoais.ToList();
+            return View("~/Views/CinemaAdmin/DanhMuc/DanhSachTheLoai.cshtml", theloais);
+        }
+
+        [HttpGet]
+        public IActionResult CreateTheLoai()
+        {
+            return View("~/Views/CinemaAdmin/DanhMuc/CreateTheLoai.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult CreateTheLoai(TheLoai model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Giữ nguyên IdTheLoai do người dùng nhập
+                _context.TheLoais.Add(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachTheLoai");
+            }
+
+            return View("~/Views/CinemaAdmin/DanhMuc/CreateTheLoai.cshtml", model);
+        }
+        
+
+
+        [HttpGet]
+        public IActionResult EditTheLoai(string id)
+        {
+            var theloai = _context.TheLoais.Find(id);
+            return View("~/Views/CinemaAdmin/DanhMuc/EditTheLoai.cshtml", theloai);
+        }
+
+        [HttpPost]
+        public IActionResult EditTheLoai(TheLoai model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.TheLoais.Update(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachTheLoai");
+            }
+            return View("~/Views/CinemaAdmin/DanhMuc/EditTheLoai.cshtml", model);
+        }
+
+        public IActionResult DeleteTheLoai(string id)
+        {
+            var theloai = _context.TheLoais.Find(id);
+            if (theloai != null)
+            {
+                _context.TheLoais.Remove(theloai);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("DanhSachTheLoai");
+        }
     }
 }

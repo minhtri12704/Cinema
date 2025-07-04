@@ -6,16 +6,52 @@ public class CinemaViewController : Controller
 {
     private readonly RapChieuPhimContext _context;
 
+    public IActionResult Search(string query)
+    {
+        var movies = _context.Phims
+            .Where(m => m.TenPhim.Contains(query))
+            .ToList();
+
+        // Tạm thêm hình (gắn sẵn theo TenPhim hoặc IdPhim)
+        foreach (var phim in movies)
+        {
+            phim.HinhAnh = $"{phim.IdPhim}.jpg"; // Gán cứng tên file ảnh tương ứng
+        }
+
+        return View("Search", movies);
+    }
+
     public CinemaViewController(RapChieuPhimContext context)
     {
         _context = context;
     }
 
-    public IActionResult Home()
+    public IActionResult Home(int page = 1)
     {
-        var dsPhim = _context.Phims.ToList();
-        return View("Home", dsPhim);
+        int pageSize = 4;
+        var today = new DateTime(2025,06,20);
+
+        var sapKhoiChieu = _context.Phims
+            .Where(p => p.NgayKhoiChieu > today)
+            .OrderBy(p => p.NgayKhoiChieu);
+
+        var model = new TrangChuViewModel
+        {
+            SapKhoiChieuGanNhat = sapKhoiChieu.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+            TotalPages = (int)Math.Ceiling(sapKhoiChieu.Count() / (double)pageSize),
+            CurrentPage = page,
+
+            PhimRaMatHomNay = _context.Phims
+                .Where(p => p.NgayKhoiChieu == today).ToList(),
+
+            DangChieu = _context.Phims
+                .Where(p => p.NgayKhoiChieu <= today).ToList()
+        };
+
+        return View(model);
     }
+
+
 
     [HttpGet]
     public IActionResult Login()
@@ -114,6 +150,7 @@ public class CinemaViewController : Controller
         ViewBag.Error = "Vui lòng kiểm tra lại thông tin.";
         return View("Signup",model);
     }
+
     // Chi tiết phim
     public IActionResult ChiTiet(string id)
     {
@@ -130,5 +167,5 @@ public class CinemaViewController : Controller
         return View("FilmDetail", phim);
     }
 
-
 }
+    
