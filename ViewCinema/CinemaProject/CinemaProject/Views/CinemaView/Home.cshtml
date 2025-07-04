@@ -10,9 +10,15 @@
         {
             <div class="col">
                 <div class="card h-100 bg-dark text-white">
-                    <img src="~/images/@(p.TenPhim).jpg" class="card-img-top" alt="@p.TenPhim" style="height: 400px; object-fit: cover;">
+                    <img src="@Url.Content($"~/images/{p.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
+                         class="card-img-top" alt="@p.TenPhim"
+                         style="height: 350px; object-fit: cover;" />
                     <div class="card-body">
-                        <h5 class="card-title">@p.TenPhim</h5>
+                        <h5 class="card-title">
+                            <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@p.IdPhim" class="text-white text-decoration-none">
+                                @p.TenPhim
+                            </a>
+                        </h5>
                         <p class="card-text">Thời lượng: @p.ThoiLuong phút</p>
                         <p class="card-text">Ngày khởi chiếu: @p.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
                     </div>

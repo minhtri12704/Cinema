@@ -1,0 +1,46 @@
+﻿@model CinemaProject.Models.Phim
+@{
+    ViewData["Title"] = "Chi tiết phim";
+}
+<div class="container text-white mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/images/@(Model.IdPhim).jpg" class="card-img-top" alt="@Model.TenPhim" style="height: 400px; object-fit: cover;">
+        </div>
+
+        <div class="col-md-8">
+            <h2>@Model.TenPhim</h2>
+            <p><strong>Thể loại:</strong> @Model.IdTheLoaiNavigation.TenTheLoai</p>
+            <p><strong>Thời lượng:</strong> @Model.ThoiLuong phút</p>
+            <p><strong>Ngày khởi chiếu:</strong> @Model.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
+            <p><strong>Độ tuổi phù hợp:</strong> @Model.DoTuoiPhuHop</p>
+            <a class="btn btn-primary mt-3" href="/Booking/Create?phimId=@Model.IdPhim">
+                Mua vé
+            </a>
+        </div>
+    </div>
+</div>
+
+<ul class="nav nav-tabs mt-5" id="filmTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">Thông tin phim</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab">Đánh giá</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="book-tab" data-bs-toggle="tab" data-bs-target="#book" type="button" role="tab">Mua vé</button>
+    </li>
+</ul>
+<div class="tab-content p-3 bg-dark text-white border border-top-0" id="filmTabContent">
+    <div class="tab-pane fade show active" id="info" role="tabpanel">
+        <p>@Model.TenPhim là một bộ phim thuộc thể loại @Model.IdTheLoaiNavigation?.TenTheLoai.</p>
+        <!-- Thêm mô tả tùy ý -->
+    </div>
+    <div class="tab-pane fade" id="review" role="tabpanel">
+        <p>Chưa có đánh giá nào.</p>
+    </div>
+    <div class="tab-pane fade" id="book" role="tabpanel">
+        <a class="btn btn-success" href="/Booking/Create?phimId=@Model.IdPhim">Mua vé ngay</a>
+    </div>
+</div>

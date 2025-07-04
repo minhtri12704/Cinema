@@ -50,12 +50,52 @@ public partial class RapChieuPhimContext : DbContext
 
     public virtual DbSet<VeXemPhim> VeXemPhims { get; set; }
 
+    public virtual DbSet<DanhGiaPhim> DanhGiaPhims { get; set; }
+
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=RapChieuPhim;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<DanhGiaPhim>(entity =>
+        {
+            entity.HasKey(e => e.IdDanhGia);
+            entity.ToTable("DanhGiaPhim");
+            entity.Property(e => e.IdDanhGia)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idDanhGia");
+
+            entity.Property(e => e.IdPhim)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idPhim");
+
+            entity.Property(e => e.IdKhach)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idKhach");
+
+            entity.Property(e => e.NoiDung)
+                .HasMaxLength(500);
+
+            entity.Property(e => e.SoSao);
+            entity.Property(e => e.NgayDanhGia).HasColumnType("datetime");
+
+            entity.HasOne(d => d.IdPhimNavigation)
+                .WithMany(p => p.DanhGiaPhims)
+                .HasForeignKey(d => d.IdPhim)
+                .HasConstraintName("FK_DanhGiaPhim_Phim");
+
+            entity.HasOne(d => d.IdKhachNavigation)
+                .WithMany(p => p.DanhGiaPhims)
+                .HasForeignKey(d => d.IdKhach)
+                .HasConstraintName("FK_DanhGiaPhim_KhachHang");
+        });
+
+
         modelBuilder.Entity<ApDungKhuyenMaiDoAn>(entity =>
         {
             entity.HasKey(e => e.IdApDungDoAn).HasName("PK__ApDungKh__CAA676886177205B");
