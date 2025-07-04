@@ -1,23 +1,137 @@
-﻿@model IEnumerable<CinemaProject.Models.Phim>
+﻿@model CinemaProject.Models.TrangChuViewModel
 @{
-    ViewData["Title"] = "Danh sách phim";
+    ViewData["Title"] = "Trang chủ";
+    Layout = "_Layout";
 }
+<style>
+    .dot-pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        gap: 10px;
+        margin-top: 20px;
+    }
 
-<div class="container">
-    <h2 class="text-white">Danh sách phim</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach (var p in Model)
-        {
-            <div class="col">
-                <div class="card h-100 bg-dark text-white">
-                    <img src="~/images/@(p.TenPhim).jpg" class="card-img-top" alt="@p.TenPhim" style="height: 400px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">@p.TenPhim</h5>
-                        <p class="card-text">Thời lượng: @p.ThoiLuong phút</p>
-                        <p class="card-text">Ngày khởi chiếu: @p.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
-                    </div>
-                </div>
-            </div>
+        .dot-pagination li a.dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-color: #999;
+            border-radius: 50%;
+            text-indent: -9999px; /* ẩn text nhưng vẫn có thể focus */
+            transition: background-color 0.3s ease;
         }
+
+            .dot-pagination li a.dot:hover {
+                background-color: #ff3366; /* màu hồng pastel khi hover */
+            }
+
+            .dot-pagination li a.dot.active {
+                background-color: red; /* màu chấm tròn khi đang chọn */
+                box-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+            }
+
+
+</style>
+
+    <div class="homepage">
+        <div class="container">
+            <!-- Slider phim khởi chiếu gần nhất -->
+        <section class="mt-4">
+            <h3>Phim sắp khởi chiếu</h3>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                @foreach (var phim in Model.SapKhoiChieuGanNhat)
+                {
+                    <div class="col">
+                        <div class="card">
+                            <img src="@Url.Content($"~/images/{phim.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
+                                 class="card-img-top" alt="@phim.TenPhim"
+                                 style="height: 350px; object-fit: cover;" />
+                            <div class="card-body text-white bg-dark">
+                                <h5 class="card-title">@phim.TenPhim</h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-4">
+                <ul class="dot-pagination justify-content-center">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li>
+                            <a class="dot @(i == Model.CurrentPage ? "active" : "")"
+                               href="@Url.Action("Home", new { page = i })"
+                               title="Trang @i">
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+        </section>
+
+
+            <section class="mt-5">
+                <h3>Phim mới ra mắt hôm nay</h3>
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    @foreach (var phim in Model.PhimRaMatHomNay.Take(12))
+                    {
+                        <div class="col">
+                            <div class="card">
+                                <img src="@Url.Content($"~/images/{phim.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
+                                     class="card-img-top" alt="@phim.TenPhim"
+                                     style="height: 350px; object-fit: cover;" />
+                                <div class="card-body text-white bg-dark">
+                                    <h5 class="card-title">@phim.TenPhim</h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+
+            <!-- Phim đang chiếu -->
+            <section class="mt-5">
+                <h3>Phim đang chiếu</h3>
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    @foreach (var phim in Model.DangChieu.Take(12))
+                    {
+                        <div class="col position-relative">
+                            <div class="card bg-dark text-white h-100">
+                                <div class="position-relative">
+                                    <img src="@Url.Content($"~/images/{phim.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
+                                         alt="@phim.TenPhim"
+                                         class="card-img-top"
+                                         style="height:350px; object-fit:cover;" />
+
+                                    @{
+                                        var daysSinceRelease = (DateTime.Now - phim.NgayKhoiChieu)?.TotalDays ?? 0;
+                                    }
+                                    @if (daysSinceRelease > 17)
+                                    {
+                                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sắp hết hạn</span>
+                                    }
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">@phim.TenPhim</h5>
+                                    <p class="card-text text-secondary" style="font-size: 14px;">
+                                        ID: @phim.IdPhim – Ngày: @phim.NgayKhoiChieu?.ToString("dd/MM")
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+        </div>
     </div>
-</div>
+    
+
+
+
+

@@ -211,20 +211,25 @@ VALUES
 
 
 -- 4. Dữ liệu cho bảng Phim --
-INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop) 
-VALUES ('P01', N'Avengers_Endgame', 'HD', 181, '2023-12-01', 'PG-13'),
-('P02', N'Mắt Biếc', 'TC', 120, '2024-01-15', 'PG'),
-('P03', N'The Batman', 'HD', 176, '2023-03-01', 'PG-13'),
-('P04', N'Your Name', 'HD', 112, '2023-05-15', 'PG'),
-('P05', N'Parasite', 'TL', 132, '2023-09-20', 'R'),
-('P06', N'Top Gun_Maverick', 'HD', 131, '2023-07-04', 'PG-13'),
-('P07', N'Spider-Man_No Way Home', 'HD', 148, '2023-12-17', 'PG-13'),
-('P08', N'Conan_Viên đạn đỏ', 'HD', 110, '2024-03-25', 'PG'),
-('P09', N'Suzume', 'HH', 122, '2024-02-01', 'PG'),
-('P10', N'Nhà Bà Nữ', 'H', 98, '2024-01-10', 'PG'),
-('P11', N'The Conjuring', 'KD', 98, '2024-03-10', 'PG-16'),
-('P12', N'The Conjuring 2', 'KD', 98, '2024-03-10', 'PG-16')
+-- Phim đang chiếu (<= hôm nay)
+INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop)
+VALUES 
+('P01', N'Avengers_Endgame', 'HD', 181, '2025-06-01', 'PG-13'),
+('P02', N'Mắt Biếc', 'TC', 120, '2025-06-10', 'PG'),
+('P03', N'The Batman', 'HD', 176, '2025-05-15', 'PG-13'),
+('P04', N'Your Name', 'HD', 112, '2025-05-20', 'PG'),
+('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R'),
 
+-- Phim ra mắt hôm nay (== 2025-07-04)
+('P06', N'Top Gun_Maverick', 'HD', 131, '2025-07-04', 'PG-13'),
+('P07', N'Spider-Man_No Way Home', 'HD', 148, '2025-07-04', 'PG-13'),
+
+-- Phim sắp chiếu (> hôm nay)
+('P08', N'Conan_Viên đạn đỏ', 'HD', 110, '2025-07-06', 'PG'),
+('P09', N'Suzume', 'HH', 122, '2025-07-08', 'PG'),
+('P10', N'Nhà Bà Nữ', 'H', 98, '2025-07-10', 'PG'),
+('P11', N'The Conjuring', 'KD', 98, '2025-07-11', 'PG-16'),
+('P12', N'The Conjuring 2', 'KD', 98, '2025-07-15', 'PG-16');
 go
 
 -- 5. Dữ liệu cho bảng LichChieu --
@@ -318,3 +323,7 @@ go
  select * from BookVe
  select * from KhachHang
  delete from KhachHang where Ten = 'dang1'
+ SELECT * FROM Phim
+ SELECT * FROM Phim WHERE NgayKhoiChieu > GETDATE()
+
+
