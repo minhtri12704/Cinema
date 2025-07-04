@@ -41,8 +41,23 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <form class="d-flex align-items-center" asp-controller="CinemaView" asp-action="Search" method="get">
+                                <!-- tìm kiếm -->
                                 <input class="form-control me-2" type="search" name="query" placeholder="Tìm kiếm phim..." />
                                 <button class="btn btn-sm btn-outline-light" type="submit">Tìm</button>
+                                @if (Context.Session.GetString("username") != null)
+                                {
+                                    <div class="dropdown ms-2">
+                                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="avatarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="~/images/no-avatar.jpg" alt="Avatar" class="rounded-circle" style="width:32px; height:32px; object-fit:cover;" />
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
+                                            <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
+                                            <li><a class="dropdown-item" href="#">Kho phim</a></li>
+                                            <li><a class="dropdown-item" href="#">Lịch sử mua vé</a></li>
+                                            <li><hr class="dropdown-divider" /></li>
+                                        </ul>
+                                    </div>
+                                }
                             </form>
 
 

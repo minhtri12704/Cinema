@@ -14,9 +14,18 @@
             <p><strong>Thời lượng:</strong> @Model.ThoiLuong phút</p>
             <p><strong>Ngày khởi chiếu:</strong> @Model.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
             <p><strong>Độ tuổi phù hợp:</strong> @Model.DoTuoiPhuHop</p>
-            <a class="btn btn-primary mt-3" href="/Booking/Create?phimId=@Model.IdPhim">
-                Mua vé
-            </a>
+            <div class="d-flex gap-2 mt-3">
+                <a class="btn btn-primary" href="/Booking/Create?phimId=@Model.IdPhim">Mua vé</a>
+
+                <button class="btn btn-outline-warning">
+                    👍 Thích
+                </button>
+
+                <button class="btn btn-outline-info" onclick="document.getElementById('commentBox').scrollIntoView();">
+                    💬 Bình luận
+                </button>
+            </div>
+
         </div>
     </div>
 </div>
@@ -38,9 +47,61 @@
         <!-- Thêm mô tả tùy ý -->
     </div>
     <div class="tab-pane fade" id="review" role="tabpanel">
-        <p>Chưa có đánh giá nào.</p>
+        @if (ViewBag.DanhGias is List<DanhGiaPhim> danhGiaList && danhGiaList.Any())
+        {
+            @foreach (var dg in danhGiaList)
+            {
+                <div class="border-bottom pb-2 mb-2">
+                    <strong>@dg.KhachHangNavigation?.Ten</strong>
+                    <span class="text-muted">(@dg.NgayDanhGia.ToString("dd/MM/yyyy"))</span>
+
+                    <div>
+                        @for (int i = 0; i < dg.SoSao; i++)
+                        {
+                            <span style="color:gold;">&#9733;</span> @* &#9733; là ký tự sao (★) *@
+                        }
+                    </div>
+
+                    <p>@dg.BinhLuan</p>
+                </div>
+            }
+
+        }
+        else
+        {
+            <p>Chưa có đánh giá nào.</p>
+        }
+
     </div>
+
     <div class="tab-pane fade" id="book" role="tabpanel">
         <a class="btn btn-success" href="/Booking/Create?phimId=@Model.IdPhim">Mua vé ngay</a>
     </div>
 </div>
+
+@if (Context.Session.GetString("idKhach") != null)
+{
+    <div id="commentBox" class="mt-4">
+        <h5 class="text-white">Viết bình luận:</h5>
+        <form method="post" asp-controller="CinemaView" asp-action="ThemBinhLuan">
+            <input type="hidden" name="IdPhim" value="@Model.IdPhim" />
+            <div class="mb-2">
+                <textarea name="BinhLuan" class="form-control" rows="3" placeholder="Nhập bình luận..." required></textarea>
+            </div>
+            <div class="mb-2">
+                <label class="text-white me-2">Số sao:</label>
+                <select name="SoSao" class="form-select w-auto d-inline" required>
+                    @for (int i = 1; i <= 10; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Gửi</button>
+        </form>
+    </div>
+}
+else
+{
+    <p class="text-warning mt-4">Bạn cần <a href="/CinemaView/Login" class="text-info">đăng nhập</a> để viết bình luận.</p>
+}
