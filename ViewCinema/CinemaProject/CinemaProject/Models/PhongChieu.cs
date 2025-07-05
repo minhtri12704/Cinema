@@ -13,6 +13,8 @@ public partial class PhongChieu
 
     public int SoLuongGhe { get; set; }
 
+    public int SoLuongGheDoi { get; set; }
+
     public virtual Rap? IdRapNavigation { get; set; }
 
     public virtual ICollection<LichChieu> LichChieus { get; set; } = new List<LichChieu>();

@@ -16,6 +16,7 @@
             <th>Thời lượng (phút)</th>
             <th>Ngày khởi chiếu</th>
             <th>Độ tuổi</th>
+            <th>Hình ảnh</th>
             <th>Thao tác</th>
         </tr>
     </thead>
@@ -30,9 +31,18 @@
                 <td>@phim.NgayKhoiChieu?.ToString("dd/MM/yyyy")</td>
                 <td>@phim.DoTuoiPhuHop</td>
                 <td>
+                    @if (!string.IsNullOrEmpty(phim.HinhAnh))
+                    {
+                        <img src="~/images/@phim.HinhAnh" style="height: 80px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <span><em>Không có ảnh</em></span>
+                    }
+                </td>
+                <td>
                     <a asp-controller="CinemaAdmin" asp-action="EditPhim" asp-route-id="@phim.IdPhim">Sửa</a>
                     <a asp-controller="CinemaAdmin" asp-action="DeletePhim" asp-route-id="@phim.IdPhim">Xoá</a>
-
                 </td>
             </tr>
         }
