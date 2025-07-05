@@ -164,6 +164,7 @@ public class CinemaViewController : Controller
             return NotFound();
         }
 
+        // Đánh giá phim
         var danhGias = _context.DanhGiaPhims
         .Include(d => d.KhachHangNavigation)
         .Include(d => d.PhimNavigation)
@@ -174,6 +175,20 @@ public class CinemaViewController : Controller
 
         // Truyền sang ViewBag
         ViewBag.DanhGias = danhGias;
+
+
+        //Lịch chiếu
+        var lichChieus = _context.LichChieus
+        .Include(l => l.IdPhimNavigation)
+        .Include(l => l.IdPhongNavigation)
+            .ThenInclude(pc => pc.IdRapNavigation)
+        .Where(l => l.IdPhim == id)
+        .OrderBy(l => l.NgayChieu)
+        .ThenBy(l => l.GioChieu)
+        .ToList();
+
+        ViewBag.LichChieus = lichChieus;
+
 
 
         return View("FilmDetail", phim);
