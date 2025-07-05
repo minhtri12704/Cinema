@@ -190,7 +190,7 @@ namespace CinemaProject.Controllers
 
             return View("~/Views/CinemaAdmin/DanhMuc/CreateTheLoai.cshtml", model);
         }
-        
+
 
 
         [HttpGet]
@@ -229,7 +229,7 @@ namespace CinemaProject.Controllers
         public IActionResult DanhSachPhongChieu()
         {
             var list = _context.PhongChieus
-                   .Include(p => p.IdRapNavigation) 
+                   .Include(p => p.IdRapNavigation)
                    .ToList();
 
             return View("~/Views/CinemaAdmin/Phong/DanhSach.cshtml", list);

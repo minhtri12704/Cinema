@@ -182,6 +182,47 @@ create table ComboMonAn(
 )
 go
 
+CREATE TABLE DanhGiaPhim (
+    idDanhGia VARCHAR(30) PRIMARY KEY,
+    idKhach VARCHAR(30),
+    idPhim VARCHAR(30),
+    SoSao INT CHECK (SoSao BETWEEN 1 AND 10),
+    BinhLuan NVARCHAR(500),
+    NgayDanhGia DATE DEFAULT GETDATE(),
+    FOREIGN KEY (idKhach) REFERENCES KhachHang(idKhach),
+    FOREIGN KEY (idPhim) REFERENCES Phim(idPhim)
+)
+GO
+CREATE TABLE MonAnvaThucUong (
+    MaMon INT IDENTITY(1,1) PRIMARY KEY,
+    TenMon NVARCHAR(100) NOT NULL,
+    Loai NVARCHAR(50) NOT NULL,
+    Gia DECIMAL(10, 2) NOT NULL,
+    MoTa NVARCHAR(255),
+    TrangThai BIT DEFAULT 1
+);
+go
+-- 10. Dữ liệu cho bảng MonAnvaThucUong --
+INSERT INTO MonAnvaThucUong (TenMon, Loai, Gia, MoTa, TrangThai) VALUES
+(N'Coca-Cola', N'Thức uống', 15000, N'Nước ngọt có gas', 1),
+(N'Bắp rang bơ', N'Món ăn', 25000, N'Bắp rang bơ ngọt', 1),
+(N'Trà sữa', N'Thức uống', 20000, N'Trà sữa trân châu đường đen', 1);
+go
+-- Dữ liệu đánh giá phim
+INSERT INTO DanhGiaPhim (idDanhGia, idKhach, idPhim, SoSao, BinhLuan, NgayDanhGia)
+VALUES 
+('DG001', 'KH01', 'P01', 9, N'Phim rất hay, kỹ xảo ấn tượng, đáng xem!', '2025-07-01'),
+('DG002', 'KH02', 'P02', 8, N'Nội dung cảm động, diễn xuất tốt.', '2025-07-02'),
+('DG003', 'KH03', 'P03', 7, N'Phim ổn, có vài đoạn hơi dài dòng.', '2025-07-02'),
+('DG004', 'KH04', 'P06', 10, N'Bom tấn! Cảnh hành động đỉnh cao!', '2025-07-04'),
+('DG005', 'KH05', 'P05', 8, N'Phim có chiều sâu và đáng suy ngẫm.', '2025-07-03'),
+('DG006', 'KH06', 'P07', 9, N'Mãn nhãn, nội dung hấp dẫn!', '2025-07-04'),
+('DG007', 'KH07', 'P04', 10, N'Âm nhạc và hình ảnh tuyệt vời, rất xúc động.', '2025-06-28'),
+('DG008', 'KH08', 'P01', 8, N'Kết thúc hơi buồn nhưng rất hợp lý.', '2025-06-30'),
+('DG009', 'KH09', 'P10', 6, N'Phim vui nhộn nhưng nội dung hơi nhạt.', '2025-07-04'),
+('DG010', 'KH10', 'P03', 9, N'Phim có màu sắc riêng, rất nghệ thuật.', '2025-07-01');
+go
+
 -- 1. Dữ liệu cho bảng Rap --
 INSERT INTO Rap (idRap, TenRap, DiaChi, SoDienThoai) 
 VALUES ('R1', N'BHD STAR Lê Văn Việt', N'Tầng 4, Vincom Plaza Lê Văn Việt, 50 Lê Văn Việt, P.Hiệp Phú, Quận 9, TP.HCM', '011564215'),
