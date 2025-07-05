@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CinemaProject.Models.KhuyenMai>
+@{
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách khuyến mãi</h2>
+<a asp-action="CreateKhuyenMai" class="btn btn-primary">Thêm khuyến mãi</a>
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Mô tả</th>
+            <th>Giảm (%)</th>
+            <th>Bắt đầu</th>
+            <th>Kết thúc</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenKhuyenMai</td>
+                <td>@item.MoTa</td>
+                <td>@item.PhanTramGiam%</td>
+                <td>@item.NgayBatDau.ToShortDateString()</td>
+                <td>@item.NgayKetThuc.ToShortDateString()</td>
+                <td>
+                    <a asp-action="EditKhuyenMai" asp-route-id="@item.IdKhuyenMai">Sửa</a> |
+                    <a asp-action="DeleteKhuyenMai" asp-route-id="@item.IdKhuyenMai" onclick="return confirm('Xoá khuyến mãi này?');">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
