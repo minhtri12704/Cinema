@@ -10,10 +10,10 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Rạp</th>
             <th>Tên phòng</th>
             <th>Số lượng ghế</th>
+            <th>Số ghế đôi</th>
             <th>Thao tác</th>
         </tr>
     </thead>
@@ -21,17 +21,16 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.IdPhong</td>
                 <td>@item.IdRapNavigation?.TenRap</td>
                 <td>@item.TenPhong</td>
                 <td>@item.SoLuongGhe</td>
+                <td>@item.SoLuongGheDoi</td>
                 <td>
                     <a asp-action="EditPhongChieu" asp-route-id="@item.IdPhong">Sửa</a> |
                     <a asp-action="DeletePhongChieu" asp-route-id="@item.IdPhong" onclick="return confirm('Xoá phòng này?');">Xoá</a>
                 </td>
             </tr>
         }
-
     </tbody>
 </table>
 

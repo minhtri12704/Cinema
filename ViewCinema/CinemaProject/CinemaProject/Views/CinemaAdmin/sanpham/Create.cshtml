@@ -6,8 +6,7 @@
 
 <h2>Thêm phim mới</h2>
 
-<form asp-action="Create" asp-controller="CinemaAdmin" method="post">
-
+<form asp-action="Create" asp-controller="CinemaAdmin" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="IdPhim">Mã phim</label>
         <input asp-for="IdPhim" class="form-control" />
@@ -45,6 +44,19 @@
         <input asp-for="DoTuoiPhuHop" class="form-control" />
         <span asp-validation-for="DoTuoiPhuHop" class="text-danger"></span>
     </div>
+
+    <div class="form-group">
+        <label>Hình ảnh phim</label>
+        <input type="file" name="HinhAnhFile" class="form-control" accept=".jpg,.jpeg,.png" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MoTa">Mô tả phim</label>
+        <textarea asp-for="MoTa" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="MoTa" class="text-danger"></span>
+    </div>
+
+
 
     <button type="submit" class="btn btn-primary">Thêm phim</button>
     <a asp-action="Home" asp-controller="CinemaAdmin" class="btn btn-secondary">Hủy</a>

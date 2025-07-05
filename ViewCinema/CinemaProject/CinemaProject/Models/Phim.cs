@@ -12,7 +12,6 @@ public partial class Phim
 
     public string? IdTheLoai { get; set; }
 
-    [NotMapped]
     public string? HinhAnh { get; set; }
 
     public int ThoiLuong { get; set; }
@@ -20,6 +19,7 @@ public partial class Phim
     public DateTime? NgayKhoiChieu { get; set; }
 
     public string? DoTuoiPhuHop { get; set; }
+    public string? MoTa { get; set; }
 
     public virtual TheLoai? IdTheLoaiNavigation { get; set; }
 

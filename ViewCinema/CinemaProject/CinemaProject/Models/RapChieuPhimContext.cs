@@ -369,20 +369,39 @@ public partial class RapChieuPhimContext : DbContext
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("idPhim");
-            entity.Property(e => e.DoTuoiPhuHop)
-                .HasMaxLength(10)
-                .IsUnicode(false);
+
+            entity.Property(e => e.TenPhim)
+                .HasMaxLength(255)
+                .IsUnicode(true);
+
             entity.Property(e => e.IdTheLoai)
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("idTheLoai");
-            entity.Property(e => e.NgayKhoiChieu).HasColumnType("date");
-            entity.Property(e => e.TenPhim).HasMaxLength(255);
 
-            entity.HasOne(d => d.IdTheLoaiNavigation).WithMany(p => p.Phims)
+            entity.Property(e => e.ThoiLuong);
+
+            entity.Property(e => e.NgayKhoiChieu)
+                .HasColumnType("date");
+
+            entity.Property(e => e.DoTuoiPhuHop)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+
+            entity.Property(e => e.HinhAnh)
+                .HasMaxLength(255)
+                .HasColumnName("HinhAnh");
+
+            entity.Property(e => e.MoTa)
+                .HasColumnName("MoTa")
+                .HasColumnType("nvarchar(max)");
+
+            entity.HasOne(d => d.IdTheLoaiNavigation)
+                .WithMany(p => p.Phims)
                 .HasForeignKey(d => d.IdTheLoai)
                 .HasConstraintName("FK__Phim__idTheLoai__3E52440B");
         });
+
 
         modelBuilder.Entity<PhimDoiTac>(entity =>
         {
@@ -421,16 +440,26 @@ public partial class RapChieuPhimContext : DbContext
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("idPhong");
+
             entity.Property(e => e.IdRap)
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("idRap");
-            entity.Property(e => e.TenPhong).HasMaxLength(50);
+
+            entity.Property(e => e.TenPhong)
+                .HasMaxLength(50);
+
+            entity.Property(e => e.SoLuongGhe)
+                .HasColumnName("SoLuongGhe");
+
+            entity.Property(e => e.SoLuongGheDoi)
+                .HasColumnName("SoLuongGheDoi");
 
             entity.HasOne(d => d.IdRapNavigation).WithMany(p => p.PhongChieus)
                 .HasForeignKey(d => d.IdRap)
                 .HasConstraintName("FK__PhongChie__idRap__398D8EEE");
         });
+
 
         modelBuilder.Entity<Rap>(entity =>
         {

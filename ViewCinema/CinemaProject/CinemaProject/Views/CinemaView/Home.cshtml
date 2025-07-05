@@ -45,9 +45,12 @@
                 {
                     <div class="col">
                         <div class="card">
-                            <img src="@Url.Content($"~/images/{phim.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
-                                 class="card-img-top" alt="@phim.TenPhim"
-                                 style="height: 350px; object-fit: cover;" />
+                            <img src="~/images/@phim.HinhAnh?v=@DateTime.Now.Ticks"
+                                 alt="@phim.TenPhim"
+                                 class="card-img-top"
+                                 style="height: 350px; object-fit: cover;"
+                                 onerror="this.onerror=null;this.src='@Url.Content("~/images/no-image.jpg")';" />
+
                             <div class="card-body text-white bg-dark">
                                 <h5 class="card-title">
                                     <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
@@ -85,9 +88,12 @@
                     {
                         <div class="col">
                             <div class="card">
-                                <img src="@Url.Content($"~/images/{phim.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
-                                     class="card-img-top" alt="@phim.TenPhim"
-                                     style="height: 350px; object-fit: cover;" />
+                            <img src="~/images/@phim.HinhAnh?v=@DateTime.Now.Ticks"
+                                 alt="@phim.TenPhim"
+                                 class="card-img-top"
+                                 style="height: 350px; object-fit: cover;"
+                                 onerror="this.onerror=null;this.src='@Url.Content("~/images/no-image.jpg")';" />
+
                                 <div class="card-body text-white bg-dark">
                                 <h5 class="card-title">
                                     <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
@@ -111,10 +117,12 @@
                         <div class="col position-relative">
                             <div class="card bg-dark text-white h-100">
                                 <div class="position-relative">
-                                    <img src="@Url.Content($"~/images/{phim.IdPhim}.jpg?v={DateTime.Now.Ticks}")"
-                                         alt="@phim.TenPhim"
-                                         class="card-img-top"
-                                         style="height:350px; object-fit:cover;" />
+                                <img src="~/images/@phim.HinhAnh?v=@DateTime.Now.Ticks"
+                                     alt="@phim.TenPhim"
+                                     class="card-img-top"
+                                     style="height: 350px; object-fit: cover;"
+                                     onerror="this.onerror=null;this.src='@Url.Content("~/images/no-image.jpg")';" />
+
 
                                     @{
                                         var daysSinceRelease = (DateTime.Now - phim.NgayKhoiChieu)?.TotalDays ?? 0;

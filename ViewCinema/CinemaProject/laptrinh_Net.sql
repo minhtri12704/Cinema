@@ -5,6 +5,13 @@ go
 set dateformat dmy
 go
 
+create table Ghe(
+	idGhe varchar(30) primary key,
+	LoaiGhe nvarchar(255),
+	Gia int not null
+)
+go
+
 -- bảng lưu thông tin các rạp chiếu phim
 create table Rap (
     idRap varchar(30) primary key ,
@@ -19,6 +26,7 @@ create table PhongChieu(
     idRap varchar(30),
     TenPhong nvarchar(50),
     SoLuongGhe int not null,
+	SoLuongGheDoi int NULL,
     foreign key (idRap) references rap(idRap)
 )
 go
@@ -36,6 +44,8 @@ create table Phim (
     ThoiLuong int not null,  
     NgayKhoiChieu date,
     DoTuoiPhuHop varchar(10),  -- độ tuổi phù hợp (pg-13, r, g...)
+	HinhAnh nvarchar(255) NULL,
+	MoTa nvarchar(MAX) NULL,
 	foreign key (idTheLoai) references TheLoai(idTheLoai)
 )
 go
@@ -200,28 +210,21 @@ CREATE TABLE MonAnvaThucUong (
     Gia DECIMAL(10, 2) NOT NULL,
     MoTa NVARCHAR(255),
     TrangThai BIT DEFAULT 1
-);
+)
 go
--- 10. Dữ liệu cho bảng MonAnvaThucUong --
+-- Dữ liệu giá tiền của ghế
+INSERT INTO Ghe(idGhe, LoaiGhe, Gia)
+VALUES
+('G1', N'Ghế đơn', 70000),
+('G2', N'Ghế đôi', 145000)
+go
+-- Dữ liệu cho bảng MonAnvaThucUong --
 INSERT INTO MonAnvaThucUong (TenMon, Loai, Gia, MoTa, TrangThai) VALUES
 (N'Coca-Cola', N'Thức uống', 15000, N'Nước ngọt có gas', 1),
 (N'Bắp rang bơ', N'Món ăn', 25000, N'Bắp rang bơ ngọt', 1),
 (N'Trà sữa', N'Thức uống', 20000, N'Trà sữa trân châu đường đen', 1);
 go
--- Dữ liệu đánh giá phim
-INSERT INTO DanhGiaPhim (idDanhGia, idKhach, idPhim, SoSao, BinhLuan, NgayDanhGia)
-VALUES 
-('DG001', 'KH01', 'P01', 9, N'Phim rất hay, kỹ xảo ấn tượng, đáng xem!', '2025-07-01'),
-('DG002', 'KH02', 'P02', 8, N'Nội dung cảm động, diễn xuất tốt.', '2025-07-02'),
-('DG003', 'KH03', 'P03', 7, N'Phim ổn, có vài đoạn hơi dài dòng.', '2025-07-02'),
-('DG004', 'KH04', 'P06', 10, N'Bom tấn! Cảnh hành động đỉnh cao!', '2025-07-04'),
-('DG005', 'KH05', 'P05', 8, N'Phim có chiều sâu và đáng suy ngẫm.', '2025-07-03'),
-('DG006', 'KH06', 'P07', 9, N'Mãn nhãn, nội dung hấp dẫn!', '2025-07-04'),
-('DG007', 'KH07', 'P04', 10, N'Âm nhạc và hình ảnh tuyệt vời, rất xúc động.', '2025-06-28'),
-('DG008', 'KH08', 'P01', 8, N'Kết thúc hơi buồn nhưng rất hợp lý.', '2025-06-30'),
-('DG009', 'KH09', 'P10', 6, N'Phim vui nhộn nhưng nội dung hơi nhạt.', '2025-07-04'),
-('DG010', 'KH10', 'P03', 9, N'Phim có màu sắc riêng, rất nghệ thuật.', '2025-07-01');
-go
+
 
 -- 1. Dữ liệu cho bảng Rap --
 INSERT INTO Rap (idRap, TenRap, DiaChi, SoDienThoai) 
@@ -231,13 +234,13 @@ VALUES ('R1', N'BHD STAR Lê Văn Việt', N'Tầng 4, Vincom Plaza Lê Văn Vi�
 go
 
 -- 2. Dữ liệu cho bảng PhongChieu --
-INSERT INTO PhongChieu (idPhong, idRap, TenPhong, SoLuongGhe) 
-VALUES ('PC1', 'R1', N'Phòng 1', 80),
-('PC2', 'R1', N'Phòng 2', 80),
-('PC3', 'R2', N'Phòng 3', 80),
-('PC4', 'R2', N'Phòng 4', 80),
-('PC5', 'R3', N'Phòng 5', 80),
-('PC6', 'R3', N'Phòng 6', 80)
+INSERT INTO PhongChieu (idPhong, idRap, TenPhong, SoLuongGhe, SoLuongGheDoi) 
+VALUES ('PC1', 'R1', N'Phòng 1', 80, 3),
+('PC2', 'R1', N'Phòng 2', 80, 3),
+('PC3', 'R2', N'Phòng 1', 80, 4),
+('PC4', 'R2', N'Phòng 2', 100, 5),
+('PC5', 'R3', N'Phòng 1', 80, 5),
+('PC6', 'R3', N'Phòng 2', 90, 2)
 go
 
 -- 3. Dữ liệu cho bảng TheLoai --
@@ -251,27 +254,26 @@ VALUES
 ('KD', N'Kinh Dị')
 
 
--- 4. Dữ liệu cho bảng Phim --
--- Phim đang chiếu (<= hôm nay)
-INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop)
+INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop, HinhAnh, MoTa)
 VALUES 
-('P01', N'Avengers_Endgame', 'HD', 181, '2025-06-01', 'PG-13'),
-('P02', N'Mắt Biếc', 'TC', 120, '2025-06-10', 'PG'),
-('P03', N'The Batman', 'HD', 176, '2025-05-15', 'PG-13'),
-('P04', N'Your Name', 'HD', 112, '2025-05-20', 'PG'),
-('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R'),
+-- Phim đang chiếu
+('P01', N'Avengers: Endgame', 'HD', 181, '2025-06-01', 'PG-13', 'P01.jpg', N'Siêu phẩm Marvel, trận chiến cuối cùng với Thanos.'),
+('P02', N'Mắt Biếc', 'TC', 120, '2025-06-10', 'PG', 'P02.jpg', N'Chuyện tình buồn tuổi học trò được chuyển thể từ truyện của Nguyễn Nhật Ánh.'),
+('P03', N'The Batman', 'HD', 176, '2025-05-15', 'PG-13', 'P03.jpg', N'Batman trở lại trong cuộc chiến chống lại tội ác tại Gotham.'),
+('P04', N'Your Name', 'HD', 112, '2025-05-20', 'PG', 'P04.jpg', N'Bộ phim hoạt hình lãng mạn nổi tiếng của Nhật Bản, về hoán đổi thân xác.'),
+('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R', 'P05.jpg', N'Tác phẩm đoạt giải Oscar, kể về khoảng cách giai cấp trong xã hội Hàn Quốc.'),
 
--- Phim ra mắt hôm nay (== 2025-07-04)
-('P06', N'Top Gun_Maverick', 'HD', 131, '2025-07-04', 'PG-13'),
-('P07', N'Spider-Man_No Way Home', 'HD', 148, '2025-07-04', 'PG-13'),
+-- Phim ra mắt hôm nay
+('P06', N'Top Gun: Maverick', 'HD', 131, '2025-07-04', 'PG-13', 'P06.jpg', N'Phi công kỳ cựu Maverick trở lại cùng những trận không chiến mãn nhãn.'),
+('P07', N'Spider-Man: No Way Home', 'HD', 148, '2025-07-04', 'PG-13', 'P07.jpg', N'Spider-Man đối mặt đa vũ trụ và các phản diện từ nhiều thế giới.'),
 
--- Phim sắp chiếu (> hôm nay)
-('P08', N'Conan_Viên đạn đỏ', 'HD', 110, '2025-07-06', 'PG'),
-('P09', N'Suzume', 'HH', 122, '2025-07-08', 'PG'),
-('P10', N'Nhà Bà Nữ', 'H', 98, '2025-07-10', 'PG'),
-('P11', N'The Conjuring', 'KD', 98, '2025-07-11', 'PG-16'),
-('P12', N'The Conjuring 2', 'KD', 98, '2025-07-15', 'PG-16');
-go
+-- Phim sắp chiếu
+('P08', N'Conan: Viên đạn đỏ', 'HD', 110, '2025-07-06', 'PG', 'P08.jpg', N'Thám tử lừng danh Conan tham gia phá án trong vụ ám sát tại hội nghị quốc tế.'),
+('P09', N'Suzume', 'HH', 122, '2025-07-08', 'PG', 'P09.jpg', N'Cô gái trẻ cùng hành trình đóng cánh cửa dẫn đến thảm hoạ.'),
+('P10', N'Nhà Bà Nữ', 'H', 98, '2025-07-10', 'PG', 'P10.jpg', N'Phim hài – gia đình của Trấn Thành về xung đột giữa các thế hệ.'),
+('P11', N'The Conjuring', 'KD', 98, '2025-07-11', 'PG-16', 'P11.jpg', N'Cặp đôi trừ tà đối đầu với thế lực ma quái tại căn nhà ám.'),
+('P12', N'The Conjuring 2', 'KD', 98, '2025-07-15', 'PG-16', 'P12.jpg', N'Câu chuyện trừ tà tiếp theo tại nước Anh, dựa trên sự kiện có thật.');
+
 
 -- 5. Dữ liệu cho bảng LichChieu --
 INSERT INTO LichChieu (idLich, idPhim, idPhong, NgayChieu, GioChieu, GiaVe) 
@@ -360,11 +362,26 @@ VALUES ('BV01', 'KH01', 'L1', 'A1,A2', '2024-04-08', 140000, N'Đang giữ chỗ
 ('BV04', 'KH04', 'L4', 'D1', '2024-04-11', 70000, N'Đã hủy'),
 ('BV05', 'KH05', 'L5', 'E2,E3', '2024-04-12', 140000, N'Đang giữ chỗ');
 go
+-- Dữ liệu đánh giá phim
+INSERT INTO DanhGiaPhim (idDanhGia, idKhach, idPhim, SoSao, BinhLuan, NgayDanhGia)
+VALUES 
+('DG001', 'KH01', 'P01', 9, N'Phim rất hay, kỹ xảo ấn tượng, đáng xem!', '2025-07-01'),
+('DG002', 'KH02', 'P02', 8, N'Nội dung cảm động, diễn xuất tốt.', '2025-07-02'),
+('DG003', 'KH03', 'P03', 7, N'Phim ổn, có vài đoạn hơi dài dòng.', '2025-07-02'),
+('DG004', 'KH04', 'P06', 10, N'Bom tấn! Cảnh hành động đỉnh cao!', '2025-07-04'),
+('DG005', 'KH05', 'P05', 8, N'Phim có chiều sâu và đáng suy ngẫm.', '2025-07-03'),
+('DG006', 'KH06', 'P07', 9, N'Mãn nhãn, nội dung hấp dẫn!', '2025-07-04'),
+('DG007', 'KH07', 'P04', 10, N'Âm nhạc và hình ảnh tuyệt vời, rất xúc động.', '2025-06-28'),
+('DG008', 'KH08', 'P01', 8, N'Kết thúc hơi buồn nhưng rất hợp lý.', '2025-06-30'),
+('DG009', 'KH09', 'P10', 6, N'Phim vui nhộn nhưng nội dung hơi nhạt.', '2025-07-04'),
+('DG010', 'KH10', 'P03', 9, N'Phim có màu sắc riêng, rất nghệ thuật.', '2025-07-01');
+go
+
 
  select * from BookVe
  select * from KhachHang
  delete from KhachHang where Ten = 'dang1'
  SELECT * FROM Phim
  SELECT * FROM Phim WHERE NgayKhoiChieu > GETDATE()
-
+ select * from Ghe
 
