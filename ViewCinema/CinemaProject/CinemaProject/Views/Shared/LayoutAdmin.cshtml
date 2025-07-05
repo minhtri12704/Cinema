@@ -17,9 +17,9 @@
                 <a href="@Url.Action("Movie", "CinemaAdmin")">Kho phim</a>
                 <a href="@Url.Action("DanhSachTheLoai")">Danh mục phim</a>
                 <a href="@Url.Action("bookve")">Giá vé</a>
-                <a href="@Url.Action("DanhSachPhongChieu")">Phòng</a>
+                <a href="@Url.Action("#", "Phong")">Phòng</a>
                 <a href="@Url.Action("KhachHang")">Quản lí khách hàng</a>
-                <a href="@Url.Action("DanhSachMon")">Đồ ăn - Thức uống</a>
+                <a href="@Url.Action("#", "DoAn")">Đồ ăn - Thức uống</a>
                 <!-- Bên phải -->
                 <ul class="navbar-nav ms-auto">
                     @if (Context.Session.GetString("username") == null)
