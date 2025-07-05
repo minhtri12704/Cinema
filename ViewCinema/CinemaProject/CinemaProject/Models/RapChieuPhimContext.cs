@@ -51,6 +51,7 @@ public partial class RapChieuPhimContext : DbContext
     public virtual DbSet<VeXemPhim> VeXemPhims { get; set; }
 
     public virtual DbSet<DanhGiaPhim> DanhGiaPhims { get; set; }
+    public virtual DbSet<MonAnvaThucUong> MonAnvaThucUongs { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -59,6 +60,18 @@ public partial class RapChieuPhimContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<MonAnvaThucUong>(entity =>
+        {
+            entity.HasKey(e => e.MaMon);
+            entity.ToTable("MonAnvaThucUong");
+
+            entity.Property(e => e.TenMon).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.Loai).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Gia).HasColumnType("decimal(10,2)");
+            entity.Property(e => e.MoTa).HasMaxLength(255);
+            entity.Property(e => e.TrangThai).HasDefaultValue(true);
+        });
+
         modelBuilder.Entity<DanhGiaPhim>(entity =>
         {
             entity.HasKey(e => e.IdDanhGia);

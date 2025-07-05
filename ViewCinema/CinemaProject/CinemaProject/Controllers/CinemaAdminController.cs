@@ -292,6 +292,65 @@ namespace CinemaProject.Controllers
             }
             return RedirectToAction("DanhSachPhongChieu");
         }
+        // ========================
+        // MÓN ĂN VÀ THỨC UỐNG =====
+        // ========================
+
+        public IActionResult DanhSachMon()
+        {
+            var list = _context.MonAnvaThucUongs.ToList();
+            return View("~/Views/CinemaAdmin/MonAn/DanhSachMon.cshtml", list);
+        }
+
+        [HttpGet]
+        public IActionResult CreateMon()
+        {
+            return View("~/Views/CinemaAdmin/MonAn/CreateMon.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult CreateMon(MonAnvaThucUong model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.MonAnvaThucUongs.Add(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachMon");
+            }
+            return View("~/Views/CinemaAdmin/MonAn/CreateMon.cshtml", model);
+        }
+
+        [HttpGet]
+        public IActionResult EditMon(int id)
+        {
+            var mon = _context.MonAnvaThucUongs.Find(id);
+            if (mon == null) return NotFound();
+
+            return View("~/Views/CinemaAdmin/MonAn/EditMon.cshtml", mon);
+        }
+
+        [HttpPost]
+        public IActionResult EditMon(MonAnvaThucUong model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.MonAnvaThucUongs.Update(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachMon");
+            }
+            return View("~/Views/CinemaAdmin/MonAn/EditMon.cshtml", model);
+        }
+
+        public IActionResult DeleteMon(int id)
+        {
+            var mon = _context.MonAnvaThucUongs.Find(id);
+            if (mon != null)
+            {
+                _context.MonAnvaThucUongs.Remove(mon);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("DanhSachMon");
+        }
 
     }
 }
