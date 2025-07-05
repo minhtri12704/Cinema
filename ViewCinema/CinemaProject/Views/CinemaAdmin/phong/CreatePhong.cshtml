@@ -1,0 +1,36 @@
+﻿@model CinemaProject.Models.PhongChieu
+@{
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+    ViewData["Title"] = "Thêm Phòng Chiếu";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="CreatePhongChieu" method="post">
+    <div class="form-group">
+        <label asp-for="IdPhong">Mã phòng</label>
+        <input asp-for="IdPhong" class="form-control" />
+        <span asp-validation-for="IdPhong" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TenPhong">Tên phòng</label>
+        <input asp-for="TenPhong" class="form-control" />
+        <span asp-validation-for="TenPhong" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdRap">Rạp</label>
+        <select asp-for="IdRap" class="form-control" asp-items="ViewBag.IdRap"></select>
+        <span asp-validation-for="IdRap" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoLuongGhe">Số lượng ghế</label>
+        <input asp-for="SoLuongGhe" type="number" class="form-control" />
+        <span asp-validation-for="SoLuongGhe" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-2">Lưu</button>
+    <a asp-action="DanhSachPhongChieu" class="btn btn-secondary mt-2">Quay lại</a>
+</form>
