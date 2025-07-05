@@ -351,6 +351,62 @@ namespace CinemaProject.Controllers
             }
             return RedirectToAction("DanhSachMon");
         }
+        // === KHUYẾN MÃI ===
+
+        public IActionResult DanhSachKhuyenMai()
+        {
+            var list = _context.KhuyenMais.ToList();
+            return View("~/Views/CinemaAdmin/KhuyenMai/DanhSachKhuyenMai.cshtml", list);
+        }
+
+        [HttpGet]
+        public IActionResult CreateKhuyenMai()
+        {
+            return View("~/Views/CinemaAdmin/KhuyenMai/CreateKhuyenMai.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult CreateKhuyenMai(KhuyenMai model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.KhuyenMais.Add(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachKhuyenMai");
+            }
+            return View("~/Views/CinemaAdmin/KhuyenMai/CreateKhuyenMai.cshtml", model);
+        }
+
+        [HttpGet]
+        public IActionResult EditKhuyenMai(string id)
+        {
+            var km = _context.KhuyenMais.Find(id);
+            if (km == null) return NotFound();
+            return View("~/Views/CinemaAdmin/KhuyenMai/EditKhuyenMai.cshtml", km);
+        }
+
+        [HttpPost]
+        public IActionResult EditKhuyenMai(KhuyenMai model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.KhuyenMais.Update(model);
+                _context.SaveChanges();
+                return RedirectToAction("DanhSachKhuyenMai");
+            }
+            return View("~/Views/CinemaAdmin/KhuyenMai/EditKhuyenMai.cshtml", model);
+        }
+
+        public IActionResult DeleteKhuyenMai(string id)
+        {
+            var km = _context.KhuyenMais.Find(id);
+            if (km != null)
+            {
+                _context.KhuyenMais.Remove(km);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("DanhSachKhuyenMai");
+        }
 
     }
 }

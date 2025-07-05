@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "D:\\Doan\\ViewCinema\\CinemaProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaadmin\\khuyenmai\\danhsachkhuyenmai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaadmin\\khuyenmai\\danhsachkhuyenmai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaadmin\\khuyenmai\\createkhuyenmai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaadmin\\khuyenmai\\createkhuyenmai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\views\\shared\\layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\shared\\layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaadmin\\khuyenmai\\editkhuyenmai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaadmin\\khuyenmai\\editkhuyenmai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\models\\khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\views\\cinemaadmin\\monan\\editmon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaadmin\\monan\\editmon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -15,24 +43,12 @@
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\cinemaadmin\\monan\\danhsachmon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\views\\shared\\layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\views\\shared\\layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\models\\rapchieuphimcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\rapchieuphimcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\models\\monanvathucuong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\monanvathucuong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\migrations\\rapchieuphimcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,10 +167,6 @@
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\models\\khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\doan\\viewcinema\\cinemaproject\\cinemaproject\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -242,16 +254,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateKhuyenMai.cshtml",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\CreateKhuyenMai.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\CreateKhuyenMai.cshtml",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\CreateKhuyenMai.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\CreateKhuyenMai.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-05T01:43:14.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DanhSachKhuyenMai.cshtml",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\DanhSachKhuyenMai.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\DanhSachKhuyenMai.cshtml",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\DanhSachKhuyenMai.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\DanhSachKhuyenMai.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-05T01:42:30.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CinemaAdminController.cs",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaAdminController.cs",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs*",
+              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaAdminController.cs*",
+              "ViewState": "AgIAAH8BAAAAAAAAAAAswIwBAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T14:40:30.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T14:40:30.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "EditMon.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\EditMon.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\EditMon.cshtml",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\EditMon.cshtml*",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\EditMon.cshtml*",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\EditMon.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\EditMon.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-05T01:14:56.344Z",
@@ -259,33 +323,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateMon.cshtml",
-              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-05T01:13:42.25Z",
+              "DocumentIndex": 4,
+              "Title": "CinemaViewController.cs",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaViewController.cs",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
+              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T14:40:30.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DanhSachMon.cshtml",
-              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwB0AAAAVAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "EditKhuyenMai.cshtml",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\EditKhuyenMai.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\EditKhuyenMai.cshtml",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\EditKhuyenMai.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\khuyenmai\\EditKhuyenMai.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-05T01:13:17.055Z",
+              "WhenOpened": "2025-07-05T01:43:28.756Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "MonAnvaThucUong.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\MonAnvaThucUong.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\MonAnvaThucUong.cs",
@@ -293,38 +357,48 @@
               "RelativeToolTip": "CinemaProject\\Models\\MonAnvaThucUong.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T01:07:35.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T01:07:35.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CinemaAdminController.cs",
-              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaAdminController.cs",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAgwFEBAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T14:40:30.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "RelativeToolTip": "CinemaProject\\Views\\Shared\\LayoutAdmin.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "DanhSachMon.cshtml",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\DanhSachMon.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwB0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-02T14:40:30.228Z",
+              "WhenOpened": "2025-07-05T01:13:17.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "KhuyenMai.cs",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\KhuyenMai.cs",
+              "RelativeDocumentMoniker": "CinemaProject\\Models\\KhuyenMai.cs",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\KhuyenMai.cs",
+              "RelativeToolTip": "CinemaProject\\Models\\KhuyenMai.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T15:32:56.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
+              "Title": "CreateMon.cshtml",
+              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
+              "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
+              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
+              "RelativeToolTip": "CinemaProject\\Views\\CinemaAdmin\\MonAn\\CreateMon.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-05T01:13:42.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "DanhSachTheLoai.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\danhmuc\\DanhSachTheLoai.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\danhmuc\\DanhSachTheLoai.cshtml",
@@ -336,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "RapChieuPhimContext.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\RapChieuPhimContext.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\RapChieuPhimContext.cs",
@@ -344,12 +418,11 @@
               "RelativeToolTip": "CinemaProject\\Models\\RapChieuPhimContext.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAowEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T14:40:30.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T14:40:30.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "EditTheLoai.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\danhmuc\\EditTheLoai.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\danhmuc\\EditTheLoai.cshtml",
@@ -361,20 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CinemaViewController.cs",
-              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
-              "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaViewController.cs",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
-              "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T14:40:30.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "RapChieuPhimContextModelSnapshot.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Migrations\\RapChieuPhimContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Migrations\\RapChieuPhimContextModelSnapshot.cs",
@@ -382,12 +442,11 @@
               "RelativeToolTip": "CinemaProject\\Migrations\\RapChieuPhimContextModelSnapshot.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T00:47:26.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T00:47:26.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CreateTheLoai.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\danhmuc\\CreateTheLoai.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\danhmuc\\CreateTheLoai.cshtml",
@@ -399,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "PhongChieu.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\PhongChieu.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\PhongChieu.cs",
@@ -411,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Rap.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Rap.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Rap.cs",
@@ -423,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\sanpham\\Create.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\sanpham\\Create.cshtml",
@@ -435,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "Movie.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Movie.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Movie.cs",
@@ -447,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Phim.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Phim.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Phim.cs",
@@ -459,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_Layout.cshtml",
@@ -471,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "TheLoai.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\TheLoai.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\TheLoai.cs",
@@ -483,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "PhimDoiTac.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\PhimDoiTac.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\PhimDoiTac.cs",
@@ -495,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\Edit.cshtml",
@@ -507,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Program.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Program.cs",
@@ -519,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "KhachHang.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\khachhang\\KhachHang.cshtml",
@@ -531,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Controllers\\HomeController.cs",
@@ -543,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Search.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Search.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Search.cshtml",
@@ -555,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "Home.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaView\\Home.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaView\\Home.cshtml",
@@ -567,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "BookingController.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Controllers\\BookingController.cs",
@@ -579,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "Product.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\sanpham\\Product.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\sanpham\\Product.cshtml",
@@ -591,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "bookve.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\bookve\\bookve.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\bookve\\bookve.cshtml",
@@ -603,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "Admin.css",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\Admin.css",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\Admin.css",
@@ -615,7 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\RegisterViewModel.cs",
@@ -627,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "LichChieu.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\LichChieu.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\LichChieu.cs",
@@ -639,7 +698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "KhachHang.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\KhachHang.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\KhachHang.cs",
@@ -651,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "BookVe.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\BookVe.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\BookVe.cs",
@@ -663,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "DatVe.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\DatVe.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\DatVe.cs",
@@ -675,7 +734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "Cinema.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Cinema.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Cinema.cs",
@@ -687,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "ComboMonAn.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ComboMonAn.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ComboMonAn.cs",
@@ -699,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "DoiTacPhim.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\DoiTacPhim.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\DoiTacPhim.cs",
@@ -711,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "DonHangDoAn.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\DonHangDoAn.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\DonHangDoAn.cs",
@@ -723,7 +782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ErrorViewModel.cs",
@@ -735,19 +794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "KhuyenMai.cs",
-              "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\KhuyenMai.cs",
-              "RelativeDocumentMoniker": "CinemaProject\\Models\\KhuyenMai.cs",
-              "ToolTip": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\KhuyenMai.cs",
-              "RelativeToolTip": "CinemaProject\\Models\\KhuyenMai.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T15:32:56.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "LayoutAdmin.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\sanpham\\LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\sanpham\\LayoutAdmin.cshtml",
@@ -759,7 +806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\CinemaAdmin\\sanpham\\Edit.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\CinemaAdmin\\sanpham\\Edit.cshtml",
@@ -771,7 +818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\_ViewStart.cshtml",
@@ -783,7 +830,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\_ViewImports.cshtml",
@@ -795,7 +842,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Home\\Privacy.cshtml",
@@ -807,7 +854,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "site.css",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\css\\site.css",
@@ -819,7 +866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "CinemaProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -831,7 +878,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\appsettings.json",
               "RelativeDocumentMoniker": "CinemaProject\\appsettings.json",
@@ -843,7 +890,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "Showtime.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\Showtime.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Showtime.cs",
@@ -855,7 +902,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\LoginViewModel.cs",
@@ -867,7 +914,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "TaiKhoanNhanVien.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\TaiKhoanNhanVien.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\TaiKhoanNhanVien.cs",
@@ -879,7 +926,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "ApDungKhuyenMaiVe.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ApDungKhuyenMaiVe.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ApDungKhuyenMaiVe.cs",
@@ -891,7 +938,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "VeXemPhim.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\VeXemPhim.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\VeXemPhim.cs",
@@ -903,7 +950,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "Avengers_Endgame.jpg",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
               "RelativeDocumentMoniker": "CinemaProject\\wwwroot\\images\\Avengers_Endgame.jpg",
@@ -914,7 +961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "ApDungKhuyenMaiDoAn.cs",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Models\\ApDungKhuyenMaiDoAn.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\ApDungKhuyenMaiDoAn.cs",
@@ -926,7 +973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "CinemaProject",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\CinemaProject.csproj",
               "RelativeDocumentMoniker": "CinemaProject\\CinemaProject.csproj",
@@ -937,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Doan\\ViewCinema\\CinemaProject\\CinemaProject\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "CinemaProject\\Properties\\launchSettings.json",
