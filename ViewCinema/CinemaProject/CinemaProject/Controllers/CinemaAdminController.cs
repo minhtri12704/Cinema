@@ -190,7 +190,7 @@ namespace CinemaProject.Controllers
 
             return View("~/Views/CinemaAdmin/DanhMuc/CreateTheLoai.cshtml", model);
         }
-
+        
 
 
         [HttpGet]
@@ -407,6 +407,5 @@ namespace CinemaProject.Controllers
             }
             return RedirectToAction("DanhSachKhuyenMai");
         }
-
     }
 }

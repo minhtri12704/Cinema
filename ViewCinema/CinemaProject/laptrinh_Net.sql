@@ -181,15 +181,7 @@ create table ComboMonAn(
 	GiaTien int
 )
 go
-CREATE TABLE MonAnvaThucUong (
-    MaMon INT IDENTITY(1,1) PRIMARY KEY,
-    TenMon NVARCHAR(100) NOT NULL,
-    Loai NVARCHAR(50) NOT NULL,
-    Gia DECIMAL(10, 2) NOT NULL,
-    MoTa NVARCHAR(255),
-    TrangThai BIT DEFAULT 1
-);
-go
+
 -- 1. Dữ liệu cho bảng Rap --
 INSERT INTO Rap (idRap, TenRap, DiaChi, SoDienThoai) 
 VALUES ('R1', N'BHD STAR Lê Văn Việt', N'Tầng 4, Vincom Plaza Lê Văn Việt, 50 Lê Văn Việt, P.Hiệp Phú, Quận 9, TP.HCM', '011564215'),
@@ -327,11 +319,6 @@ VALUES ('BV01', 'KH01', 'L1', 'A1,A2', '2024-04-08', 140000, N'Đang giữ chỗ
 ('BV04', 'KH04', 'L4', 'D1', '2024-04-11', 70000, N'Đã hủy'),
 ('BV05', 'KH05', 'L5', 'E2,E3', '2024-04-12', 140000, N'Đang giữ chỗ');
 go
--- 10. Dữ liệu cho bảng MonAnvaThucUong --
-INSERT INTO MonAnvaThucUong (TenMon, Loai, Gia, MoTa, TrangThai) VALUES
-(N'Coca-Cola', N'Thức uống', 15000, N'Nước ngọt có gas', 1),
-(N'Bắp rang bơ', N'Món ăn', 25000, N'Bắp rang bơ ngọt', 1),
-(N'Trà sữa', N'Thức uống', 20000, N'Trà sữa trân châu đường đen', 1);
 
  select * from BookVe
  select * from KhachHang
