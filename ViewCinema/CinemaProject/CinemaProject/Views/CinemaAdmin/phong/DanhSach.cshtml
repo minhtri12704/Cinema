@@ -12,8 +12,9 @@
         <tr>
             <th>Rạp</th>
             <th>Tên phòng</th>
-            <th>Số lượng ghế</th>
-            <th>Số ghế đôi</th>
+            <th>Tổng lượng ghế</th>
+            <th>Ghế đôi</th>
+            <th>Ghế Vip</th>
             <th>Thao tác</th>
         </tr>
     </thead>
@@ -25,6 +26,7 @@
                 <td>@item.TenPhong</td>
                 <td>@item.SoLuongGhe</td>
                 <td>@item.SoLuongGheDoi</td>
+                <td>@item.SoLuongGheVip</td>
                 <td>
                     <a asp-action="EditPhongChieu" asp-route-id="@item.IdPhong">Sửa</a> |
                     <a asp-action="DeletePhongChieu" asp-route-id="@item.IdPhong" onclick="return confirm('Xoá phòng này?');">Xoá</a>

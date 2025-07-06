@@ -27,6 +27,7 @@ create table PhongChieu(
     TenPhong nvarchar(50),
     SoLuongGhe int not null,
 	SoLuongGheDoi int NULL,
+	SoLuongGheVip INT NULL,
     foreign key (idRap) references rap(idRap)
 )
 go
@@ -84,7 +85,7 @@ create table DatVe (
     foreign key (idLich) references LichChieu(idLich)
 )
 go
-----option khác cảu đặt vé
+----option khác của đặt vé
 CREATE TABLE BookVe (
     idBookVe varchar(30) primary key,
     idKhach varchar(30),
@@ -215,8 +216,10 @@ go
 -- Dữ liệu giá tiền của ghế
 INSERT INTO Ghe(idGhe, LoaiGhe, Gia)
 VALUES
-('G1', N'Ghế đơn', 70000),
-('G2', N'Ghế đôi', 145000)
+('GHE_DON', N'Ghế đơn', 70000),
+('GHE_DOI', N'Ghế đôi', 145000),
+('GHE_TRONG', N'Ghế trống', 0),
+('GHE_VIP', N'Ghế Vip', 90000);
 go
 -- Dữ liệu cho bảng MonAnvaThucUong --
 INSERT INTO MonAnvaThucUong (TenMon, Loai, Gia, MoTa, TrangThai) VALUES
@@ -234,13 +237,13 @@ VALUES ('R1', N'BHD STAR Lê Văn Việt', N'Tầng 4, Vincom Plaza Lê Văn Vi�
 go
 
 -- 2. Dữ liệu cho bảng PhongChieu --
-INSERT INTO PhongChieu (idPhong, idRap, TenPhong, SoLuongGhe, SoLuongGheDoi) 
-VALUES ('PC1', 'R1', N'Phòng 1', 80, 3),
-('PC2', 'R1', N'Phòng 2', 80, 3),
-('PC3', 'R2', N'Phòng 1', 80, 4),
-('PC4', 'R2', N'Phòng 2', 100, 5),
-('PC5', 'R3', N'Phòng 1', 80, 5),
-('PC6', 'R3', N'Phòng 2', 90, 2)
+INSERT INTO PhongChieu (idPhong, idRap, TenPhong, SoLuongGhe, SoLuongGheDoi, SoLuongGheVip) 
+VALUES ('PC1', 'R1', N'Phòng 1', 80, 3, 2),
+('PC2', 'R1', N'Phòng 2', 80, 3, 3),
+('PC3', 'R2', N'Phòng 1', 80, 4, 6),
+('PC4', 'R2', N'Phòng 2', 100, 5, 8),
+('PC5', 'R3', N'Phòng 1', 80, 5, 6),
+('PC6', 'R3', N'Phòng 2', 90, 2, 5)
 go
 
 -- 3. Dữ liệu cho bảng TheLoai --
@@ -281,7 +284,7 @@ VALUES ('L1', 'P01', 'PC1', '2024-04-10', '9:00 - 11:00', 70000),
 ('L2', 'P02', 'PC2', '2024-04-10', '11:00 - 13:00', 70000),
 ('L3', 'P03', 'PC3', '2024-04-11', '20:00 - 22:00', 70000),
 ('L4', 'P04', 'PC3', '2024-04-11', '18:00 - 20:00', 70000),
-('L5', 'P04', 'PC3', '2024-04-11', '15:00 - 17:00', 70000);
+('L5', 'P04', 'PC3', '2024-04-12', '15:00 - 17:00', 70000);
 go
 
 -- 6. Dữ liệu cho bảng KhachHang --
@@ -356,11 +359,11 @@ VALUES ('cb1', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz', 77000),
 ('cb5', N'01 bắp nhỏ vị ngọt + 01 ly nước 22Oz + 01 xúc xích lốc xoáy', 114000)
 go
 INSERT INTO BookVe (idBookVe, idKhach, idLich, GheNgoi, ThoiGianDat, TongTien, TrangThai)
-VALUES ('BV01', 'KH01', 'L1', 'A1,A2', '2024-04-08', 140000, N'Đang giữ chỗ'),
-('BV02', 'KH02', 'L2', 'B3', '2024-04-09', 70000, N'Đang giữ chỗ'),
-('BV03', 'KH03', 'L3', 'C5,C6,C7', '2024-04-10', 210000, N'Đang giữ chỗ'),
-('BV04', 'KH04', 'L4', 'D1', '2024-04-11', 70000, N'Đã hủy'),
-('BV05', 'KH05', 'L5', 'E2,E3', '2024-04-12', 140000, N'Đang giữ chỗ');
+VALUES ('BV01', 'KH01', 'L1', 'A01, A02', '2024-04-08', 140000, N'Đang giữ chỗ'),
+('BV02', 'KH02', 'L2', 'B03', '2024-04-09', 70000, N'Đang giữ chỗ'),
+('BV03', 'KH03', 'L3', 'C05, C06, C07', '2024-04-10', 210000, N'Đang giữ chỗ'),
+('BV04', 'KH04', 'L4', 'D01', '2024-04-11', 70000, N'Đã hủy'),
+('BV05', 'KH05', 'L5', 'E02, E03', '2024-04-12', 140000, N'Đang giữ chỗ');	
 go
 -- Dữ liệu đánh giá phim
 INSERT INTO DanhGiaPhim (idDanhGia, idKhach, idPhim, SoSao, BinhLuan, NgayDanhGia)

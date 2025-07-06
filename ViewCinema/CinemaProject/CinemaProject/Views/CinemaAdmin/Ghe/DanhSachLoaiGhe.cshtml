@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CinemaProject.Models.Ghe>
+
+@{
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách ghế</h2>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>ID Ghế</th>
+            <th>Loại ghế</th>
+            <th>Giá (VNĐ)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ghe in Model)
+        {
+            <tr>
+                <td>@ghe.IdGhe</td>
+                <td>@ghe.LoaiGhe</td>
+                <td>@String.Format("{0:N0}", ghe.Gia)</td>
+                <td>
+                    <a asp-controller="CinemaAdmin" asp-action="EditGhe" asp-route-id="@ghe.IdGhe">Sửa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

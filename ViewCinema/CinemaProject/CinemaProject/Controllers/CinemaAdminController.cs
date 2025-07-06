@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CinemaProject.Models;
+using System.Collections.Generic;
 
 namespace CinemaProject.Controllers
 {
@@ -470,6 +471,14 @@ namespace CinemaProject.Controllers
                 _context.SaveChanges();
             }
             return RedirectToAction("DanhSachKhuyenMai");
+        }
+        // ==============================
+        // ==== LOẠI GHẾ ============
+        // ==============================
+        public IActionResult ListGhe()
+        {
+            var list = _context.Ghes.ToList();
+            return View("~/Views/CinemaAdmin/Ghe/DanhSachLoaiGhe.cshtml", list);
         }
     }
 }
