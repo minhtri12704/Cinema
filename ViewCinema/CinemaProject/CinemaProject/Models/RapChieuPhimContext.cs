@@ -53,12 +53,36 @@ public partial class RapChieuPhimContext : DbContext
     public virtual DbSet<DanhGiaPhim> DanhGiaPhims { get; set; }
 
     public virtual DbSet<MonAnvaThucUong> MonAnvaThucUongs { get; set; }
+
+    public virtual DbSet<Ghe> Ghes { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=RapChieuPhim;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Ghe>(entity =>
+        {
+            entity.HasKey(e => e.IdGhe);
+
+            entity.ToTable("Ghe");
+
+            entity.Property(e => e.IdGhe)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("idGhe");
+
+            entity.Property(e => e.LoaiGhe)
+                .IsRequired()
+                .HasMaxLength(255)
+                .HasColumnName("LoaiGhe");
+
+            entity.Property(e => e.Gia)
+                .IsRequired()
+                .HasColumnName("Gia");
+        });
+
         modelBuilder.Entity<MonAnvaThucUong>(entity =>
         {
             entity.HasKey(e => e.MaMon);
@@ -454,6 +478,9 @@ public partial class RapChieuPhimContext : DbContext
 
             entity.Property(e => e.SoLuongGheDoi)
                 .HasColumnName("SoLuongGheDoi");
+
+            entity.Property(e => e.SoLuongGheVip)
+                .HasColumnName("SoLuongGheVip");
 
             entity.HasOne(d => d.IdRapNavigation).WithMany(p => p.PhongChieus)
                 .HasForeignKey(d => d.IdRap)

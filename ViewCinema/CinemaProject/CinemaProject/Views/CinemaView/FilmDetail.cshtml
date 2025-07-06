@@ -34,12 +34,12 @@
 
 <ul class="nav nav-tabs mt-5" id="filmTab" role="tablist">
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">
+        <button class="nav-link " id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">
             Thông tin phim
         </button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="lich-tab" data-bs-toggle="tab" data-bs-target="#lich" type="button" role="tab">
+        <button class="nav-link active" id="lich-tab" data-bs-toggle="tab" data-bs-target="#lich" type="button" role="tab">
             Lịch chiếu
         </button>
     </li>
@@ -51,11 +51,11 @@
 </ul>
 
 <div class="tab-content p-3 bg-dark text-white border border-top-0" id="filmTabContent">
-    <div class="tab-pane fade show active" id="info" role="tabpanel">
+    <div class="tab-pane fade " id="info" role="tabpanel">
         <p>@Model.TenPhim là một bộ phim thuộc thể loại @Model.IdTheLoaiNavigation?.TenTheLoai.</p>
         <!-- Thêm mô tả tùy ý -->
     </div>
-    <div class="tab-pane fade" id="lich" role="tabpanel" aria-labelledby="lich-tab">
+    <div class="tab-pane fade show active" id="lich" role="tabpanel" aria-labelledby="lich-tab">
         @if (ViewBag.LichChieus is List<LichChieu> lichList && lichList.Any())
         {
             var groupedByDate = lichList.GroupBy(l => l.NgayChieu);
@@ -70,21 +70,22 @@
                     {
                         <div class="col">
                             <div class="card shadow-sm border-primary">
+                                <b>
                                 <div class="card-body bg-light d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                                     <div>
                                         <h6 class="card-title text-primary mb-1">Vị trí: @lc.IdPhongNavigation?.TenPhong</h6>
-                                        <p class="card-subtitle text-muted mb-0">
+                                        <p class="card-subtitle text-muted mb-0 fs-5" style="color:blue">
                                             🏢 Rạp: @lc.IdPhongNavigation?.IdRapNavigation?.TenRap
                                         </p>
                                     </div>
                                     <div class="mt-2 mt-md-0 d-flex flex-column flex-md-row gap-3 align-items-start align-items-md-center">
                                         <span class="text-dark fw-semibold">🕒 @lc.GioChieu</span>
-                                        <span class="text-success fw-bold">@String.Format("{0:N0}", lc.GiaVe) đ</span>
                                         <a asp-controller="DatVe" asp-action="DatGhe" asp-route-id="@lc.IdLich" class="btn btn-danger">
                                             Đặt vé ngay
                                         </a>
                                     </div>
                                 </div>
+                                </b>
                             </div>
                         </div>
                     }

@@ -1,29 +1,193 @@
 ﻿@model CinemaProject.Models.LichChieu
 @{
     ViewData["Title"] = "Đặt vé";
+
+    var gheList = ViewBag.DanhSachGhe as List<dynamic> ?? new List<dynamic>();
+    var gheDonList = gheList.Where(g => g.IdGhe == "GHE_DON" || g.IdGhe == "GHE_TRONG" || g.IdGhe == "GHE_VIP").ToList();
+    var gheDoiList = gheList.Where(g => g.IdGhe == "GHE_DOI").ToList();
 }
 
+<style>
+    .btn-vip {
+        background-color: #800080 !important; /* tím */
+        color: white !important;
+    }
+</style>
+
+<!-- Progress bar -->
 <div class="d-flex justify-content-between align-items-center my-4 px-3">
-    <div class="text-center">
-        <div class="rounded-circle bg-danger text-white p-3 fw-bold">1</div>
-        <small class="d-block mt-1 text-white">Chọn ghế</small>
-    </div>
-    <div class="border-top border-white flex-grow-1 mx-2"></div>
+    @{
+        var steps = new[] { "Chọn ghế", "Bắp nước", "Thanh toán", "Thông tin vé" };
+        for (int i = 0; i < steps.Length; i++)
+        {
+            <div class="text-center">
+                <div class="rounded-circle @(i == 0 ? "bg-danger" : "bg-secondary") text-white p-3 fw-bold">@(i + 1)</div>
+                <small class="d-block mt-1 text-white">@steps[i]</small>
+            </div>
+            if (i < steps.Length - 1)
+            {
+                <div class="border-top border-white flex-grow-1 mx-2"></div>
+            }
+        }
+    }
+</div>
 
-    <div class="text-center">
-        <div class="rounded-circle bg-secondary text-white p-3 fw-bold">2</div>
-        <small class="d-block mt-1 text-white">Bắp nước</small>
-    </div>
-    <div class="border-top border-white flex-grow-1 mx-2"></div>
+<div class="container text-white mt-5">
+    <div class="row">
+        <!-- Cột trái: Sơ đồ ghế -->
+        <div class="col-md-8">
+            <!-- Chú thích màu -->
+            <div class="d-flex justify-content-center align-items-center mt-4 gap-3 flex-wrap">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-success" style="width: 25px; height: 25px;" disabled></button>
+                    <span class="ms-2">Ghế bạn chọn</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-danger" style="width: 25px; height: 25px;" disabled></button>
+                    <span class="ms-2">Ghế đã đặt</span>
+                </div>
+            </div>
 
-    <div class="text-center">
-        <div class="rounded-circle bg-secondary text-white p-3 fw-bold">3</div>
-        <small class="d-block mt-1 text-white">Thanh toán</small>
-    </div>
-    <div class="border-top border-white flex-grow-1 mx-2"></div>
+            <div class="text-center mb-4 mt-4">
+                <div style="width: 300px; height: 30px; margin: auto; background: linear-gradient(to right, #aaa, #ddd); border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;">
+                    <span class="text-dark fw-bold" style="font-size: 12px;">MÀN HÌNH</span>
+                </div>
+            </div>
 
-    <div class="text-center">
-        <div class="rounded-circle bg-secondary text-white p-3 fw-bold">4</div>
-        <small class="d-block mt-1 text-white">Thông tin vé</small>
+            <!-- Ghế đơn + VIP + trống -->
+            <div class="d-flex flex-wrap justify-content-center" style="max-width: 650px; margin: auto;">
+                @foreach (var ghe in gheDonList)
+                {
+                    if (ghe.IdGhe == "GHE_TRONG")
+                    {
+                        <button type="button" class="btn btn-secondary m-1" style="width: 40px; height: 35px;" disabled></button>
+                    }
+                    else if (ghe.IdGhe == "GHE_VIP")
+                    {
+                        <button type="button" class="btn btn-vip m-1 ghe" style="width: 40px; height: 35px; display: flex; align-items: center; justify-content: center;"
+                                data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
+                            @ghe.Id
+                        </button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-outline-light m-1 ghe" style="width: 40px; height: 35px; display: flex; align-items: center; justify-content: center;"
+                                data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
+                            @ghe.Id
+                        </button>
+                    }
+                }
+            </div>
+
+            <!-- Ghế đôi -->
+            <div class="d-flex flex-wrap justify-content-center mt-4" style="max-width: 650px; margin: auto;">
+                @foreach (var ghe in gheDoiList)
+                {
+                    <button type="button" class="btn btn-warning m-1 ghe" style="width: 80px; height: 35px; display: flex; align-items: center; justify-content: center;"
+                            data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
+                        @ghe.Id
+                    </button>
+                }
+            </div>
+
+            <!-- Chú thích -->
+            <div class="d-flex justify-content-center align-items-center mt-4 gap-3 flex-wrap">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light" style="width: 25px; height: 25px;" disabled></button>
+                    <span class="ms-2">Ghế đơn</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-warning" style="width: 25px; height: 25px;" disabled></button>
+                    <span class="ms-2">Ghế đôi</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-vip" style="width: 25px; height: 25px;" disabled></button>
+                    <span class="ms-2">Ghế VIP</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-secondary" style="width: 25px; height: 25px;" disabled></button>
+                    <span class="ms-2">Ghế trống (Không có ghế)</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Cột phải: Thông tin đặt vé -->
+        <div class="col-md-4">
+            <div class="bg-dark p-3 rounded">
+                <h5 class="mb-3 text-center">Thông tin đặt vé</h5>
+                <p><strong>Phim:</strong> @Model.IdPhimNavigation.TenPhim</p>
+                <p><strong>Rạp:</strong> @Model.IdPhongNavigation.IdRapNavigation.TenRap</p>
+                <p><strong>Phòng:</strong> @Model.IdPhongNavigation.TenPhong</p>
+                <p><strong>Suất:</strong> @Model.GioChieu - @Model.NgayChieu.ToString("dd/MM/yyyy")</p>
+
+                <hr />
+                <p><strong>Ghế đã chọn:</strong> <span id="gheDaChon" class="text-info"></span></p>
+                <p><strong>Tổng tiền:</strong> <span id="tongTien" class="text-warning">0₫</span></p>
+
+                <a href="#" class="btn btn-success mt-3 w-100 disabled" id="btnTiepTheo">Tiếp tục</a>
+            </div>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        const gheBtns = document.querySelectorAll(".ghe");
+        const gheDaChonSpan = document.getElementById("gheDaChon");
+        const tongTienSpan = document.getElementById("tongTien");
+        const btnTiep = document.getElementById("btnTiepTheo");
+
+        let gheChon = [];
+
+        gheBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const id = btn.dataset.id;
+                const gia = parseInt(btn.dataset.gia);
+                const idGhe = btn.dataset.idghe;
+
+                const isSelected = btn.classList.contains("btn-success");
+
+                if (isSelected) {
+                    btn.classList.remove("btn-success");
+                    if (idGhe === "GHE_DOI") {
+                        btn.classList.add("btn-warning");
+                    } else if (idGhe === "GHE_VIP") {
+                        btn.classList.add("btn-vip");
+                    } else {
+                        btn.classList.add("btn-outline-light");
+                    }
+                } else {
+                    btn.classList.remove("btn-outline-light", "btn-warning", "btn-vip");
+                    btn.classList.add("btn-success");
+                }
+
+                if (!isSelected) {
+                    gheChon.push({ id: id, gia: gia });
+                } else {
+                    gheChon = gheChon.filter(g => g.id !== id);
+                }
+
+                gheDaChonSpan.innerText = gheChon.map(g => g.id).join(", ");
+                const tong = gheChon.reduce((sum, g) => sum + g.gia, 0);
+                tongTienSpan.innerText = tong.toLocaleString("vi-VN") + "₫";
+
+                btnTiep.classList.toggle("disabled", gheChon.length === 0);
+            });
+        });
+    </script>
+}
+<style>
+    .btn-vip {
+        background-color: #800080 !important; /* tím đậm */
+        color: white !important;
+        border: 1px solid #a64ca6 !important;
+        transition: all 0.2s ease-in-out;
+    }
+
+        .btn-vip:hover {
+            background-color: #a64ca6 !important; /* tím sáng hơn */
+            box-shadow: 0 0 10px #c77dff;
+            border-color: #d68df0 !important;
+        }
+</style>
