@@ -1,0 +1,6 @@
+﻿@model List<CinemaProject.Models.Phim>
+
+@foreach (var phim in Model)
+{
+    <partial name="_PhimCard" model="phim" />
+}

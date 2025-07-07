@@ -4,6 +4,15 @@
     Layout = "_Layout";
 }
 <style>
+    .card-title {
+        height: 48px; /* hoặc height phù hợp */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* hiển thị tối đa 2 dòng */
+        -webkit-box-orient: vertical;
+    }
+
     .dot-pagination {
         display: flex;
         justify-content: center;
@@ -35,11 +44,11 @@
 
 </style>
 
-    <div class="homepage">
+<div class="homepage" style="margin-top: 80px">
         <div class="container">
             <!-- Slider phim khởi chiếu gần nhất -->
-        <section class="mt-4">
-            <h3>Phim sắp khởi chiếu</h3>
+        <section class="">
+            <h3 class="mb-4">Phim sắp khởi chiếu</h3>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach (var phim in Model.SapKhoiChieuGanNhat)
                 {
@@ -57,6 +66,9 @@
                                         @phim.TenPhim
                                     </a>
                                 </h5>
+                                <p class="card-text text-secondary" style="font-size: 14px;">
+                                    Ngày: @phim.NgayKhoiChieu?.ToString("dd/MM")
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -95,11 +107,14 @@
                                  onerror="this.onerror=null;this.src='@Url.Content("~/images/no-image.jpg")';" />
 
                                 <div class="card-body text-white bg-dark">
-                                <h5 class="card-title">
-                                    <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
-                                        @phim.TenPhim
-                                    </a>
-                                </h5>
+                                    <h5 class="card-title">
+                                        <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
+                                            @phim.TenPhim
+                                        </a>
+                                    </h5>
+                                    <p class="card-text text-secondary" style="font-size: 14px;">
+                                        Ngày: @phim.NgayKhoiChieu?.ToString("dd/MM")
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -133,13 +148,13 @@
                                     }
                                 </div>
                                 <div class="card-body">
-                                <h5 class="card-title">
-                                    <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
-                                        @phim.TenPhim
-                                    </a>
-                                </h5>
+                                    <h5 class="card-title">
+                                        <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@phim.IdPhim" class="text-white text-decoration-none">
+                                            @phim.TenPhim
+                                        </a>
+                                    </h5>
                                     <p class="card-text text-secondary" style="font-size: 14px;">
-                                        ID: @phim.IdPhim – Ngày: @phim.NgayKhoiChieu?.ToString("dd/MM")
+                                        Ngày: @phim.NgayKhoiChieu?.ToString("dd/MM")
                                     </p>
                                 </div>
                             </div>

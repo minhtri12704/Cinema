@@ -1,0 +1,31 @@
+﻿@model CinemaProject.Models.Phim
+
+<div class="col position-relative">
+    <div class="card bg-dark text-white h-100">
+        <div class="position-relative">
+            <img src="~/images/@Model.HinhAnh?v=@DateTime.Now.Ticks"
+                 alt="@Model.TenPhim"
+                 class="card-img-top"
+                 style="height: 350px; object-fit: cover;"
+                 onerror="this.onerror=null;this.src='@Url.Content("~/images/no-image.jpg")';" />
+
+            @{
+                var daysSinceRelease = (DateTime.Now - Model.NgayKhoiChieu)?.TotalDays ?? 0;
+            }
+            @if (daysSinceRelease > 17)
+            {
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sắp hết hạn</span>
+            }
+        </div>
+        <div class="card-body p-2 fs-6">
+            <h5 class="card-title" style="font-size: 16px;">
+                <a asp-controller="CinemaView" asp-action="ChiTiet" asp-route-id="@Model.IdPhim" class="text-white text-decoration-none">
+                    @Model.TenPhim
+                </a>
+            </h5>
+            <p class="card-text text-secondary" style="font-size: 13px;">
+                Ngày: @Model.NgayKhoiChieu?.ToString("dd/MM")
+            </p>
+        </div>
+    </div>
+</div>

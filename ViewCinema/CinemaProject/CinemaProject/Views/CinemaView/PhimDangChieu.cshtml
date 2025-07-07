@@ -1,0 +1,57 @@
+﻿@model List<CinemaProject.Models.Phim>
+@using CinemaProject.Models
+@{
+    ViewData["Title"] = "Phim đang chiếu";
+    Layout = "_Layout";
+    var danhSachTheLoai = ViewBag.DanhSachTheLoai as List<TheLoai> ?? new();
+}
+
+<div class="container" style="margin-top: 80px">
+    <h3 class="text-center mb-4">Phim đang chiếu</h3>
+
+    <!-- Combobox chọn thể loại -->
+    <div class="row mb-4">
+        <div class="col-md-4 offset-md-4">
+            <select id="theLoaiSelect" class="form-select">
+                <option value="">-- Tất cả thể loại --</option>
+                @foreach (var theLoai in danhSachTheLoai)
+                {
+                    <option value="@theLoai.IdTheLoai">@theLoai.TenTheLoai</option>
+                }
+            </select>
+
+        </div>
+    </div>
+
+    <!-- Danh sách phim -->
+    <div id="danhSachPhim" class="row row-cols-2 row-cols-md-4 g-3">
+        @foreach (var phim in Model.Take(12))
+        {
+            <partial name="_PhimCard" model="phim" />
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const select = document.getElementById("theLoaiSelect");
+
+            select.addEventListener("change", function () {
+                const theLoaiId = this.value;
+
+                const url = theLoaiId
+                    ? `/CinemaView/LayPhimTheoTheLoai?theLoaiId=${theLoaiId}`
+                    : `/CinemaView/LayTatCaPhimDangChieu`;
+
+                fetch(url)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById("danhSachPhim").innerHTML = html;
+                    })
+                    .catch(error => console.error("Lỗi khi tải phim:", error));
+            });
+
+        });
+    </script>
+}

@@ -5,6 +5,42 @@ using Microsoft.EntityFrameworkCore;
 public class CinemaViewController : Controller
 {
     private readonly RapChieuPhimContext _context;
+    // Lấy tất cả phim đang chiếu ==============================================================
+    [HttpGet]
+    public IActionResult LayTatCaPhimDangChieu()
+    {
+        var tatCaPhim = _context.Phims
+            .Where(p => p.NgayKhoiChieu <= DateTime.Today)
+            .OrderByDescending(p => p.NgayKhoiChieu)
+            .ToList();
+
+        return PartialView("_PhimCardsPartial", tatCaPhim);
+    }
+
+    // Lấy phim theo thể loại ==================================================================
+    [HttpGet]
+    public IActionResult LayPhimTheoTheLoai(string theLoaiId)
+    {
+        var phimTheoTheLoai = _context.Phims
+            .Where(p => p.IdTheLoai == theLoaiId && p.NgayKhoiChieu <= DateTime.Today)
+            .OrderByDescending(p => p.NgayKhoiChieu)
+            .ToList();
+
+        return PartialView("_PhimCardsPartial", phimTheoTheLoai);
+    }
+
+    // Phim đang chiếu =========================================================================
+    public IActionResult PhimDangChieu()
+    {
+        var today = DateTime.Today;
+
+        var phimDangChieu = _context.Phims
+            .Where(p => p.NgayKhoiChieu <= today)
+            .OrderByDescending(p => p.NgayKhoiChieu)
+            .ToList();
+        ViewBag.DanhSachTheLoai = _context.TheLoais.ToList();
+        return View("PhimDangChieu", phimDangChieu);
+    }
 
     public IActionResult Search(string query)
     {
@@ -29,7 +65,7 @@ public class CinemaViewController : Controller
     public IActionResult Home(int page = 1)
     {
         int pageSize = 4;
-        var today = new DateTime(2025,06,20);
+        var today = new DateTime(2025,07,07);
 
         var sapKhoiChieu = _context.Phims
             .Where(p => p.NgayKhoiChieu > today)
