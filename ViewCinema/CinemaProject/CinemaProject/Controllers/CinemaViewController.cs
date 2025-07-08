@@ -22,12 +22,14 @@ public class CinemaViewController : Controller
     public IActionResult LayPhimTheoTheLoai(string theLoaiId)
     {
         var phimTheoTheLoai = _context.Phims
-            .Where(p => p.IdTheLoai == theLoaiId && p.NgayKhoiChieu <= DateTime.Today)
+            .Where(p => p.NgayKhoiChieu <= DateTime.Today &&
+                        p.IdTheLoai.Contains(theLoaiId)) // chứa chuỗi
             .OrderByDescending(p => p.NgayKhoiChieu)
             .ToList();
 
         return PartialView("_PhimCardsPartial", phimTheoTheLoai);
     }
+
 
     // Phim đang chiếu =========================================================================
     public IActionResult PhimDangChieu()
@@ -174,7 +176,7 @@ public class CinemaViewController : Controller
                 Ten = model.Ten,
                 Email = model.Email,
                 SoDienThoai = model.SoDienThoai,
-                NgayDangKy = DateTime.Now,
+                NgaySinh = DateTime.Now,
                 MatKhauKH = model.MatKhauKH
             };
 
@@ -192,7 +194,6 @@ public class CinemaViewController : Controller
     public IActionResult ChiTiet(string id)
     {
         var phim = _context.Phims
-            .Include(p => p.IdTheLoaiNavigation)
             .FirstOrDefault(p => p.IdPhim == id);
 
         if (phim == null)
