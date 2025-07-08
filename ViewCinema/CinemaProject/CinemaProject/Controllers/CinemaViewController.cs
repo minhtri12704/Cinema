@@ -229,7 +229,7 @@ public class CinemaViewController : Controller
 
         return View("FilmDetail", phim);
     }
-
+    // Thêm bình luận ==============================================================
     [HttpPost]
     public IActionResult ThemBinhLuan(string idPhim, int soSao, string binhLuan)
     {
@@ -269,4 +269,60 @@ public class CinemaViewController : Controller
 
         return RedirectToAction("ChiTiet", new { id = idPhim });
     }
+    // Chỉnh sửa bình luận ==============================================================
+    [HttpGet]
+    public IActionResult ChinhSuaBinhLuan(string id)
+    {
+        var idKhach = HttpContext.Session.GetString("idKhach");
+        if (idKhach == null)
+            return RedirectToAction("Login");
+
+        var danhGia = _context.DanhGiaPhims.FirstOrDefault(d => d.IdDanhGia == id);
+        if (danhGia == null || danhGia.IdKhach != idKhach)
+            return NotFound();
+
+        return View(danhGia);
+    }
+    // Lưu chỉnh sửa bình luận ==============================================================
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult ChinhSuaBinhLuan(string id, string BinhLuan, int SoSao)
+    {
+        var idKhach = HttpContext.Session.GetString("idKhach");
+        if (idKhach == null)
+            return RedirectToAction("Login");
+
+        var danhGia = _context.DanhGiaPhims.FirstOrDefault(d => d.IdDanhGia == id);
+        if (danhGia == null || danhGia.IdKhach != idKhach)
+            return NotFound();
+
+        danhGia.BinhLuan = BinhLuan;
+        danhGia.SoSao = SoSao;
+        danhGia.NgayDanhGia = DateTime.Now;
+
+        _context.Update(danhGia);
+        _context.SaveChanges();
+
+        return RedirectToAction("ChiTiet", new { id = danhGia.IdPhim });
+    }
+    //Xóa bình luận ==============================================================
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult XoaBinhLuan(string idDanhGia)
+    {
+        var idKhach = HttpContext.Session.GetString("idKhach");
+        if (idKhach == null)
+            return RedirectToAction("Login");
+
+        var danhGia = _context.DanhGiaPhims.FirstOrDefault(d => d.IdDanhGia == idDanhGia);
+        if (danhGia == null || danhGia.IdKhach != idKhach)
+            return NotFound();
+
+        _context.DanhGiaPhims.Remove(danhGia);
+        _context.SaveChanges();
+
+        return RedirectToAction("ChiTiet", new { id = danhGia.IdPhim });
+    }
+
 }
