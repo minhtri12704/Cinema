@@ -71,7 +71,18 @@ namespace CinemaProject.Controllers
 
         public IActionResult Movie()
         {
-            var dsPhim = _context.Phims.Include(p => p.IdTheLoaiNavigation).ToList();
+            var dsPhim = _context.Phims.ToList();
+            var danhSachTheLoai = _context.TheLoais.ToList();
+
+            foreach (var phim in dsPhim)
+            {
+                var maTheLoais = phim.IdTheLoai?.Split(',') ?? new string[0];
+                phim.TenTheLoais = danhSachTheLoai
+                    .Where(t => maTheLoais.Contains(t.IdTheLoai))
+                    .Select(t => t.TenTheLoai)
+                    .ToList();
+            }
+
             return View("~/Views/CinemaAdmin/SanPham/Product.cshtml", dsPhim);
         }
 

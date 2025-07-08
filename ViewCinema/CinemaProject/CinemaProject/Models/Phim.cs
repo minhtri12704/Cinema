@@ -21,11 +21,12 @@ public partial class Phim
     public string? DoTuoiPhuHop { get; set; }
     public string? MoTa { get; set; }
 
-    public virtual TheLoai? IdTheLoaiNavigation { get; set; }
-
     public virtual ICollection<LichChieu> LichChieus { get; set; } = new List<LichChieu>();
 
     public virtual ICollection<PhimDoiTac> PhimDoiTacs { get; set; } = new List<PhimDoiTac>();
 
     public virtual ICollection<DanhGiaPhim> DanhGiaPhims { get; set; } = new List<DanhGiaPhim>();
+
+    [NotMapped]
+    public List<string> TenTheLoais { get; set; }
 }

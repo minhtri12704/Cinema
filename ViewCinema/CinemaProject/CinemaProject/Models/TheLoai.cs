@@ -11,6 +11,4 @@ public partial class TheLoai
     public string IdTheLoai { get; set; } = null!;
     [Required(ErrorMessage = "Tên thể loại không được để trống")]
     public string? TenTheLoai { get; set; }
-
-    public virtual ICollection<Phim> Phims { get; set; } = new List<Phim>();
 }

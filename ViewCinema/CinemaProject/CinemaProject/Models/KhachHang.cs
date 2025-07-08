@@ -13,7 +13,7 @@ public partial class KhachHang
 
     public string? SoDienThoai { get; set; }
 
-    public DateTime? NgayDangKy { get; set; }
+    public DateTime? NgaySinh { get; set; }
 
     public string MatKhauKH { get; set; } = null!;
 

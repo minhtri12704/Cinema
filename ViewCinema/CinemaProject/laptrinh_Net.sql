@@ -61,7 +61,6 @@ create table Phim (
     DoTuoiPhuHop varchar(10),  -- độ tuổi phù hợp (pg-13, r, g...)
 	HinhAnh nvarchar(255) NULL,
 	MoTa nvarchar(MAX) NULL,
-	foreign key (idTheLoai) references TheLoai(idTheLoai)
 )
 go
 -- bảng lịch chiếu
@@ -263,12 +262,25 @@ go
 -- 3. Dữ liệu cho bảng TheLoai --
 INSERT INTO TheLoai(idTheLoai, TenTheLoai)
 VALUES
-('HD', N'Hành động'),
+('HDG', N'Hành động'),
 ('TC', N'Tình cảm'),
 ('HH', N'Hoạt hình'),
 ('TL', N'Tâm lý'),
 ('H', N'Hài'),
-('KD', N'Kinh Dị')
+('KD', N'Kinh dị'),
+('PH', N'Phiêu lưu'),
+('VT', N'Viễn tưởng'),
+('TT', N'Tài liệu'),
+('LS', N'Lịch sử'),
+('CH', N'Chiến tranh'),
+('TG', N'Trinh thám'),
+('NH', N'Nhạc kịch'),
+('GK', N'Gia đình'),
+('PL', N'Pháp luật'),
+('AN', N'Anime'),
+('TV', N'Truyền hình'),
+('CN', N'Cổ trang'),
+('HDH', N'Học đường');
 
 
 INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop, HinhAnh, MoTa)
@@ -277,8 +289,9 @@ VALUES
 ('P01', N'Avengers: Endgame', 'HD', 120, '2025-06-01', 'PG-13', 'P01.jpg', N'Siêu phẩm Marvel, trận chiến cuối cùng với Thanos.'),
 ('P02', N'Mắt Biếc', 'TC', 120, '2025-06-10', 'PG', 'P02.jpg', N'Chuyện tình buồn tuổi học trò được chuyển thể từ truyện của Nguyễn Nhật Ánh.'),
 ('P03', N'The Batman', 'HD', 176, '2025-05-15', 'PG-13', 'P03.jpg', N'Batman trở lại trong cuộc chiến chống lại tội ác tại Gotham.'),
-('P04', N'Your Name', 'HH', 112, '2025-05-20', 'PG', 'P04.jpg', N'Bộ phim hoạt hình lãng mạn nổi tiếng của Nhật Bản, về hoán đổi thân xác.'),
+('P04', N'Your Name', 'AN', 112, '2025-05-20', 'PG', 'P04.jpg', N'Bộ phim hoạt hình lãng mạn nổi tiếng của Nhật Bản, về hoán đổi thân xác.'),
 ('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R', 'P05.jpg', N'Tác phẩm đoạt giải Oscar, kể về khoảng cách giai cấp trong xã hội Hàn Quốc.'),
+('P13', N'Sono Bisque Doll wa Koi wo Suru Season 2 Tập 1', 'AN, TC, HDH', 45, '2025-07-07', 'R', 'marin2.jpg', N'Mùa 2 của Sono Bisque Doll wa Koi wo Suru.'),
 
 -- Phim ra mắt hôm nay
 ('P06', N'Top Gun: Maverick', 'HD', 131, '2025-07-07', 'PG-13', 'P06.jpg', N'Phi công kỳ cựu Maverick trở lại cùng những trận không chiến mãn nhãn.'),

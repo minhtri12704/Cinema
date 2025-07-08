@@ -14,7 +14,7 @@
 
         <div class="col-md-8">
             <h2>@Model.TenPhim</h2>
-            <p><strong>Thể loại:</strong> @Model.IdTheLoaiNavigation.TenTheLoai</p>
+            <p><strong>Thể loại:</strong> @Model.IdTheLoai</p>
             <p><strong>Thời lượng:</strong> @Model.ThoiLuong phút</p>
             <p><strong>Ngày khởi chiếu:</strong> @Model.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
             <p><strong>Độ tuổi phù hợp:</strong> @Model.DoTuoiPhuHop</p>
@@ -53,7 +53,7 @@
 
 <div class="tab-content p-3 bg-dark text-white border border-top-0" id="filmTabContent">
     <div class="tab-pane fade " id="info" role="tabpanel">
-        <p>@Model.TenPhim là một bộ phim thuộc thể loại @Model.IdTheLoaiNavigation?.TenTheLoai.</p>
+        <p>@Model.TenPhim là một bộ phim thuộc thể loại @Model.IdTheLoai.</p>
         <!-- Thêm mô tả tùy ý -->
     </div>
     <div class="tab-pane fade " id="lich" role="tabpanel" aria-labelledby="lich-tab">
@@ -71,7 +71,6 @@
                     {
                         <div class="col">
                             <div class="card shadow-sm border-primary">
-                                <b>
                                 <div class="card-body bg-light d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                                     <div>
                                         <h6 class="card-title text-primary mb-1">Vị trí: @lc.IdPhongNavigation?.TenPhong</h6>
@@ -86,7 +85,6 @@
                                         </a>
                                     </div>
                                 </div>
-                                </b>
                             </div>
                         </div>
                     }

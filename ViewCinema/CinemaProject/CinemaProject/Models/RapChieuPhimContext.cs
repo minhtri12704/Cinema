@@ -303,7 +303,7 @@ public partial class RapChieuPhimContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(255)
                 .IsUnicode(false);
-            entity.Property(e => e.NgayDangKy).HasColumnType("date");
+            entity.Property(e => e.NgaySinh).HasColumnType("date");
             entity.Property(e => e.SoDienThoai)
                 .HasMaxLength(20)
                 .IsUnicode(false);
@@ -419,11 +419,6 @@ public partial class RapChieuPhimContext : DbContext
             entity.Property(e => e.MoTa)
                 .HasColumnName("MoTa")
                 .HasColumnType("nvarchar(max)");
-
-            entity.HasOne(d => d.IdTheLoaiNavigation)
-                .WithMany(p => p.Phims)
-                .HasForeignKey(d => d.IdTheLoai)
-                .HasConstraintName("FK__Phim__idTheLoai__3E52440B");
         });
 
 
