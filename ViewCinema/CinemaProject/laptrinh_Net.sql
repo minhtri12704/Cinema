@@ -286,19 +286,19 @@ VALUES
 INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop, HinhAnh, MoTa)
 VALUES 
 -- Phim đang chiếu
-('P01', N'Avengers: Endgame', 'HD', 120, '2025-06-01', 'PG-13', 'P01.jpg', N'Siêu phẩm Marvel, trận chiến cuối cùng với Thanos.'),
+('P01', N'Avengers: Endgame', 'HDG', 120, '2025-06-01', 'PG-13', 'P01.jpg', N'Siêu phẩm Marvel, trận chiến cuối cùng với Thanos.'),
 ('P02', N'Mắt Biếc', 'TC', 120, '2025-06-10', 'PG', 'P02.jpg', N'Chuyện tình buồn tuổi học trò được chuyển thể từ truyện của Nguyễn Nhật Ánh.'),
-('P03', N'The Batman', 'HD', 176, '2025-05-15', 'PG-13', 'P03.jpg', N'Batman trở lại trong cuộc chiến chống lại tội ác tại Gotham.'),
+('P03', N'The Batman', 'HDG', 176, '2025-05-15', 'PG-13', 'P03.jpg', N'Batman trở lại trong cuộc chiến chống lại tội ác tại Gotham.'),
 ('P04', N'Your Name', 'AN', 112, '2025-05-20', 'PG', 'P04.jpg', N'Bộ phim hoạt hình lãng mạn nổi tiếng của Nhật Bản, về hoán đổi thân xác.'),
 ('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R', 'P05.jpg', N'Tác phẩm đoạt giải Oscar, kể về khoảng cách giai cấp trong xã hội Hàn Quốc.'),
 ('P13', N'Sono Bisque Doll wa Koi wo Suru Season 2 Tập 1', 'AN, TC, HDH', 45, '2025-07-07', 'R', 'marin2.jpg', N'Mùa 2 của Sono Bisque Doll wa Koi wo Suru.'),
 
 -- Phim ra mắt hôm nay
-('P06', N'Top Gun: Maverick', 'HD', 131, '2025-07-07', 'PG-13', 'P06.jpg', N'Phi công kỳ cựu Maverick trở lại cùng những trận không chiến mãn nhãn.'),
-('P07', N'Spider-Man: No Way Home', 'HD', 148, '2025-07-07', 'PG-13', 'P07.jpg', N'Spider-Man đối mặt đa vũ trụ và các phản diện từ nhiều thế giới.'),
+('P06', N'Top Gun: Maverick', 'HDG', 131, '2025-07-07', 'PG-13', 'P06.jpg', N'Phi công kỳ cựu Maverick trở lại cùng những trận không chiến mãn nhãn.'),
+('P07', N'Spider-Man: No Way Home', 'HDG', 148, '2025-07-07', 'PG-13', 'P07.jpg', N'Spider-Man đối mặt đa vũ trụ và các phản diện từ nhiều thế giới.'),
 
 -- Phim sắp chiếu
-('P08', N'Conan: Viên đạn đỏ', 'HD', 110, '2025-08-06', 'PG', 'P08.jpg', N'Thám tử lừng danh Conan tham gia phá án trong vụ ám sát tại hội nghị quốc tế.'),
+('P08', N'Conan: Viên đạn đỏ', 'HDG', 110, '2025-08-06', 'PG', 'P08.jpg', N'Thám tử lừng danh Conan tham gia phá án trong vụ ám sát tại hội nghị quốc tế.'),
 ('P09', N'Suzume', 'HH', 122, '2025-08-08', 'PG', 'P09.jpg', N'Cô gái trẻ cùng hành trình đóng cánh cửa dẫn đến thảm hoạ.'),
 ('P10', N'Nhà Bà Nữ', 'H', 98, '2025-08-10', 'PG', 'P10.jpg', N'Phim hài – gia đình của Trấn Thành về xung đột giữa các thế hệ.'),
 ('P11', N'The Conjuring', 'KD', 98, '2025-08-11', 'PG-16', 'P11.jpg', N'Cặp đôi trừ tà đối đầu với thế lực ma quái tại căn nhà ám.'),
