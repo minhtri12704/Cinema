@@ -292,6 +292,15 @@ VALUES
 ('P04', N'Your Name', 'AN', 112, '2025-05-20', 'PG', 'P04.jpg', N'Bộ phim hoạt hình lãng mạn nổi tiếng của Nhật Bản, về hoán đổi thân xác.'),
 ('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R', 'P05.jpg', N'Tác phẩm đoạt giải Oscar, kể về khoảng cách giai cấp trong xã hội Hàn Quốc.'),
 ('P13', N'Sono Bisque Doll wa Koi wo Suru Season 2 Tập 1', 'AN, TC, HDH', 45, '2025-07-07', 'R', 'marin2.jpg', N'Mùa 2 của Sono Bisque Doll wa Koi wo Suru.'),
+('P14', N'Cô Gái Đến Từ Hôm Qua', 'TC, HDH', 110, '2025-06-28', 'PG', 'P14.jpg', N'Phim học đường Việt Nam lãng mạn, chuyển thể từ truyện Nguyễn Nhật Ánh.'),
+('P15', N'How to Train Your Dragon', 'HH, GK', 98, '2025-06-15', 'PG', 'P15.jpg', N'Câu chuyện cảm động giữa một cậu bé và rồng ở thế giới Viking.'),
+('P16', N'Doraemon: Nobita và Mặt Trăng Phiêu Lưu Ký', 'HH, AN, PH', 111, '2025-06-30', 'PG', 'P16.jpg', N'Cuộc phiêu lưu mới của nhóm bạn Doraemon trên Mặt Trăng.'),
+('P17', N'Tenet', 'HDG, VT, TG', 150, '2025-06-18', 'PG-13', 'P17.jpg', N'Bộ phim hành động nghẹt thở với yếu tố đảo ngược thời gian.'),
+('P18', N'Chiếc Lá Cuốn Bay', 'TL, TC', 90, '2025-07-01', 'R', 'P18.jpg', N'Phim tâm lý Thái Lan xoay quanh những bí mật gia đình và danh tính.'),
+('P19', N'Jujutsu Kaisen 0', 'AN, HDG', 105, '2025-07-06', 'R', 'P19.jpg', N'Tiền truyện nổi bật của series Jujutsu Kaisen, chiến đấu giữa người và lời nguyền.'),
+('P20', N'Anh Hùng Xạ Điêu: Khởi Nguyên', 'CN, HDG, TC', 125, '2025-06-22', 'PG-13', 'P20.jpg', N'Khúc dạo đầu mới cho tiểu thuyết võ hiệp kinh điển Kim Dung, hành trình của Quách Tĩnh thời trẻ.'),
+('P21', N'Thần Điêu Đại Hiệp: Duyên Phận Trùng Phùng', 'CN, TC, TL', 132, '2025-06-29', 'PG', 'P21.jpg', N'Chuyện tình sâu sắc giữa Dương Quá và Tiểu Long Nữ, trong bối cảnh giang hồ phân tranh.'),
+('P22', N'Trường Tương Tư: Phần I', 'CN, TL', 140, '2025-07-05', 'PG', 'P22.jpg', N'Câu chuyện tình yêu và vận mệnh giữa các nhân vật hoàng tộc thời thượng cổ Trung Hoa.'),
 
 -- Phim ra mắt hôm nay
 ('P06', N'Top Gun: Maverick', 'HDG', 131, '2025-07-07', 'PG-13', 'P06.jpg', N'Phi công kỳ cựu Maverick trở lại cùng những trận không chiến mãn nhãn.'),
