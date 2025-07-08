@@ -58,12 +58,13 @@
     </div>
 
     <!-- Giữ lại tên ảnh cũ để gán lại nếu không chọn ảnh mới -->
-    <input type="hidden" asp-for="HinhAnh" />
+    <input asp-for="HinhAnh" type="hidden" />
+
+
 
     <div class="form-group">
         <label>Đổi ảnh phim (nếu muốn)</label>
         <input type="file" name="HinhAnhFile" class="form-control" accept=".jpg,.jpeg,.png" />
-        <small class="form-text text-muted">Bỏ qua nếu không muốn thay đổi ảnh</small>
     </div>
 
 

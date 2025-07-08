@@ -89,7 +89,13 @@ namespace CinemaProject.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.IdTheLoai = new SelectList(_context.TheLoais, "IdTheLoai", "TenTheLoai");
+            ViewBag.IdTheLoai = _context.TheLoais
+                .Select(t => new SelectListItem
+                {
+                    Value = t.IdTheLoai,
+                    Text = t.TenTheLoai
+                }).ToList();
+
             return View("~/Views/CinemaAdmin/SanPham/Create.cshtml");
         }
 
@@ -133,7 +139,6 @@ namespace CinemaProject.Controllers
             return RedirectToAction("Movie");
         }
 
-
         [HttpGet]
         public IActionResult EditPhim(string id)
         {
@@ -148,6 +153,15 @@ namespace CinemaProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPhim(Phim phim, IFormFile HinhAnhFile)
         {
+            // Gán ảnh từ hidden input thủ công nếu Model không bind được
+            if (string.IsNullOrEmpty(phim.HinhAnh) && Request.Form.ContainsKey("HinhAnh"))
+            {
+                phim.HinhAnh = Request.Form["HinhAnh"];
+                Console.WriteLine("Gán thủ công HinhAnh: " + phim.HinhAnh);
+            }
+
+            Console.WriteLine("HinhAnh nhận được: " + phim.HinhAnh);
+
             if (!ModelState.IsValid)
             {
                 ViewBag.IdTheLoai = new SelectList(_context.TheLoais, "IdTheLoai", "TenTheLoai", phim.IdTheLoai);
@@ -166,7 +180,7 @@ namespace CinemaProject.Controllers
             phimCu.DoTuoiPhuHop = phim.DoTuoiPhuHop;
             phimCu.MoTa = phim.MoTa;
 
-            // Nếu có ảnh mới được upload
+            // Xử lý ảnh
             if (HinhAnhFile != null && HinhAnhFile.Length > 0)
             {
                 var extension = Path.GetExtension(HinhAnhFile.FileName).ToLower();
@@ -188,25 +202,18 @@ namespace CinemaProject.Controllers
                     await HinhAnhFile.CopyToAsync(stream);
                 }
 
-                // Xóa ảnh cũ nếu có
-                if (!string.IsNullOrEmpty(phimCu.HinhAnh))
-                {
-                    var oldPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", phimCu.HinhAnh);
-                    if (System.IO.File.Exists(oldPath))
-                    {
-                        System.IO.File.Delete(oldPath);
-                    }
-                }
-
                 phimCu.HinhAnh = fileName;
             }
-
+            else
+            {
+                // Không chọn ảnh mới → giữ nguyên ảnh cũ từ form
+                phimCu.HinhAnh = phim.HinhAnh;
+            }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction("Movie");
+
+            return RedirectToAction("Movie", "CinemaAdmin");
         }
-
-
 
         public IActionResult DeletePhim(string id)
         {

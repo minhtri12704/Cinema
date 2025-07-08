@@ -21,9 +21,15 @@
 
     <div class="form-group">
         <label asp-for="IdTheLoai">Thể loại</label>
-        <select asp-for="IdTheLoai" class="form-control" asp-items="ViewBag.IdTheLoai">
-            <option value="">-- Chọn thể loại --</option>
+        <select id="theLoaiSelect" class="form-control" multiple size="8">
+            @foreach (var theLoai in ViewBag.IdTheLoai as List<SelectListItem>)
+            {
+                <option value="@theLoai.Value">@theLoai.Text</option>
+            }
         </select>
+        <button type="button" class="btn btn-sm btn-primary mt-2" onclick="layTheLoai()">Xác nhận</button>
+        <input type="text" id="IdTheLoai" name="IdTheLoai" class="form-control mt-2" readonly />
+
         <span asp-validation-for="IdTheLoai" class="text-danger"></span>
     </div>
 
@@ -62,4 +68,14 @@
     <a asp-action="Home" asp-controller="CinemaAdmin" class="btn btn-secondary">Hủy</a>
 </form>
 
+@section Scripts {
+    <script>
+        function layTheLoai() {
+            const selected = Array.from(document.getElementById("theLoaiSelect").selectedOptions)
+                .map(o => o.value)
+                .filter(v => v !== "");
 
+            document.getElementById("IdTheLoai").value = selected.join(',');
+        }
+    </script>
+}

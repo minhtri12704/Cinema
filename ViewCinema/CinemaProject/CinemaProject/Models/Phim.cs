@@ -6,7 +6,7 @@ namespace CinemaProject.Models;
 
 public partial class Phim
 {
-    public string IdPhim { get; set; }
+    public string IdPhim { get; set; } = null!;
 
     public string TenPhim { get; set; } = null!;
 
@@ -28,5 +28,6 @@ public partial class Phim
     public virtual ICollection<DanhGiaPhim> DanhGiaPhims { get; set; } = new List<DanhGiaPhim>();
 
     [NotMapped]
-    public List<string> TenTheLoais { get; set; }
+    public List<string> TenTheLoais { get; set; } = new List<string>();
+
 }
