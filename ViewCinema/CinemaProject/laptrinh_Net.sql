@@ -58,9 +58,10 @@ create table Phim (
     idTheLoai varchar(30),
     ThoiLuong int not null,  
     NgayKhoiChieu date,
-    DoTuoiPhuHop varchar(10),  -- độ tuổi phù hợp (pg-13, r, g...)
+    MaDoTuoi VARCHAR(10),  -- độ tuổi phù hợp (pg-13, r, g...)
 	HinhAnh nvarchar(255) NULL,
 	MoTa nvarchar(MAX) NULL,
+	foreign key (MaDoTuoi) references DoTuoiPhuHop(MaDoTuoi)
 )
 go
 -- bảng lịch chiếu
@@ -283,7 +284,7 @@ VALUES
 ('HDH', N'Học đường');
 
 
-INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, DoTuoiPhuHop, HinhAnh, MoTa)
+INSERT INTO Phim (idPhim, TenPhim, idTheLoai, ThoiLuong, NgayKhoiChieu, MaDoTuoi, HinhAnh, MoTa)
 VALUES 
 -- Phim đang chiếu
 ('P01', N'Avengers: Endgame', 'HDG', 120, '2025-06-01', 'PG-13', 'P01.jpg', N'Siêu phẩm Marvel, trận chiến cuối cùng với Thanos.'),

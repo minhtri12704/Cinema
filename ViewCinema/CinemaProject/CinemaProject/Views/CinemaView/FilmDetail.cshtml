@@ -17,7 +17,12 @@
             <p><strong>Thể loại:</strong> @string.Join(", ", (List<string>)ViewBag.TenTheLoais)</p>
             <p><strong>Thời lượng:</strong> @Model.ThoiLuong phút</p>
             <p><strong>Ngày khởi chiếu:</strong> @Model.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
-            <p><strong>Độ tuổi phù hợp:</strong> @Model.DoTuoiPhuHop</p>
+            <p>
+                <strong>Độ tuổi phù hợp:</strong>
+                @Model.DoTuoiPhuHopNavigation?.MaDoTuoi
+                - @Model.DoTuoiPhuHopNavigation?.MoTa
+            </p>
+
             <div class="d-flex gap-2 mt-3">               
                 <button class="btn btn-outline-warning">
                     👍 Thích
@@ -53,8 +58,8 @@
 
 <div class="tab-content p-3 bg-dark text-white border border-top-0" id="filmTabContent">
     <div class="tab-pane fade " id="info" role="tabpanel">
-        <p>@Model.TenPhim là một bộ phim thuộc thể loại @Model.IdTheLoai.</p>
-        <!-- Thêm mô tả tùy ý -->
+        <p>@Model.TenPhim là một bộ phim thuộc thể loại @string.Join(", ", (List<string>)ViewBag.TenTheLoais)</p>
+        <p>@Model.MoTa</p>
     </div>
     <div class="tab-pane fade " id="lich" role="tabpanel" aria-labelledby="lich-tab">
         @if (ViewBag.LichChieus is List<LichChieu> lichList && lichList.Any())
