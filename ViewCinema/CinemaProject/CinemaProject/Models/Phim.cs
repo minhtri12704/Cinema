@@ -18,7 +18,7 @@ public partial class Phim
 
     public DateTime? NgayKhoiChieu { get; set; }
 
-    public string? DoTuoiPhuHop { get; set; }
+    public string? MaDoTuoi { get; set; }
     public string? MoTa { get; set; }
 
     public virtual ICollection<LichChieu> LichChieus { get; set; } = new List<LichChieu>();
@@ -26,6 +26,8 @@ public partial class Phim
     public virtual ICollection<PhimDoiTac> PhimDoiTacs { get; set; } = new List<PhimDoiTac>();
 
     public virtual ICollection<DanhGiaPhim> DanhGiaPhims { get; set; } = new List<DanhGiaPhim>();
+
+    public virtual DoTuoiPhuHop DoTuoiPhuHopNavigation { get; set; }
 
     [NotMapped]
     public List<string> TenTheLoais { get; set; } = new List<string>();

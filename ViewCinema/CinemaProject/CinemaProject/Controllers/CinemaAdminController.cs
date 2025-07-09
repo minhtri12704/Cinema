@@ -193,7 +193,7 @@ namespace CinemaProject.Controllers
             phimCu.TenPhim = phim.TenPhim;
             phimCu.ThoiLuong = phim.ThoiLuong;
             phimCu.NgayKhoiChieu = phim.NgayKhoiChieu;
-            phimCu.DoTuoiPhuHop = phim.DoTuoiPhuHop;
+            phimCu.MaDoTuoi = phim.MaDoTuoi;
             phimCu.MoTa = phim.MoTa;
             phimCu.IdTheLoai = phim.IdTheLoai;
 

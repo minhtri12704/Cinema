@@ -56,12 +56,31 @@ public partial class RapChieuPhimContext : DbContext
 
     public virtual DbSet<Ghe> Ghes { get; set; }
 
+    public virtual DbSet<DoTuoiPhuHop> DoTuoiPhuHops { get; set; }
+
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=RapChieuPhim;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<DoTuoiPhuHop>(entity =>
+        {
+            entity.ToTable("DoTuoiPhuHop");
+            entity.HasKey(e => e.MaDoTuoi);
+
+            entity.Property(e => e.MaDoTuoi)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+
+            entity.Property(e => e.MoTa)
+                .HasMaxLength(255);
+
+            entity.Property(e => e.TuoiToiThieu)
+                .HasDefaultValue(0);
+        });
+
         modelBuilder.Entity<Ghe>(entity =>
         {
             entity.HasKey(e => e.IdGhe);
@@ -408,9 +427,10 @@ public partial class RapChieuPhimContext : DbContext
             entity.Property(e => e.NgayKhoiChieu)
                 .HasColumnType("date");
 
-            entity.Property(e => e.DoTuoiPhuHop)
+            entity.Property(e => e.MaDoTuoi)
                 .HasMaxLength(10)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasColumnName("MaDoTuoi");
 
             entity.Property(e => e.HinhAnh)
                 .HasMaxLength(255)
@@ -419,7 +439,15 @@ public partial class RapChieuPhimContext : DbContext
             entity.Property(e => e.MoTa)
                 .HasColumnName("MoTa")
                 .HasColumnType("nvarchar(max)");
+
+            // 👇 Thêm quan hệ FK đến DoTuoiPhuHop
+            entity.HasOne(p => p.DoTuoiPhuHopNavigation)
+                .WithMany()
+                .HasForeignKey(p => p.MaDoTuoi)
+                .HasConstraintName("FK_Phim_DoTuoiPhuHop")
+                .OnDelete(DeleteBehavior.ClientSetNull); // hoặc .Cascade nếu muốn xóa lan
         });
+
 
 
         modelBuilder.Entity<PhimDoiTac>(entity =>

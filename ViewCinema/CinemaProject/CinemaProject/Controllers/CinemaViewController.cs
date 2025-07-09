@@ -194,6 +194,7 @@ public class CinemaViewController : Controller
     public IActionResult ChiTiet(string id)
     {
         var phim = _context.Phims
+            .Include(p => p.DoTuoiPhuHopNavigation)
             .FirstOrDefault(p => p.IdPhim == id);
 
         if (phim == null)
@@ -225,7 +226,7 @@ public class CinemaViewController : Controller
         var lichChieus = _context.LichChieus
             .Include(l => l.IdPhimNavigation)
             .Include(l => l.IdPhongNavigation)
-                .ThenInclude(pc => pc.IdRapNavigation)
+            .ThenInclude(pc => pc.IdRapNavigation)
             .Where(l => l.IdPhim == id)
             .OrderBy(l => l.NgayChieu)
             .ThenBy(l => l.GioChieu)
