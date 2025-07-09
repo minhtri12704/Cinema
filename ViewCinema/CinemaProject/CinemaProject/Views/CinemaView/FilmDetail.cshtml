@@ -14,7 +14,7 @@
 
         <div class="col-md-8">
             <h2>@Model.TenPhim</h2>
-            <p><strong>Thể loại:</strong> @Model.IdTheLoai</p>
+            <p><strong>Thể loại:</strong> @string.Join(", ", (List<string>)ViewBag.TenTheLoais)</p>
             <p><strong>Thời lượng:</strong> @Model.ThoiLuong phút</p>
             <p><strong>Ngày khởi chiếu:</strong> @Model.NgayKhoiChieu?.ToString("dd/MM/yyyy")</p>
             <p><strong>Độ tuổi phù hợp:</strong> @Model.DoTuoiPhuHop</p>

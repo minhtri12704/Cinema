@@ -266,7 +266,7 @@ VALUES
 ('TC', N'Tình cảm'),
 ('HH', N'Hoạt hình'),
 ('TL', N'Tâm lý'),
-('H', N'Hài'),
+('CMD', N'Hài'),
 ('KD', N'Kinh dị'),
 ('PH', N'Phiêu lưu'),
 ('VT', N'Viễn tưởng'),
@@ -309,7 +309,7 @@ VALUES
 -- Phim sắp chiếu
 ('P08', N'Conan: Viên đạn đỏ', 'HDG', 110, '2025-08-06', 'PG', 'P08.jpg', N'Thám tử lừng danh Conan tham gia phá án trong vụ ám sát tại hội nghị quốc tế.'),
 ('P09', N'Suzume', 'HH', 122, '2025-08-08', 'PG', 'P09.jpg', N'Cô gái trẻ cùng hành trình đóng cánh cửa dẫn đến thảm hoạ.'),
-('P10', N'Nhà Bà Nữ', 'H', 98, '2025-08-10', 'PG', 'P10.jpg', N'Phim hài – gia đình của Trấn Thành về xung đột giữa các thế hệ.'),
+('P10', N'Nhà Bà Nữ', 'CMD', 98, '2025-08-10', 'PG', 'P10.jpg', N'Phim hài – gia đình của Trấn Thành về xung đột giữa các thế hệ.'),
 ('P11', N'The Conjuring', 'KD', 98, '2025-08-11', 'PG-16', 'P11.jpg', N'Cặp đôi trừ tà đối đầu với thế lực ma quái tại căn nhà ám.'),
 ('P12', N'The Conjuring 2', 'KD', 98, '2025-08-15', 'PG-16', 'P12.jpg', N'Câu chuyện trừ tà tiếp theo tại nước Anh, dựa trên sự kiện có thật.')
 

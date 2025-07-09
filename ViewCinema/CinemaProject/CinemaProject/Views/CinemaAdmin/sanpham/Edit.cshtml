@@ -20,9 +20,15 @@
 
     <div class="form-group">
         <label asp-for="IdTheLoai">Thể loại</label>
-        <select asp-for="IdTheLoai" class="form-control" asp-items="ViewBag.IdTheLoai">
-            <option value="">-- Chọn thể loại --</option>
+        <select id="theLoaiSelect" class="form-control" multiple size="8">
+            @foreach (var theLoai in ViewBag.IdTheLoai as List<SelectListItem>)
+            {
+                <option value="@theLoai.Value">@theLoai.Text</option>
+            }
         </select>
+        <button type="button" class="btn btn-sm btn-primary mt-2" onclick="layTheLoai()">Xác nhận</button>
+        <input type="text" id="IdTheLoai" name="IdTheLoai" class="form-control mt-2" value="@Model.IdTheLoai" readonly />
+
         <span asp-validation-for="IdTheLoai" class="text-danger"></span>
     </div>
 
@@ -49,23 +55,24 @@
         <label>Hình ảnh hiện tại</label><br />
         @if (!string.IsNullOrEmpty(Model.HinhAnh))
         {
-            <img src="~/images/@Model.HinhAnh" style="height: 200px; object-fit: cover; border-radius: 5px;" />
+            <img id="previewAnh" src="~/images/@Model.HinhAnh" style="height: 200px; object-fit: cover; border-radius: 5px;" />
         }
         else
         {
-            <p><em>Chưa có hình ảnh</em></p>
+            <img id="previewAnh" src="~/images/no-image.png" style="height: 200px;" />
         }
     </div>
 
-    <!-- Giữ lại tên ảnh cũ để gán lại nếu không chọn ảnh mới -->
-    <input asp-for="HinhAnh" type="hidden" />
-
-
+    <div class="form-group">
+        <label>Đổi ảnh mới.</label>
+        <input type="file" id="chonFileAnh" class="form-control" accept=".jpg,.jpeg,.png" />
+    </div>
 
     <div class="form-group">
-        <label>Đổi ảnh phim (nếu muốn)</label>
-        <input type="file" name="HinhAnhFile" class="form-control" accept=".jpg,.jpeg,.png" />
+        <input type="text" id="HinhAnh" name="HinhAnh" class="form-control" value="@Model.HinhAnh" readonly />
+        <span asp-validation-for="HinhAnh" class="text-danger"></span>
     </div>
+
 
 
     <div class="form-group">
@@ -77,3 +84,33 @@
     <button type="submit" class="btn btn-success">Lưu thay đổi</button>
     <a asp-action="Movie" asp-controller="CinemaAdmin" class="btn btn-secondary">Hủy</a>
 </form>
+
+<script>
+    function layTheLoai() {
+        const selected = Array.from(document.getElementById("theLoaiSelect").selectedOptions)
+            .map(o => o.value)
+            .filter(v => v !== "");
+
+        document.getElementById("IdTheLoai").value = selected.join(',');
+    }
+
+    // Gán tên file vào input và đổi ảnh preview
+    document.getElementById("chonFileAnh").addEventListener("change", function () {
+        const fileInput = this;
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const fileName = file.name;
+
+            // Gán tên file vào input
+            document.getElementById("HinhAnh").value = fileName;
+
+            // Hiển thị ảnh mới
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("previewAnh").src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
