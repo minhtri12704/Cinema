@@ -109,7 +109,7 @@ namespace CinemaProject.Controllers
                 return View("~/Views/CinemaAdmin/SanPham/Create.cshtml", phim);
             }
 
-            // Xử lý lưu file ảnh
+            // Xử lý ảnh nếu có
             if (HinhAnhFile != null && HinhAnhFile.Length > 0)
             {
                 var extension = Path.GetExtension(HinhAnhFile.FileName).ToLower();
@@ -125,12 +125,15 @@ namespace CinemaProject.Controllers
                 var fileName = Path.GetFileName(HinhAnhFile.FileName);
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                //  Nếu ảnh chưa có trong thư mục thì mới lưu
+                if (!System.IO.File.Exists(filePath))
                 {
-                    await HinhAnhFile.CopyToAsync(stream);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await HinhAnhFile.CopyToAsync(stream);
+                    }
                 }
 
-                // Gán tên file vào cột HinhAnh
                 phim.HinhAnh = fileName;
             }
 
@@ -139,80 +142,82 @@ namespace CinemaProject.Controllers
             return RedirectToAction("Movie");
         }
 
+
         [HttpGet]
         public IActionResult EditPhim(string id)
         {
             var phim = _context.Phims.Find(id);
             if (phim == null) return NotFound();
 
-            ViewBag.IdTheLoai = new SelectList(_context.TheLoais, "IdTheLoai", "TenTheLoai", phim.IdTheLoai);
+            var dsTheLoai = _context.TheLoais.ToList();
+            var theLoaiList = dsTheLoai.Select(tl => new SelectListItem
+            {
+                Text = tl.TenTheLoai,
+                Value = tl.IdTheLoai,
+                Selected = phim.IdTheLoai?.Split(',').Select(x => x.Trim()).Contains(tl.IdTheLoai) == true
+            }).ToList();
+
+            ViewBag.IdTheLoai = theLoaiList;
+
             return View("~/Views/CinemaAdmin/SanPham/Edit.cshtml", phim);
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditPhim(Phim phim, IFormFile HinhAnhFile)
+        public async Task<IActionResult> EditPhim(Phim phim)
         {
-            // Gán ảnh từ hidden input thủ công nếu Model không bind được
-            if (string.IsNullOrEmpty(phim.HinhAnh) && Request.Form.ContainsKey("HinhAnh"))
-            {
-                phim.HinhAnh = Request.Form["HinhAnh"];
-                Console.WriteLine("Gán thủ công HinhAnh: " + phim.HinhAnh);
-            }
-
-            Console.WriteLine("HinhAnh nhận được: " + phim.HinhAnh);
-
+            // Nếu model không hợp lệ → return lại View
             if (!ModelState.IsValid)
             {
-                ViewBag.IdTheLoai = new SelectList(_context.TheLoais, "IdTheLoai", "TenTheLoai", phim.IdTheLoai);
+                var theLoaiDaChon = (phim.IdTheLoai ?? "")
+                             .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                             .Select(x => x.Trim())
+                             .ToList();
+
+                ViewBag.IdTheLoai = _context.TheLoais
+                    .Select(tl => new SelectListItem
+                    {
+                        Text = tl.TenTheLoai,
+                        Value = tl.IdTheLoai,
+                        Selected = theLoaiDaChon.Contains(tl.IdTheLoai)
+                    }).ToList();
+
                 return View("~/Views/CinemaAdmin/SanPham/Edit.cshtml", phim);
             }
 
             var phimCu = await _context.Phims.FindAsync(phim.IdPhim);
-            if (phimCu == null)
-                return NotFound();
+            if (phimCu == null) return NotFound();
 
-            // Cập nhật các trường cơ bản
+            // Cập nhật các thông tin cơ bản
             phimCu.TenPhim = phim.TenPhim;
-            phimCu.IdTheLoai = phim.IdTheLoai;
             phimCu.ThoiLuong = phim.ThoiLuong;
             phimCu.NgayKhoiChieu = phim.NgayKhoiChieu;
             phimCu.DoTuoiPhuHop = phim.DoTuoiPhuHop;
             phimCu.MoTa = phim.MoTa;
+            phimCu.IdTheLoai = phim.IdTheLoai;
 
-            // Xử lý ảnh
-            if (HinhAnhFile != null && HinhAnhFile.Length > 0)
+            // 🔍 Xử lý hình ảnh: kiểm tra nếu file không tồn tại thì mới lưu vào thư mục
+            if (!string.IsNullOrEmpty(phim.HinhAnh))
             {
-                var extension = Path.GetExtension(HinhAnhFile.FileName).ToLower();
-                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
-
-                if (!allowedExtensions.Contains(extension))
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", phim.HinhAnh);
+                if (!System.IO.File.Exists(filePath))
                 {
-                    ModelState.AddModelError("HinhAnh", "Chỉ chấp nhận ảnh .jpg, .jpeg, .png");
-                    ViewBag.IdTheLoai = new SelectList(_context.TheLoais, "IdTheLoai", "TenTheLoai", phim.IdTheLoai);
-                    return View("~/Views/CinemaAdmin/SanPham/Edit.cshtml", phim);
+                    var fileFromForm = Request.Form.Files.FirstOrDefault(f => f.FileName == phim.HinhAnh);
+                    if (fileFromForm != null && fileFromForm.Length > 0)
+                    {
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await fileFromForm.CopyToAsync(stream);
+                        }
+                    }
                 }
 
-                // Tạo tên file duy nhất
-                var fileName = $"{phim.IdPhim}_{DateTime.Now.Ticks}{extension}";
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await HinhAnhFile.CopyToAsync(stream);
-                }
-
-                phimCu.HinhAnh = fileName;
-            }
-            else
-            {
-                // Không chọn ảnh mới → giữ nguyên ảnh cũ từ form
-                phimCu.HinhAnh = phim.HinhAnh;
+                phimCu.HinhAnh = phim.HinhAnh; // Gán tên ảnh vào DB
             }
 
             await _context.SaveChangesAsync();
-
-            return RedirectToAction("Movie", "CinemaAdmin");
+            return RedirectToAction("Movie");
         }
 
         public IActionResult DeletePhim(string id)

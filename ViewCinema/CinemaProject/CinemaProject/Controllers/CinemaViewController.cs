@@ -201,35 +201,41 @@ public class CinemaViewController : Controller
             return NotFound();
         }
 
-        // Đánh giá phim
+        var listTheLoaiId = (phim.IdTheLoai ?? "")
+            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+            .Select(x => x.Trim())
+            .ToList();
+
+        var tenTheLoais = _context.TheLoais
+            .Where(tl => listTheLoaiId.Contains(tl.IdTheLoai))
+            .Select(tl => tl.TenTheLoai)
+            .ToList();
+
+        ViewBag.TenTheLoais = tenTheLoais;
+
         var danhGias = _context.DanhGiaPhims
-        .Include(d => d.KhachHangNavigation)
-        .Include(d => d.PhimNavigation)
-        .Where(d => d.IdPhim == id)
-        .OrderByDescending(d => d.NgayDanhGia)
-        .ToList();
+            .Include(d => d.KhachHangNavigation)
+            .Include(d => d.PhimNavigation)
+            .Where(d => d.IdPhim == id)
+            .OrderByDescending(d => d.NgayDanhGia)
+            .ToList();
 
-
-        // Truyền sang ViewBag
         ViewBag.DanhGias = danhGias;
 
-
-        //Lịch chiếu
         var lichChieus = _context.LichChieus
-        .Include(l => l.IdPhimNavigation)
-        .Include(l => l.IdPhongNavigation)
-            .ThenInclude(pc => pc.IdRapNavigation)
-        .Where(l => l.IdPhim == id)
-        .OrderBy(l => l.NgayChieu)
-        .ThenBy(l => l.GioChieu)
-        .ToList();
+            .Include(l => l.IdPhimNavigation)
+            .Include(l => l.IdPhongNavigation)
+                .ThenInclude(pc => pc.IdRapNavigation)
+            .Where(l => l.IdPhim == id)
+            .OrderBy(l => l.NgayChieu)
+            .ThenBy(l => l.GioChieu)
+            .ToList();
 
         ViewBag.LichChieus = lichChieus;
 
-
-
         return View("FilmDetail", phim);
     }
+
     // Thêm bình luận ==============================================================
     [HttpPost]
     public IActionResult ThemBinhLuan(string idPhim, int soSao, string binhLuan)
