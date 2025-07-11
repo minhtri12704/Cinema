@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\CinemaProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\models\\phim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\models\\phim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|solutionrelative:cinemaproject\\controllers\\cinemaviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4358A4B9-45AE-4591-891C-30C18FB7780D}|CinemaProject\\CinemaProject.csproj|d:\\cinemaproject\\cinemaproject\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -289,7 +289,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -317,15 +317,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CinemaViewController.cs",
               "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaViewController.cs",
               "ToolTip": "D:\\CinemaProject\\CinemaProject\\Controllers\\CinemaViewController.cs",
               "RelativeToolTip": "CinemaProject\\Controllers\\CinemaViewController.cs",
-              "ViewState": "AQIAAKsAAABgZmZmZmYpwLYAAAArAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAwwEsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T05:29:25.295Z"
+              "WhenOpened": "2025-07-08T05:29:25.295Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -341,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CinemaAdminController.cs",
               "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Controllers\\CinemaAdminController.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Controllers\\CinemaAdminController.cs",
@@ -353,13 +354,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Phim.cs",
               "DocumentMoniker": "D:\\CinemaProject\\CinemaProject\\Models\\Phim.cs",
               "RelativeDocumentMoniker": "CinemaProject\\Models\\Phim.cs",
               "ToolTip": "D:\\CinemaProject\\CinemaProject\\Models\\Phim.cs",
               "RelativeToolTip": "CinemaProject\\Models\\Phim.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA0wB4AAAAxAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAIwB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T05:29:25.306Z",
               "EditorCaption": ""
