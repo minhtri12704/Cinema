@@ -363,7 +363,7 @@ VALUES
 ('P10', N'Nhà Bà Nữ', 'CMD', 98, '2025-08-10', 'PG', 'P10.jpg', N'Phim hài – gia đình của Trấn Thành về xung đột giữa các thế hệ.'),
 ('P11', N'The Conjuring', 'KD', 98, '2025-08-11', 'PG-16', 'P11.jpg', N'Cặp đôi trừ tà đối đầu với thế lực ma quái tại căn nhà ám.'),
 ('P12', N'The Conjuring 2', 'KD', 98, '2025-08-15', 'PG-16', 'P12.jpg', N'Câu chuyện trừ tà tiếp theo tại nước Anh, dựa trên sự kiện có thật.')
-
+go
 
 -- 5. Dữ liệu cho bảng LichChieu --
 INSERT INTO LichChieu (idLich, idPhim, idPhong, NgayChieu, GioChieu, GiaVe) 
@@ -460,7 +460,24 @@ VALUES ('BV01', 'KH01', 'L001', 'A01, A02', '2024-04-08', 140000, N'Đang giữ 
 ('BV02', 'KH02', 'L002', 'B03', '2024-04-09', 70000, N'Đang giữ chỗ'),
 ('BV03', 'KH03', 'L003', 'C05, C06, C07', '2024-04-10', 210000, N'Đang giữ chỗ'),
 ('BV04', 'KH04', 'L004', 'D01', '2024-04-11', 70000, N'Đã hủy'),
-('BV05', 'KH05', 'L005', 'E02, E03', '2024-04-12', 140000, N'Đang giữ chỗ');	
+('BV05', 'KH05', 'L005', 'E02, E03', '2024-04-12', 140000, N'Đang giữ chỗ'),
+('BV6', 'KH03', 'L003', 'H06', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV7', 'KH09', 'L004', 'C06', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV8', 'KH08', 'L010', 'H07', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV9', 'KH09', 'L012', 'B01, I01, E09', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV10', 'KH17', 'L012', 'D03, J03, H01', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV11', 'KH15', 'L012', 'J07', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV12', 'KH13', 'L006', 'D01, A07', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV13', 'KH16', 'L012', 'A05', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV14', 'KH09', 'L003', 'J08, C03', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV15', 'KH01', 'L007', 'E10, I07, F02', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV16', 'KH10', 'L006', 'E03', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV17', 'KH02', 'L003', 'H04', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV18', 'KH04', 'L007', 'J07, F02', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV19', 'KH12', 'L002', 'A10, I08', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV20', 'KH05', 'L009', 'A06, I03, H08', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV21', 'KH18', 'L005', 'D05, D08', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV22', 'KH05', 'L001', 'G01', '2025-07-10', 210000, N'Đang giữ chỗ');
 go
 -- Dữ liệu đánh giá phim
 INSERT INTO DanhGiaPhim (idDanhGia, idKhach, idPhim, SoSao, BinhLuan, NgayDanhGia)
@@ -484,5 +501,7 @@ go
  SELECT * FROM Phim
  SELECT * FROM Phim WHERE NgayKhoiChieu > GETDATE()
  select * from DanhGiaPhim
+ SELECT * FROM MonAnvaThucUong WHERE TrangThai = 1
+
 
 

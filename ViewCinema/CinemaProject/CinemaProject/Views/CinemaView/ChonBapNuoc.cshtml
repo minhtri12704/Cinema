@@ -1,0 +1,205 @@
+﻿@model CinemaProject.Models.ChonBapNuocViewModel
+@using System.Text.Json
+@using CinemaProject.Models
+@using System.Linq
+@{
+    ViewData["Title"] = "Chọn bắp nước";
+    var comboDataJson = JsonSerializer.Serialize((List<ComboMonAn>)Model.Combos);
+    var monDataJson = JsonSerializer.Serialize((List<MonAnvaThucUong>)Model.MonLe);
+}
+
+<style>
+    .btn-quantity {
+        width: 40px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 50%;
+        background-color: #f0f0f0 !important;
+        color: black !important;
+        border: 1px solid #ccc;
+        transition: all 0.2s ease;
+    }
+
+        .btn-quantity:hover {
+            background-color: #e0e0e0 !important;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .quantity-display {
+        width: 60px;
+        height: 40px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+    }
+
+    .table-custom th, .table-custom td {
+        vertical-align: middle;
+        color: white;
+    }
+
+    .table-custom {
+        background-color: #2c2c2c;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .table-wrapper {
+        margin-bottom: 40px;
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center px-3 border-top border-bottom border-primary" style="margin-top: 80px">
+
+    @{
+        var steps = new[] { "Chọn ghế", "Bắp nước", "Thanh toán", "Thông tin vé" };
+        int currentStep = ViewBag.CurrentStep ?? 0;
+        for (int i = 0; i < steps.Length; i++)
+        {
+            <div class="text-center">
+                <div class="rounded-circle @(i == currentStep ? "bg-danger" : "bg-secondary") text-white p-3 fw-bold">@(i + 1)</div>
+                <small class="d-block mt-1 text-white">@steps[i]</small>
+            </div>
+            if (i < steps.Length - 1)
+            {
+                <div class="border-top border-white flex-grow-1 mx-2"></div>
+            }
+        }
+    }
+
+</div>
+<div class="container text-white">
+    <div class="row">
+        <!-- PHẦN 7: COMBO + MÓN ĂN -->
+        <div class="col-md-9">
+            <!-- Combo -->
+            <div class="table-wrapper">
+                <h4 class="mb-3">🍿 Danh sách Combo</h4>
+                <table class="table table-bordered table-custom">
+                    <thead>
+                        <tr>
+                            <th>Tên Combo</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var combo in Model.Combos)
+                        {
+                            <tr>
+                                <td>@combo.CacMonAn</td>
+                                <td>@(((decimal)combo.GiaTien).ToString("N0"))₫</td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="btn btn-danger btn-quantity" onclick="adjustQuantity('combo', '@combo.IdMonAn', -1)">-</button>
+                                        <input type="text" class="form-control quantity-display" id="combo-@combo.IdMonAn" value="0" readonly />
+                                        <button class="btn btn-success btn-quantity" onclick="adjustQuantity('combo', '@combo.IdMonAn', 1)">+</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Món lẻ -->
+            <div class="table-wrapper">
+                <h4 class="mb-3">🥤 Đồ ăn & Thức uống riêng lẻ</h4>
+                <table class="table table-bordered table-custom">
+                    <thead>
+                        <tr>
+                            <th>Tên món</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var mon in Model.MonLe)
+                        {
+                            <tr>
+                                <td>@mon.TenMon</td>
+                                <td>@mon.Gia.ToString("N0")₫</td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="btn btn-danger btn-quantity" onclick="adjustQuantity('mon', '@mon.MaMon', -1)">-</button>
+                                        <input type="text" class="form-control quantity-display" id="mon-@mon.MaMon" value="0" readonly />
+                                        <button class="btn btn-success btn-quantity" onclick="adjustQuantity('mon', '@mon.MaMon', 1)">+</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PHẦN 3: THÔNG TIN VÉ -->
+        <div class="col-md-3">
+            <div class="bg-dark p-4 rounded text-white sticky-top" style="top: 100px;">
+                <h4 class="mb-3">🎟 Thông tin vé</h4>
+                <p><strong>🎬 Phim:</strong> @Model.TenPhim</p>
+                <p><strong>🏢 Rạp:</strong> @Model.TenRap</p>
+                <p><strong>🛋 Phòng:</strong> @Model.TenPhong</p>
+                <p><strong>🕒 Suất:</strong> @Model.GioChieu</p>
+                <p>
+                    <strong>Ghế đã chọn:</strong> @(Model.GheDaChon != null && Model.GheDaChon.Any()
+                    ? string.Join(", ", Model.GheDaChon)
+                    : "Chưa chọn")
+                </p>
+                <hr />
+                <h5 class="text-warning">Tổng tiền: <span id="tongTien">@Model.TongTienGhe.ToString("N0")₫</span></h5>
+                <a href="/ThanhToan" class="btn btn-primary w-100 mt-3" id="btnTiep">Tiếp tục</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        const comboData = @Html.Raw(comboDataJson);
+        const monData = @Html.Raw(monDataJson);
+        const tongTienSpan = document.getElementById("tongTien");
+
+        function adjustQuantity(type, id, delta) {
+            const input = document.getElementById(`${type}-${id}`);
+            let qty = parseInt(input.value);
+            qty = isNaN(qty) ? 0 : qty + delta;
+            qty = Math.max(0, qty);
+            input.value = qty;
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            let total = @Model.TongTienGhe; // Tiền ghế đã chọn trước đó
+
+            comboData.forEach(c => {
+                let qty = parseInt(document.getElementById(`combo-${c.IdMonAn}`).value);
+                qty = isNaN(qty) ? 0 : qty;
+                total += qty * c.GiaTien;
+            });
+
+            monData.forEach(m => {
+                let qty = parseInt(document.getElementById(`mon-${m.MaMon}`).value);
+                qty = isNaN(qty) ? 0 : qty;
+                total += qty * m.Gia;
+            });
+
+            tongTienSpan.innerText = total.toLocaleString("vi-VN") + "₫";
+        }
+    </script>
+}
+
