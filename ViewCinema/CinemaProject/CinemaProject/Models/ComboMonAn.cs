@@ -5,7 +5,7 @@ namespace CinemaProject.Models;
 
 public partial class ComboMonAn
 {
-    public string IdMonAn { get; set; } = null!;
+    public string IdMonAn { get; set; }
 
     public string? CacMonAn { get; set; }
 

@@ -3,6 +3,7 @@
     ViewData["Title"] = "Đặt vé";
 
     var gheList = ViewBag.DanhSachGhe as List<dynamic> ?? new List<dynamic>();
+    var gheDaDat = ViewBag.GheDaDat as List<string> ?? new List<string>();
     var gheDonList = gheList.Where(g => g.IdGhe == "GHE_DON" || g.IdGhe == "GHE_TRONG" || g.IdGhe == "GHE_VIP").ToList();
     var gheDoiList = gheList.Where(g => g.IdGhe == "GHE_DOI").ToList();
 }
@@ -19,10 +20,11 @@
 
     @{
         var steps = new[] { "Chọn ghế", "Bắp nước", "Thanh toán", "Thông tin vé" };
+        int currentStep = ViewBag.CurrentStep ?? 0;
         for (int i = 0; i < steps.Length; i++)
         {
             <div class="text-center">
-                <div class="rounded-circle @(i == 0 ? "bg-danger" : "bg-secondary") text-white p-3 fw-bold">@(i + 1)</div>
+                <div class="rounded-circle @(i == currentStep ? "bg-danger" : "bg-secondary") text-white p-3 fw-bold">@(i + 1)</div>
                 <small class="d-block mt-1 text-white">@steps[i]</small>
             </div>
             if (i < steps.Length - 1)
@@ -59,20 +61,28 @@
             <div class="d-flex flex-wrap justify-content-center" style="max-width: 650px; margin: auto;">
                 @foreach (var ghe in gheDonList)
                 {
+                    bool isDaDat = gheDaDat.Contains(ghe.Id);
+
+                    var baseStyle = "width: 40px; height: 35px; display: flex; align-items: center; justify-content: center;";
+
                     if (ghe.IdGhe == "GHE_TRONG")
                     {
-                        <button type="button" class="btn btn-secondary m-1" style="width: 40px; height: 35px;" disabled></button>
+                        <button type="button" class="btn btn-secondary m-1" style="@baseStyle" disabled></button>
+                    }
+                    else if (isDaDat)
+                    {
+                        <button type="button" class="btn btn-danger m-1" style="@baseStyle" disabled>@ghe.Id</button>
                     }
                     else if (ghe.IdGhe == "GHE_VIP")
                     {
-                        <button type="button" class="btn btn-vip m-1 ghe" style="width: 40px; height: 35px; display: flex; align-items: center; justify-content: center;"
+                        <button type="button" class="btn btn-vip m-1 ghe" style="@baseStyle"
                                 data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
                             @ghe.Id
                         </button>
                     }
                     else
                     {
-                        <button type="button" class="btn btn-outline-light m-1 ghe" style="width: 40px; height: 35px; display: flex; align-items: center; justify-content: center;"
+                        <button type="button" class="btn btn-outline-light m-1 ghe" style="@baseStyle"
                                 data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
                             @ghe.Id
                         </button>
@@ -84,10 +94,21 @@
             <div class="d-flex flex-wrap justify-content-center mt-4" style="max-width: 650px; margin: auto;">
                 @foreach (var ghe in gheDoiList)
                 {
-                    <button type="button" class="btn btn-warning m-1 ghe" style="width: 80px; height: 35px; display: flex; align-items: center; justify-content: center;"
-                            data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
-                        @ghe.Id
-                    </button>
+                    bool isDaDat = gheDaDat.Contains(ghe.Id);
+
+                    if (isDaDat)
+                    {
+                        <button type="button" class="btn btn-danger m-1" style="width: 80px; height: 35px;" disabled>
+                            @ghe.Id
+                        </button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-warning m-1 ghe" style="width: 80px; height: 35px; display: flex; align-items: center; justify-content: center;"
+                                data-id="@ghe.Id" data-gia="@ghe.Gia" data-idghe="@ghe.IdGhe">
+                            @ghe.Id
+                        </button>
+                    }
                 }
             </div>
 
@@ -115,18 +136,24 @@
 
         <!-- Cột phải: Thông tin đặt vé -->
         <div class="col-md-4">
-            <div class="bg-dark p-3 rounded">
-                <h5 class="mb-3 text-center">Thông tin đặt vé</h5>
-                <p><strong>Phim:</strong> @Model.IdPhimNavigation.TenPhim</p>
-                <p><strong>Rạp:</strong> @Model.IdPhongNavigation.IdRapNavigation.TenRap</p>
-                <p><strong>Phòng:</strong> @Model.IdPhongNavigation.TenPhong</p>
-                <p><strong>Suất:</strong> @Model.GioChieu - @Model.NgayChieu.ToString("dd/MM/yyyy")</p>
+			<div class="bg-dark p-3 rounded">
+				<h5 class="mb-3 text-center">Thông tin đặt vé</h5>
+				<p><strong>Phim:</strong> @Model.IdPhimNavigation.TenPhim</p>
+				<p><strong>Rạp:</strong> @Model.IdPhongNavigation.IdRapNavigation.TenRap</p>
+				<p><strong>Phòng:</strong> @Model.IdPhongNavigation.TenPhong</p>
+				<p><strong>Suất:</strong> @Model.GioChieu - @Model.NgayChieu.ToString("dd/MM/yyyy")</p>
+                
 
                 <hr />
                 <p><strong>Ghế đã chọn:</strong> <span id="gheDaChon" class="text-info"></span></p>
                 <p><strong>Tổng tiền:</strong> <span id="tongTien" class="text-warning">0₫</span></p>
 
-                <a href="#" class="btn btn-success mt-3 w-100 disabled" id="btnTiepTheo">Tiếp tục</a>
+                <form asp-controller="DatVe" asp-action="ChonBapNuoc" method="post">
+                    <input type="hidden" name="DanhSachGhe" id="inputGheDaChon" />
+                    <input type="hidden" name="TongTien" id="inputTongTien" />
+                    <input type="hidden" name="idLich" value="@Model.IdLich" />
+                    <button type="submit" class="btn btn-primary">Tiếp tục</button>
+                </form>
             </div>
         </div>
     </div>
@@ -139,7 +166,13 @@
         const tongTienSpan = document.getElementById("tongTien");
         const btnTiep = document.getElementById("btnTiepTheo");
 
+
+        // Hidden input nằm trong form
+        const inputGheDaChon = document.getElementById("inputGheDaChon");
+        const inputTongTien = document.getElementById("inputTongTien");
+
         let gheChon = [];
+        
 
         gheBtns.forEach(btn => {
             btn.addEventListener("click", () => {
@@ -169,11 +202,17 @@
                     gheChon = gheChon.filter(g => g.id !== id);
                 }
 
+                // Cập nhật giao diện
                 gheDaChonSpan.innerText = gheChon.map(g => g.id).join(", ");
                 const tong = gheChon.reduce((sum, g) => sum + g.gia, 0);
                 tongTienSpan.innerText = tong.toLocaleString("vi-VN") + "₫";
 
-                btnTiep.classList.toggle("disabled", gheChon.length === 0);
+                // Gán giá trị vào input ẩn
+                inputGheDaChon.value = gheChon.map(g => g.id).join(",");
+                inputTongTien.value = tong;
+
+                // Bật / tắt nút tiếp tục
+                btnTiep.disabled = gheChon.length === 0;
             });
         });
     </script>

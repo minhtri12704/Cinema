@@ -292,7 +292,7 @@ VALUES
 ('P03', N'The Batman', 'HDG', 176, '2025-05-15', 'PG-13', 'P03.jpg', N'Batman trở lại trong cuộc chiến chống lại tội ác tại Gotham.'),
 ('P04', N'Your Name', 'AN', 112, '2025-05-20', 'PG', 'P04.jpg', N'Bộ phim hoạt hình lãng mạn nổi tiếng của Nhật Bản, về hoán đổi thân xác.'),
 ('P05', N'Parasite', 'TL', 132, '2025-06-25', 'R', 'P05.jpg', N'Tác phẩm đoạt giải Oscar, kể về khoảng cách giai cấp trong xã hội Hàn Quốc.'),
-('P13', N'Sono Bisque Doll wa Koi wo Suru Season 2 Tập 1', 'AN,TC,HDH', 45, '2025-07-07', 'R', 'marin2.jpg', N'Mùa 2 của Sono Bisque Doll wa Koi wo Suru.'),
+('P13', N'Sono Bisque Doll wa Koi wo Suru Season 2 Tập 1', 'AN,TC,HDH', 45, '2025-07-07', 'R', 'P13.jpg', N'Mùa 2 của Sono Bisque Doll wa Koi wo Suru.'),
 ('P14', N'Cô Gái Đến Từ Hôm Qua', 'TC,HDH', 110, '2025-06-28', 'PG', 'P14.jpg', N'Phim học đường Việt Nam lãng mạn, chuyển thể từ truyện Nguyễn Nhật Ánh.'),
 ('P15', N'How to Train Your Dragon', 'HH,GK', 98, '2025-06-15', 'PG', 'P15.jpg', N'Câu chuyện cảm động giữa một cậu bé và rồng ở thế giới Viking.'),
 ('P16', N'Doraemon: Nobita và Mặt Trăng Phiêu Lưu Ký', 'HH,AN,PH', 111, '2025-06-30', 'PG', 'P16.jpg', N'Cuộc phiêu lưu mới của nhóm bạn Doraemon trên Mặt Trăng.'),
@@ -302,6 +302,56 @@ VALUES
 ('P20', N'Anh Hùng Xạ Điêu: Khởi Nguyên', 'CN,HDG,TC', 125, '2025-06-22', 'PG-13', 'P20.jpg', N'Khúc dạo đầu mới cho tiểu thuyết võ hiệp kinh điển Kim Dung, hành trình của Quách Tĩnh thời trẻ.'),
 ('P21', N'Thần Điêu Đại Hiệp: Duyên Phận Trùng Phùng', 'CN,TC,TL', 132, '2025-06-29', 'PG', 'P21.jpg', N'Chuyện tình sâu sắc giữa Dương Quá và Tiểu Long Nữ, trong bối cảnh giang hồ phân tranh.'),
 ('P22', N'Trường Tương Tư: Phần I', 'CN,TL', 140, '2025-07-05', 'PG', 'P22.jpg', N'Câu chuyện tình yêu và vận mệnh giữa các nhân vật hoàng tộc thời thượng cổ Trung Hoa.'),
+
+('P23', N'Interstellar', 'VT,TL', 169, '2025-06-15', 'PG-13', 'P23.jpg', N'Hành trình xuyên không gian để cứu lấy nhân loại.'),
+('P24', N'Venom 2: Đối Mặt Tử Thù', 'HDG,KD', 97, '2025-06-16', 'PG-13', 'P24.jpg', N'Cuộc chiến giữa Venom và Carnage đầy máu lửa.'),
+('P25', N'Bố Già', 'TL,TC,GK', 128, '2025-06-17', 'PG', 'P25.jpg', N'Câu chuyện gia đình cảm động giữa Sài Gòn nhộn nhịp.'),
+('P26', N'Weathering With You', 'AN,TC', 112, '2025-06-18', 'PG', 'P26.jpg', N'Tình yêu kỳ diệu giữa cậu bé và cô gái điều khiển thời tiết.'),
+('P27', N'The Conjuring: The Devil Made Me Do It', 'KD,TG', 112, '2025-06-19', 'R', 'P27.jpg', N'Hành trình điều tra vụ án ám ảnh thực sự từ vợ chồng nhà Warren.'),
+('P28', N'Spider-Man: No Way Home', 'HDG,VT', 148, '2025-06-20', 'PG-13', 'P28.jpg', N'Peter Parker gặp lại các Spider-Man khác qua đa vũ trụ.'),
+('P29', N'Chiếc Hộp Ma Quái', 'KD,TL', 95, '2025-06-21', 'R', 'P29.jpg', N'Một chiếc hộp kỳ lạ thay đổi số phận cả gia đình.'),
+('P30', N'Toy Story 4', 'HH,GK', 100, '2025-06-22', 'G', 'P30.jpg', N'Hành trình mới của Woody và các món đồ chơi quen thuộc.'),
+('P31', N'Raya and the Last Dragon', 'HH,PH', 107, '2025-06-23', 'PG', 'P31.jpg', N'Một chiến binh Đông Nam Á tìm kiếm rồng cuối cùng để cứu thế giới.'),
+('P32', N'Doraemon: Nobita và Đảo Giấu Vàng', 'HH,AN,PH', 108, '2025-06-24', 'PG', 'P32.jpg', N'Doraemon, Nobita và nhóm bạn cùng nhau lên đường khám phá một hòn đảo bí ẩn nơi cất giấu kho báu cổ xưa – nhưng điều họ tìm thấy còn lớn hơn cả vàng bạc.'),
+('P33', N'Mulan (Live Action)', 'HDG,CN,TL', 115, '2025-06-25', 'PG-13', 'P33.jpg', N'Cô gái giả trai thay cha nhập ngũ, bảo vệ đất nước.'),
+('P34', N'Trường Học Bá Đạo', 'CMD,HDH', 102, '2025-06-26', 'PG-13', 'P34.jpg', N'Học sinh quậy phá bất ngờ trở thành anh hùng cứu trường.'),
+('P35', N'Cuộc Chiến Xuyên Không', 'VT,PH', 130, '2025-06-27', 'PG-13', 'P35.jpg', N'Cuộc Chiến Xuyên Không còn khiến người hâm mộ choáng ngợp với các pha hành động mãn nhãn vượt mọi thời đại từ đấu kiếm, bắn súng.'),
+('P36', N'Ký Ức Kẻ Sát Nhân', 'TG,TL', 121, '2025-06-28', 'R', 'P36.jpg', N'Một cảnh sát điều tra kẻ sát nhân dựa trên ký ức mơ hồ của chính mình.'),
+('P37', N'The Social Network', 'TT,PL', 120, '2025-06-29', 'PG-13', 'P37.jpg', N'Câu chuyện sáng lập Facebook và những tranh cãi pháp lý xoay quanh.'),
+('P38', N'Nắng', 'TL,GK,TC', 100, '2025-06-30', 'PG', 'P38.jpg', N'Câu chuyện xúc động giữa bé Nắng và người mẹ thiểu năng – tình thân vượt lên số phận, đầy tiếng cười và nước mắt.'),
+('P39', N'Frozen II', 'HH,AN,GK', 103, '2025-07-01', 'G', 'P39.jpg', N'Elsa lên đường tìm nguồn gốc sức mạnh kỳ diệu của mình.'),
+('P40', N'Lật Mặt: Nhà Có Khách', 'CMD,KD', 100, '2025-07-02', 'PG-13', 'P40.jpg', N'Một chuyến về quê không yên bình với những bí ẩn rợn người.'),
+('P41', N'La La Land', 'NH,TC,TL', 128, '2025-07-03', 'PG-13', 'P41.jpg', N'Một nhạc công jazz và một nữ diễn viên trẻ cùng theo đuổi ước mơ ở Los Angeles, giữa tình yêu và sự nghiệp.'),
+('P42', N'Mission: Impossible – Fallout', 'HDG,TG', 147, '2025-07-04', 'PG-13', 'P42.jpg', N'Ethan Hunt đối đầu với kẻ thù nguy hiểm nhất từ trước đến nay.'),
+('P43', N'Mắt Âm Dương', 'KD,TL', 108, '2025-07-05', 'R', 'P43.jpg', N'Cô gái nhìn thấy hồn ma sau một tai nạn kỳ lạ.'),
+('P44', N'Encanto', 'HH,GK,AN', 102, '2025-07-06', 'PG', 'P44.jpg', N'Một gia đình kỳ diệu ở Colombia, mỗi người sở hữu phép thuật riêng.'),
+('P45', N'The Greatest Showman', 'NH,TL,TC', 105, '2025-07-06', 'PG', 'P45.jpg', N'Câu chuyện về P.T. Barnum – người đàn ông đứng sau rạp xiếc vĩ đại nhất, với những màn trình diễn kết hợp âm nhạc lôi cuốn và cảm hứng sống mãnh liệt.'),
+('P46', N'Diên Hi Công Lược', 'CN,TL', 138, '2025-07-05', 'PG', 'P46.jpg', N'Mưu lược chốn hậu cung và tình yêu giữa cung nữ và hoàng đế.'),
+('P47', N'Coco', 'HH,GK,NH', 105, '2025-07-05', 'PG', 'P47.jpg', N'Một cậu bé đam mê âm nhạc vô tình bước vào thế giới người chết và khám phá bí mật gia đình mình.'),
+('P48', N'Võ Tắc Thiên: Quyền Lực Đế Hậu', 'CN,TL,HDG', 124, '2025-07-05', 'PG-13', 'P48.jpg', N'Cuộc đời đầy biến động của Võ Tắc Thiên – từ cung nữ trở thành nữ hoàng quyền lực nhất lịch sử Trung Hoa.'),
+('P49', N'Trò Đùa Của Tử Thần', 'KD,TG', 105, '2025-07-05', 'R', 'P49.jpg', N'Chuỗi sự kiện kinh hoàng xảy ra sau một trò đùa tưởng vô hại.'),
+('P50', N'Her', 'TL,VT,TC', 126, '2025-07-05', 'PG-13', 'P50.jpg', N'Một người đàn ông cô đơn đem lòng yêu hệ điều hành trí tuệ nhân tạo – câu chuyện tình yêu giữa con người và công nghệ.'),
+
+('P51', N'Thất Sơn Tâm Linh', 'KD,TG', 109, '2025-06-15', 'R', 'P51.jpg', N'Một nữ phóng viên trẻ khám phá những hiện tượng kỳ bí tại vùng núi thiêng Thất Sơn, nơi ẩn chứa tà thuật và những bí mật chết người.'),
+('P52', N'Oppenheimer', 'LS,TL,TT', 180, '2025-06-16', 'R', 'P52.jpg', N'Câu chuyện về cha đẻ của bom nguyên tử và những hệ quả đạo đức sâu sắc.'),
+('P53', N'Trolls Band Together', 'HH,NH,GK', 92, '2025-06-17', 'G', 'P53.jpg', N'Các chú Troll cùng nhau hợp lực để cứu lấy âm nhạc và tình bạn.'),
+('P54', N'Insidious: The Red Door', 'KD,TG', 107, '2025-06-18', 'R', 'P54.jpg', N'Gia đình Lambert đối mặt với ác mộng quá khứ trong hành trình vượt qua cánh cửa đỏ.'),
+('P55', N'Trong Vùng Đất Linh Hồn', 'AN,PH,TL', 125, '2025-06-19', 'PG', 'P55.jpg', N'Một cô bé lạc vào thế giới huyền bí của các linh hồn và phải vượt qua nhiều thử thách để cứu cha mẹ mình.'),
+('P56', N'Poor Things', 'TG,TL,PL', 141, '2025-06-20', 'R', 'P56.jpg', N'Một phụ nữ được hồi sinh trong cơ thể khác và khám phá cuộc sống qua lăng kính mới.'),
+('P57', N'Wish', 'HH,GK,NH', 95, '2025-06-21', 'PG', 'P57.jpg', N'Cô bé Asha chiến đấu với thế lực hắc ám bằng một ngôi sao ước nguyện.'),
+('P58', N'The Flash', 'HDG,VT', 144, '2025-06-22', 'PG-13', 'P58.jpg', N'The Flash thay đổi dòng thời gian và gây ra một đa vũ trụ đầy nguy hiểm.'),
+('P59', N'Nội Gián', 'TG,TL,PL', 118, '2025-06-23', 'R', 'P59.jpg', N'Một cảnh sát chìm rơi vào lằn ranh giữa công lý và tội ác trong thế giới ngầm.'),
+('P60', N'Soul', 'HH,TL,GK', 100, '2025-06-24', 'PG', 'P60.jpg', N'Một giáo viên nhạc rơi vào thế giới linh hồn để tìm lại ý nghĩa cuộc sống.'),
+('P61', N'Aquaman and the Lost Kingdom', 'HDG,PH,VT', 125, '2025-06-25', 'PG-13', 'P61.jpg', N'Aquaman cùng đồng minh khám phá vương quốc bị lãng quên để ngăn chặn hủy diệt.'),
+('P62', N'Nàng Tiên Cá (Live Action)', 'HH,TC,PH', 135, '2025-06-26', 'PG', 'P62.jpg', N'Nàng tiên cá Ariel đấu tranh giữa tình yêu và tự do khi lên đất liền.'),
+('P63', N'Elemental', 'HH,GK', 101, '2025-06-27', 'PG', 'P63.jpg', N'Câu chuyện tình yêu lạ lùng giữa hai nguyên tố Lửa và Nước trong thành phố nguyên tố.'),
+('P64', N'John Wick: Chapter 4', 'HDG,TG', 169, '2025-06-28', 'R', 'P64.jpg', N'Sát thủ huyền thoại John Wick đối mặt với toàn bộ thế giới ngầm để giành lại tự do.'),
+('P65', N'Em Và Trịnh', 'TL,TC,VT', 118, '2025-06-29', 'PG', 'P65.jpg', N'Bức chân dung nên thơ về cuộc đời và tình yêu của cố nhạc sĩ Trịnh Công Sơn qua góc nhìn của những người phụ nữ đã đi qua cuộc đời ông.'),
+('P66', N'Stay Alive', 'KD,TG,VT', 102, '2025-06-30', 'R', 'P66.jpg', N'Một nhóm bạn bị mắc kẹt trong trò chơi sinh tử và phải tuân theo luật lệ bí ẩn.'),
+('P67', N'Chị Chị Em Em 2', 'TL,TC,CN', 115, '2025-07-01', 'R', 'P67.jpg', N'Tình yêu, đố kỵ và âm mưu giữa hai người phụ nữ trong giới showbiz cổ trang.'),
+('P68', N'The Marvels', 'HDG,VT', 110, '2025-07-02', 'PG-13', 'P68.jpg', N'Ba nữ siêu anh hùng liên kết sức mạnh trong một nhiệm vụ xuyên thiên hà.'),
+('P69', N'Mưu Kế Thượng Lưu', 'TL,PL', 115, '2025-07-03', 'R', 'P69.jpg', N'Một nữ luật sư trẻ vô tình rơi vào vòng xoáy âm mưu giữa giới thượng lưu và phải chọn giữa sự thật và quyền lực.'),
+('P70', N'Mirai', 'AN,GK,TL', 98, '2025-07-04', 'PG', 'P70.jpg', N'Cậu bé 4 tuổi gặp chị gái mình đến từ tương lai và học cách trưởng thành qua chuyến du hành kỳ lạ.'),
 
 -- Phim ra mắt hôm nay
 ('P06', N'Top Gun: Maverick', 'HDG', 131, '2025-07-07', 'PG-13', 'P06.jpg', N'Phi công kỳ cựu Maverick trở lại cùng những trận không chiến mãn nhãn.'),
@@ -313,7 +363,7 @@ VALUES
 ('P10', N'Nhà Bà Nữ', 'CMD', 98, '2025-08-10', 'PG', 'P10.jpg', N'Phim hài – gia đình của Trấn Thành về xung đột giữa các thế hệ.'),
 ('P11', N'The Conjuring', 'KD', 98, '2025-08-11', 'PG-16', 'P11.jpg', N'Cặp đôi trừ tà đối đầu với thế lực ma quái tại căn nhà ám.'),
 ('P12', N'The Conjuring 2', 'KD', 98, '2025-08-15', 'PG-16', 'P12.jpg', N'Câu chuyện trừ tà tiếp theo tại nước Anh, dựa trên sự kiện có thật.')
-
+go
 
 -- 5. Dữ liệu cho bảng LichChieu --
 INSERT INTO LichChieu (idLich, idPhim, idPhong, NgayChieu, GioChieu, GiaVe) 
@@ -410,7 +460,24 @@ VALUES ('BV01', 'KH01', 'L001', 'A01, A02', '2024-04-08', 140000, N'Đang giữ 
 ('BV02', 'KH02', 'L002', 'B03', '2024-04-09', 70000, N'Đang giữ chỗ'),
 ('BV03', 'KH03', 'L003', 'C05, C06, C07', '2024-04-10', 210000, N'Đang giữ chỗ'),
 ('BV04', 'KH04', 'L004', 'D01', '2024-04-11', 70000, N'Đã hủy'),
-('BV05', 'KH05', 'L005', 'E02, E03', '2024-04-12', 140000, N'Đang giữ chỗ');	
+('BV05', 'KH05', 'L005', 'E02, E03', '2024-04-12', 140000, N'Đang giữ chỗ'),
+('BV6', 'KH03', 'L003', 'H06', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV7', 'KH09', 'L004', 'C06', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV8', 'KH08', 'L010', 'H07', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV9', 'KH09', 'L012', 'B01, I01, E09', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV10', 'KH17', 'L012', 'D03, J03, H01', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV11', 'KH15', 'L012', 'J07', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV12', 'KH13', 'L006', 'D01, A07', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV13', 'KH16', 'L012', 'A05', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV14', 'KH09', 'L003', 'J08, C03', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV15', 'KH01', 'L007', 'E10, I07, F02', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV16', 'KH10', 'L006', 'E03', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV17', 'KH02', 'L003', 'H04', '2025-07-10', 70000, N'Đang giữ chỗ'),
+('BV18', 'KH04', 'L007', 'J07, F02', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV19', 'KH12', 'L002', 'A10, I08', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV20', 'KH05', 'L009', 'A06, I03, H08', '2025-07-10', 210000, N'Đang giữ chỗ'),
+('BV21', 'KH18', 'L005', 'D05, D08', '2025-07-10', 140000, N'Đang giữ chỗ'),
+('BV22', 'KH05', 'L001', 'G01', '2025-07-10', 210000, N'Đang giữ chỗ');
 go
 -- Dữ liệu đánh giá phim
 INSERT INTO DanhGiaPhim (idDanhGia, idKhach, idPhim, SoSao, BinhLuan, NgayDanhGia)
@@ -434,5 +501,7 @@ go
  SELECT * FROM Phim
  SELECT * FROM Phim WHERE NgayKhoiChieu > GETDATE()
  select * from DanhGiaPhim
+ SELECT * FROM MonAnvaThucUong WHERE TrangThai = 1
+
 
 

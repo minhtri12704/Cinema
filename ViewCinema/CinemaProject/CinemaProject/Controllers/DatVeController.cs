@@ -14,10 +14,17 @@ namespace CinemaProject.Controllers
 
         public IActionResult DatGhe(string id)
         {
+            var username = HttpContext.Session.GetString("username");
+            HttpContext.Session.SetString("idLich", id);
+            ViewBag.CurrentStep = 0; // ✅ Đánh dấu bước hiện tại: Chọn ghế
+
+            if (string.IsNullOrEmpty(username))
+            {
+                return RedirectToAction("Login", "Account");
+            }
             if (string.IsNullOrEmpty(id))
                 return NotFound();
 
-            // Lấy lịch chiếu (phim + phòng + rạp)
             var lich = _context.LichChieus
                 .Include(l => l.IdPhimNavigation)
                 .Include(l => l.IdPhongNavigation)
@@ -43,7 +50,6 @@ namespace CinemaProject.Controllers
             int count = 0;
             var danhSachGhe = new List<dynamic>();
 
-            // Danh sách vị trí ghế vip theo ưu tiên từ A05 đến B09
             var gheVipUuTien = new List<string>();
             for (char r = 'A'; r <= 'B'; r++)
             {
@@ -55,7 +61,6 @@ namespace CinemaProject.Controllers
 
             var gheVipThucTe = gheVipUuTien.Take(soGheVip).ToHashSet();
 
-            // === GHẾ ĐƠN (bao gồm GHẾ VIP nếu trùng ID) ===
             for (int i = 0; i < soGheDon; i++)
             {
                 int col = count % gheMoiHang + 1;
@@ -67,60 +72,100 @@ namespace CinemaProject.Controllers
 
                 if (gheVipThucTe.Contains(maGhe))
                 {
-                    danhSachGhe.Add(new
-                    {
-                        Id = maGhe,
-                        IdGhe = giaGheVip.IdGhe,
-                        Gia = giaGheVip.Gia
-                    });
+                    danhSachGhe.Add(new { Id = maGhe, IdGhe = giaGheVip.IdGhe, Gia = giaGheVip.Gia });
                 }
                 else
                 {
-                    danhSachGhe.Add(new
-                    {
-                        Id = maGhe,
-                        IdGhe = giaGheDon.IdGhe,
-                        Gia = giaGheDon.Gia
-                    });
+                    danhSachGhe.Add(new { Id = maGhe, IdGhe = giaGheDon.IdGhe, Gia = giaGheDon.Gia });
                 }
 
                 count++;
             }
 
-            // === THÊM GHẾ ẢO (GHẾ TRỐNG) ===
             int le = soGheDon % gheMoiHang;
             if (le != 0)
             {
                 int gheAo = gheMoiHang - le;
                 for (int i = 0; i < gheAo; i++)
                 {
-                    danhSachGhe.Add(new
-                    {
-                        Id = "",
-                        IdGhe = gheTrong.IdGhe,
-                        Gia = gheTrong.Gia
-                    });
+                    danhSachGhe.Add(new { Id = "", IdGhe = gheTrong.IdGhe, Gia = gheTrong.Gia });
                 }
             }
 
-            // === GHẾ ĐÔI ===
             string hangDoi = ((char)('A' + row + 1)).ToString();
             for (int i = 1; i <= soGheDoi; i++)
             {
                 string colStr = i.ToString("D2");
-                danhSachGhe.Add(new
-                {
-                    Id = $"{hangDoi}{colStr}",
-                    IdGhe = giaGheDoi.IdGhe,
-                    Gia = giaGheDoi.Gia
-                });
+                danhSachGhe.Add(new { Id = $"{hangDoi}{colStr}", IdGhe = giaGheDoi.IdGhe, Gia = giaGheDoi.Gia });
             }
 
+            var danhSachGheDaDat = _context.BookVes
+                .Where(b => b.IdLich == id && b.TrangThai == "Đang giữ chỗ")
+                .Select(b => b.GheNgoi)
+                .ToList();
+
+            var gheDaDat = danhSachGheDaDat
+                .SelectMany(ghe => ghe.Split(',', StringSplitOptions.RemoveEmptyEntries))
+                .Select(g => g.Trim())
+                .Distinct()
+                .ToList();
+
+            ViewBag.GheDaDat = gheDaDat;
             ViewBag.DanhSachGhe = danhSachGhe;
             return View("~/Views/CinemaView/DatGhe.cshtml", lich);
         }
 
+        [HttpPost]
+        public IActionResult ChonBapNuoc(string DanhSachGhe, int TongTien, string idLich)
+        {
+            HttpContext.Session.SetString("DanhSachGhe", DanhSachGhe ?? "");
+            HttpContext.Session.SetInt32("TongTienGhe", TongTien);
+            HttpContext.Session.SetString("idLich", idLich);
+            ViewBag.CurrentStep = 1; // ✅ Đánh dấu bước hiện tại: Bắp nước
 
+            var gheList = !string.IsNullOrEmpty(DanhSachGhe)
+                ? DanhSachGhe.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(g => g.Trim()).ToList()
+                : new List<string>();
+            var tongTienGhe = HttpContext.Session.GetInt32("TongTienGhe") ?? 0;
 
+            var lich = _context.LichChieus
+                .Include(l => l.IdPhimNavigation)
+                .Include(l => l.IdPhongNavigation)
+                    .ThenInclude(p => p.IdRapNavigation)
+                .FirstOrDefault(l => l.IdLich == idLich);
+
+            if (lich == null)
+                return NotFound();
+
+            var model = new ChonBapNuocViewModel
+            {
+                GheDaChon = gheList,
+                TenPhim = lich.IdPhimNavigation?.TenPhim ?? "",
+                TenRap = lich.IdPhongNavigation?.IdRapNavigation?.TenRap ?? "",
+                TenPhong = lich.IdPhongNavigation?.TenPhong ?? "",
+                GioChieu = $"{lich.NgayChieu:dd/MM/yyyy} - {lich.GioChieu}",
+                TongTienGhe = tongTienGhe,
+                Combos = _context.ComboMonAns.Select(c => new ComboMonAn
+                {
+                    IdMonAn = c.IdMonAn,
+                    CacMonAn = c.CacMonAn,
+                    GiaTien = c.GiaTien
+                }).ToList(),
+
+                MonLe = _context.MonAnvaThucUongs
+                    .Where(m => m.TrangThai == true)
+                    .Select(m => new MonAnvaThucUong
+                    {
+                        MaMon = m.MaMon,
+                        TenMon = m.TenMon,
+                        Loai = m.Loai,
+                        Gia = m.Gia,
+                        MoTa = m.MoTa,
+                        TrangThai = m.TrangThai
+                    }).ToList()
+            };
+
+            return View("~/Views/CinemaView/ChonBapNuoc.cshtml", model);
+        }
     }
 }
