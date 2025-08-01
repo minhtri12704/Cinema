@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CinemaProject.Models;
+using System.Linq;
 
 namespace CinemaProject.Controllers
 {
@@ -172,21 +173,15 @@ namespace CinemaProject.Controllers
         [HttpPost]
         public IActionResult ThanhToan(string idLich, string selectedSeats, string ComboDaChon, string MonLeDaChon)
         {
-            var selectedGhe = selectedSeats?.Split(',')?.ToList() ?? new List<string>();
+            ViewBag.CurrentStep = 2;
+            // 1. Parse danh sách ghế
+            var selectedGhe = selectedSeats?.Split(',', StringSplitOptions.RemoveEmptyEntries)?.ToList() ?? new List<string>();
 
-            var comboIdList = (ComboDaChon ?? "")
-                .Split('|', StringSplitOptions.RemoveEmptyEntries)
-                .Select(c => c.Split(':')[0])
-                .ToList();
+            // 2. Parse combo và món lẻ thành Dictionary: { Id => SoLuong }
+            var comboDict = ParseSelectedItems(ComboDaChon);
+            var monLeDict = ParseSelectedItemsInt(MonLeDaChon);
 
-            var monLeIdList = (MonLeDaChon ?? "")
-    .Split('|', StringSplitOptions.RemoveEmptyEntries)
-    .Select(m => m.Split(':')[0])
-    .Select(int.Parse)
-    .ToList();
-
-
-            // Lấy lịch chiếu
+            // 3. Lấy lịch chiếu
             var lich = _context.LichChieus
                 .Include(l => l.IdPhimNavigation)
                 .Include(l => l.IdPhongNavigation)
@@ -198,16 +193,22 @@ namespace CinemaProject.Controllers
                 return NotFound("Lịch chiếu không tồn tại.");
             }
 
-            // Truy vấn danh sách Combo từ DB
+            // 4. Truy vấn Combo từ DB
             var comboList = _context.ComboMonAns
-                .Where(c => comboIdList.Contains(c.IdMonAn))
+                .Where(c => comboDict.Keys.Contains(c.IdMonAn))
                 .ToList();
 
-            // Truy vấn danh sách Món lẻ từ DB
+            // 5. Truy vấn Món lẻ từ DB
             var monLeList = _context.MonAnvaThucUongs
-                .Where(m => monLeIdList.Contains(m.MaMon))
+                .Where(m => monLeDict.Keys.Contains(m.MaMon))
                 .ToList();
 
+            // 6. Tính tổng tiền
+            decimal tongTienGhe = selectedGhe.Count * lich.GiaVe;
+            decimal tongTienCombo = comboList.Sum(c => c.GiaTien * comboDict[c.IdMonAn]);
+            decimal tongTienMonLe = monLeList.Sum(m => m.Gia * monLeDict[m.MaMon]);
+
+            // 7. Gán vào model
             var payment = new Payment
             {
                 TenPhim = lich.IdPhimNavigation?.TenPhim ?? "Không rõ",
@@ -215,16 +216,72 @@ namespace CinemaProject.Controllers
                 TenPhong = lich.IdPhongNavigation?.TenPhong ?? "Không rõ",
                 GioChieu = $"{lich.NgayChieu:dd/MM/yyyy} {lich.GioChieu}",
                 GheDaChon = selectedGhe,
-                ComboDaChon = comboList,
-                MonLeDaChon = monLeList,
-                TongTienGhe = selectedGhe.Count * lich.GiaVe,
-                TongTienCombo = comboList.Sum(c => c.GiaTien),
-                TongTienMonLe = monLeList.Sum(m => m.Gia),
+
+                ComboDaChon = comboList.Select(c => new ComboDaChonView
+                {
+                    CacMonAn = c.CacMonAn,
+                    GiaTien = c.GiaTien,
+                    SoLuong = comboDict[c.IdMonAn]
+                }).ToList(),
+
+                MonLeDaChon = monLeList.Select(m => new MonLeDaChonView
+                {
+                    TenMon = m.TenMon,
+                    Gia = m.Gia,
+                    SoLuong = monLeDict[m.MaMon]
+                }).ToList(),
+
+                TongTienGhe = tongTienGhe,
+                TongTienCombo = tongTienCombo,
+                TongTienMonLe = tongTienMonLe,
+                TongThanhToan = tongTienGhe + tongTienCombo + tongTienMonLe
             };
 
-            payment.TongThanhToan = payment.TongTienGhe + payment.TongTienCombo + payment.TongTienMonLe;
 
             return View("~/Views/CinemaView/ThanhToan.cshtml", payment);
+        }
+
+        // Hàm phụ để parse dữ liệu từ chuỗi: "ID1:2|ID2:1" thành Dictionary<string, int>
+        private Dictionary<string, int> ParseSelectedItems(string raw)
+        {
+            var result = new Dictionary<string, int>();
+
+            if (!string.IsNullOrEmpty(raw))
+            {
+                var items = raw.Split('|', StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in items)
+                {
+                    var parts = item.Split(':');
+                    if (parts.Length == 2 && int.TryParse(parts[1], out int quantity))
+                    {
+                        result[parts[0]] = quantity;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private Dictionary<int, int> ParseSelectedItemsInt(string raw)
+        {
+            var result = new Dictionary<int, int>();
+
+            if (!string.IsNullOrEmpty(raw))
+            {
+                var items = raw.Split('|', StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in items)
+                {
+                    var parts = item.Split(':');
+                    if (parts.Length == 2 &&
+                        int.TryParse(parts[0], out int id) &&
+                        int.TryParse(parts[1], out int quantity))
+                    {
+                        result[id] = quantity;
+                    }
+                }
+            }
+
+            return result;
         }
 
 

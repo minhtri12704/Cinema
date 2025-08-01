@@ -158,14 +158,17 @@
                     : "Chưa chọn")
                 </p>
                 <hr />
-                <form method="post" asp-action="ThanhToan" asp-controller="DatVe">
-                    <input type="hidden" id="ComboDaChon" name="ComboDaChon" value="" />
-                    <input type="hidden" id="MonLeDaChon" name="MonLeDaChon" value="" />
-                    <input type="hidden" name="idLich" value="@Model.IdLich" />
-                    <input type="hidden" name="selectedSeats" value="@string.Join(",", Model.GheDaChon)" />
+                <div class="d-flex justify-content-between">
+                    <button type="button" onclick="history.back()" class="btn btn-outline-danger w-50">Hủy</button>
+                    <form method="post" asp-action="ThanhToan" asp-controller="DatVe">
+                        <input type="hidden" id="ComboDaChon" name="ComboDaChon" value="" />
+                        <input type="hidden" id="MonLeDaChon" name="MonLeDaChon" value="" />
+                        <input type="hidden" name="idLich" value="@Model.IdLich" />
+                        <input type="hidden" name="selectedSeats" value="@string.Join(",", Model.GheDaChon)" />
 
-                    <button type="submit" class="btn btn-primary">Tiếp tục</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Tiếp tục</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -254,7 +257,13 @@
             }
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem("reloadOnBack") === "true") {
+                sessionStorage.removeItem("reloadOnBack");
+                location.reload();
+            }
+        });
+    </script>
 }
-
-
-
