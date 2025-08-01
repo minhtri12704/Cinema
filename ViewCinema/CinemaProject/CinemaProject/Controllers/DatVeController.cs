@@ -16,7 +16,7 @@ namespace CinemaProject.Controllers
         {
             var username = HttpContext.Session.GetString("username");
             HttpContext.Session.SetString("idLich", id);
-            ViewBag.CurrentStep = 0; // ✅ Đánh dấu bước hiện tại: Chọn ghế
+            ViewBag.CurrentStep = 0; // Đánh dấu bước hiện tại: Chọn ghế
 
             if (string.IsNullOrEmpty(username))
             {
@@ -121,7 +121,7 @@ namespace CinemaProject.Controllers
             HttpContext.Session.SetString("DanhSachGhe", DanhSachGhe ?? "");
             HttpContext.Session.SetInt32("TongTienGhe", TongTien);
             HttpContext.Session.SetString("idLich", idLich);
-            ViewBag.CurrentStep = 1; // ✅ Đánh dấu bước hiện tại: Bắp nước
+            ViewBag.CurrentStep = 1;
 
             var gheList = !string.IsNullOrEmpty(DanhSachGhe)
                 ? DanhSachGhe.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(g => g.Trim()).ToList()
@@ -139,6 +139,7 @@ namespace CinemaProject.Controllers
 
             var model = new ChonBapNuocViewModel
             {
+                IdLich = idLich,
                 GheDaChon = gheList,
                 TenPhim = lich.IdPhimNavigation?.TenPhim ?? "",
                 TenRap = lich.IdPhongNavigation?.IdRapNavigation?.TenRap ?? "",
@@ -167,5 +168,65 @@ namespace CinemaProject.Controllers
 
             return View("~/Views/CinemaView/ChonBapNuoc.cshtml", model);
         }
+        //thanh toan
+        [HttpPost]
+        public IActionResult ThanhToan(string idLich, string selectedSeats, string ComboDaChon, string MonLeDaChon)
+        {
+            var selectedGhe = selectedSeats?.Split(',')?.ToList() ?? new List<string>();
+
+            var comboIdList = (ComboDaChon ?? "")
+                .Split('|', StringSplitOptions.RemoveEmptyEntries)
+                .Select(c => c.Split(':')[0])
+                .ToList();
+
+            var monLeIdList = (MonLeDaChon ?? "")
+    .Split('|', StringSplitOptions.RemoveEmptyEntries)
+    .Select(m => m.Split(':')[0])
+    .Select(int.Parse)
+    .ToList();
+
+
+            // Lấy lịch chiếu
+            var lich = _context.LichChieus
+                .Include(l => l.IdPhimNavigation)
+                .Include(l => l.IdPhongNavigation)
+                .ThenInclude(p => p.IdRapNavigation)
+                .FirstOrDefault(l => l.IdLich == idLich);
+
+            if (lich == null)
+            {
+                return NotFound("Lịch chiếu không tồn tại.");
+            }
+
+            // Truy vấn danh sách Combo từ DB
+            var comboList = _context.ComboMonAns
+                .Where(c => comboIdList.Contains(c.IdMonAn))
+                .ToList();
+
+            // Truy vấn danh sách Món lẻ từ DB
+            var monLeList = _context.MonAnvaThucUongs
+                .Where(m => monLeIdList.Contains(m.MaMon))
+                .ToList();
+
+            var payment = new Payment
+            {
+                TenPhim = lich.IdPhimNavigation?.TenPhim ?? "Không rõ",
+                TenRap = lich.IdPhongNavigation?.IdRapNavigation?.TenRap ?? "Không rõ",
+                TenPhong = lich.IdPhongNavigation?.TenPhong ?? "Không rõ",
+                GioChieu = $"{lich.NgayChieu:dd/MM/yyyy} {lich.GioChieu}",
+                GheDaChon = selectedGhe,
+                ComboDaChon = comboList,
+                MonLeDaChon = monLeList,
+                TongTienGhe = selectedGhe.Count * lich.GiaVe,
+                TongTienCombo = comboList.Sum(c => c.GiaTien),
+                TongTienMonLe = monLeList.Sum(m => m.Gia),
+            };
+
+            payment.TongThanhToan = payment.TongTienGhe + payment.TongTienCombo + payment.TongTienMonLe;
+
+            return View("~/Views/CinemaView/ThanhToan.cshtml", payment);
+        }
+
+
     }
 }

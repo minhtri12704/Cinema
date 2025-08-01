@@ -2,10 +2,11 @@
 {
     public class ChonBapNuocViewModel
     {
-        public List<ComboMonAn> Combos { get; set; }
-        public List<MonAnvaThucUong> MonLe { get; set; }
+            public List<ComboMonAn> Combos { get; set; }
+            public List<MonAnvaThucUong> MonLe { get; set; }
 
         // Dữ liệu vé
+        public string IdLich { get; set; }
         public string TenPhim { get; set; }
         public string TenRap { get; set; }
         public string TenPhong { get; set; }
