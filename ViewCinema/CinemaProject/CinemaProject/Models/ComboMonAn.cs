@@ -9,5 +9,5 @@ public partial class ComboMonAn
 
     public string? CacMonAn { get; set; }
 
-    public int? GiaTien { get; set; }
+    public decimal GiaTien { get; set; }
 }

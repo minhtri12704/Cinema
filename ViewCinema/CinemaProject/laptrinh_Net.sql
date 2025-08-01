@@ -203,7 +203,7 @@ go
 create table ComboMonAn(
 	idMonAn varchar(30) primary key ,
 	CacMonAn nvarchar(200),
-	GiaTien int
+	GiaTien DECIMAL(10, 2) NOT NULL
 )
 go
 

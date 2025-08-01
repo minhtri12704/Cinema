@@ -158,8 +158,14 @@
                     : "Chưa chọn")
                 </p>
                 <hr />
-                <h5 class="text-warning">Tổng tiền: <span id="tongTien">@Model.TongTienGhe.ToString("N0")₫</span></h5>
-                <a href="/ThanhToan" class="btn btn-primary w-100 mt-3" id="btnTiep">Tiếp tục</a>
+                <form method="post" asp-action="ThanhToan" asp-controller="DatVe">
+                    <input type="hidden" id="ComboDaChon" name="ComboDaChon" value="" />
+                    <input type="hidden" id="MonLeDaChon" name="MonLeDaChon" value="" />
+                    <input type="hidden" name="idLich" value="@Model.IdLich" />
+                    <input type="hidden" name="selectedSeats" value="@string.Join(",", Model.GheDaChon)" />
+
+                    <button type="submit" class="btn btn-primary">Tiếp tục</button>
+                </form>
             </div>
         </div>
     </div>
@@ -181,25 +187,74 @@
             input.value = qty;
 
             updateTotal();
+            updateSelectedItems();
         }
 
         function updateTotal() {
-            let total = @Model.TongTienGhe; // Tiền ghế đã chọn trước đó
+            let total = @Model.TongTienGhe;
 
             comboData.forEach(c => {
-                let qty = parseInt(document.getElementById(`combo-${c.IdMonAn}`).value);
-                qty = isNaN(qty) ? 0 : qty;
-                total += qty * c.GiaTien;
+                let input = document.getElementById(`combo-${c.IdMonAn}`);
+                let qty = input ? parseInt(input.value) : 0;
+                if (!isNaN(qty) && qty > 0) {
+                    total += qty * c.GiaTien;
+                }
             });
 
             monData.forEach(m => {
-                let qty = parseInt(document.getElementById(`mon-${m.MaMon}`).value);
-                qty = isNaN(qty) ? 0 : qty;
-                total += qty * m.Gia;
+                let input = document.getElementById(`mon-${m.MaMon}`);
+                let qty = input ? parseInt(input.value) : 0;
+                if (!isNaN(qty) && qty > 0) {
+                    total += qty * m.Gia;
+                }
             });
 
-            tongTienSpan.innerText = total.toLocaleString("vi-VN") + "₫";
+            if (tongTienSpan) {
+                tongTienSpan.innerText = total.toLocaleString("vi-VN") + "₫";
+            }
         }
+
+        function updateSelectedItems() {
+            const selectedCombos = [];
+            const selectedMons = [];
+
+            comboData.forEach(c => {
+                let input = document.getElementById(`combo-${c.IdMonAn}`);
+                let qty = input ? parseInt(input.value) : 0;
+                if (!isNaN(qty) && qty > 0) {
+                    selectedCombos.push(`${c.IdMonAn}:${qty}`);
+                }
+            });
+
+            monData.forEach(m => {
+                let input = document.getElementById(`mon-${m.MaMon}`);
+                let qty = input ? parseInt(input.value) : 0;
+                if (!isNaN(qty) && qty > 0) {
+                    selectedMons.push(`${m.MaMon}:${qty}`);
+                }
+            });
+
+            const comboInput = document.getElementById("ComboDaChon");
+            const monInput = document.getElementById("MonLeDaChon");
+
+            if (comboInput) comboInput.value = selectedCombos.join("|");
+            if (monInput) monInput.value = selectedMons.join("|");
+        }
+
+        // Khi người dùng nhấn submit form
+        document.addEventListener("DOMContentLoaded", () => {
+            updateTotal();
+            updateSelectedItems();
+
+            const form = document.querySelector("form");
+            if (form) {
+                form.addEventListener("submit", () => {
+                    updateSelectedItems(); // đảm bảo dữ liệu cập nhật trước khi gửi
+                });
+            }
+        });
     </script>
 }
+
+
 

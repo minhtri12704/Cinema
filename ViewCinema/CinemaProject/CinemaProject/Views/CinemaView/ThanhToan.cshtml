@@ -1,0 +1,69 @@
+﻿@model CinemaProject.Models.Payment
+@{
+    ViewData["Title"] = "Xác nhận thanh toán";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">XÁC NHẬN THANH TOÁN</h2>
+
+    <div class="row">
+        <!-- Cột Thông tin ghế -->
+        <div class="col-md-6">
+            <div class="card p-4 mb-4 shadow text-dark">
+                <h4 class="mb-3">Thông tin vé</h4>
+                <p><strong>Tên phim:</strong> @Model.TenPhim</p>
+                <p><strong>Rạp:</strong> @Model.TenRap</p>
+                <p><strong>Phòng chiếu:</strong> @Model.TenPhong</p>
+                <p><strong>Giờ chiếu:</strong> @Model.GioChieu</p>
+                <p><strong>Ghế đã chọn:</strong> @string.Join(", ", Model.GheDaChon)</p>
+                <p><strong>Tiền vé:</strong> @Model.TongTienGhe.ToString("N0") VNĐ</p>
+            </div>
+        </div>
+
+        <!-- Cột Thông tin bắp nước -->
+        <div class="col-md-6">
+            <div class="card p-4 mb-4 shadow text-dark">
+                <h4 class="mb-3">Thông tin bắp nước</h4>
+
+                @if (Model.ComboDaChon?.Any() == true)
+                {
+                    <div class="mb-3">
+                        <h5>Combo đã chọn</h5>
+                        <ul>
+                            @foreach (var combo in Model.ComboDaChon)
+                            {
+                                <li>
+                                    @combo.CacMonAn - @(combo.GiaTien.ToString("N0") ?? "0") VNĐ
+                                </li>
+                            }
+                        </ul>
+                        <p><strong>Tiền combo:</strong> @Model.TongTienCombo.ToString("N0") VNĐ</p>
+                    </div>
+                }
+
+                @if (Model.MonLeDaChon?.Any() == true)
+                {
+                    <div>
+                        <h5>Món lẻ đã chọn</h5>
+                        <ul>
+                            @foreach (var mon in Model.MonLeDaChon)
+                            {
+                                <li>@mon.TenMon - @mon.Gia.ToString("N0") VNĐ</li>
+                            }
+                        </ul>
+                        <p><strong>Tiền món lẻ:</strong> @Model.TongTienMonLe.ToString("N0") VNĐ</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Tổng tiền -->
+    <div class="card p-4 mb-4 shadow text-dark">
+        <h4 class="text-danger">Tổng thanh toán: <strong>@Model.TongThanhToan.ToString("N0") VNĐ</strong></h4>
+    </div>
+
+    <form method="post" asp-action="HoanTat" asp-controller="DatVe">
+        <button type="submit" class="btn btn-success w-100">Xác nhận thanh toán</button>
+    </form>
+</div>
