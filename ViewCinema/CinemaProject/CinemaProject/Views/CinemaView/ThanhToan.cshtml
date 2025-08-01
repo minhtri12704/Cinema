@@ -3,6 +3,26 @@
     ViewData["Title"] = "Xác nhận thanh toán";
 }
 
+<div class="d-flex justify-content-between align-items-center px-3 border-top border-bottom border-primary" style="margin-top: 80px">
+
+    @{
+        var steps = new[] { "Chọn ghế", "Bắp nước", "Thanh toán", "Thông tin vé" };
+        int currentStep = ViewBag.CurrentStep ?? 0;
+        for (int i = 0; i < steps.Length; i++)
+        {
+            <div class="text-center">
+                <div class="rounded-circle @(i == currentStep ? "bg-danger" : "bg-secondary") text-white p-3 fw-bold">@(i + 1)</div>
+                <small class="d-block mt-1 text-white">@steps[i]</small>
+            </div>
+            if (i < steps.Length - 1)
+            {
+                <div class="border-top border-white flex-grow-1 mx-2"></div>
+            }
+        }
+    }
+
+</div>
+
 <div class="container mt-5">
     <h2 class="text-center text-primary mb-4">XÁC NHẬN THANH TOÁN</h2>
 
@@ -33,7 +53,7 @@
                             @foreach (var combo in Model.ComboDaChon)
                             {
                                 <li>
-                                    @combo.CacMonAn - @(combo.GiaTien.ToString("N0") ?? "0") VNĐ
+                                    (x @combo.SoLuong)  @combo.CacMonAn - @combo.GiaTien.ToString("N0") VNĐ
                                 </li>
                             }
                         </ul>
@@ -48,12 +68,13 @@
                         <ul>
                             @foreach (var mon in Model.MonLeDaChon)
                             {
-                                <li>@mon.TenMon - @mon.Gia.ToString("N0") VNĐ</li>
+                                <li>(x @mon.SoLuong)  @mon.TenMon - @mon.Gia.ToString("N0") VNĐ</li>
                             }
                         </ul>
                         <p><strong>Tiền món lẻ:</strong> @Model.TongTienMonLe.ToString("N0") VNĐ</p>
                     </div>
                 }
+
             </div>
         </div>
     </div>
@@ -63,7 +84,17 @@
         <h4 class="text-danger">Tổng thanh toán: <strong>@Model.TongThanhToan.ToString("N0") VNĐ</strong></h4>
     </div>
 
-    <form method="post" asp-action="HoanTat" asp-controller="DatVe">
-        <button type="submit" class="btn btn-success w-100">Xác nhận thanh toán</button>
-    </form>
+    <div class="d-flex justify-content-between">
+        <button type="button" onclick="goBackAndReload()" class="btn btn-outline-danger w-50" style="margin-right:30px;">Hủy </button>
+        <form asp-action="HoanTat" asp-controller="DatVe" method="post" class="me-2 w-50">
+            <button type="submit" class="btn btn-success w-100">Xác nhận thanh toán</button>
+        </form>
+    </div>
 </div>
+
+<script>
+    function goBackAndReload() {
+        sessionStorage.setItem("reloadOnBack", "true");
+        history.back();
+    }
+</script>
